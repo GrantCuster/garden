@@ -1,0 +1,87 @@
+:root {
+  --bg: #282828;
+  --fg: #ebdbb2;
+  --black: #282828;
+  --red: #cc241d;
+  --green: #98971a;
+  --yellow: #d79921;
+  --blue: #458588;
+  --purple: #b16286;
+  --aqua: #689d6a;
+  --gray: #a89984;
+  --bright-black: #928374;
+  --bright-red: #fb4934;
+  --bright-green: #b8bb26;
+  --bright-yellow: #fabd2f;
+  --bright-blue: #83a598;
+  --bright-purple: #d3869b;
+  --bright-aqua: #8ec07c;
+  --bright-gray: #ebdbb2;
+}
+
+.blue {
+  color: var(--blue);
+}
+.gray {
+  color: var(--gray);
+}
+
+html, body {
+  background-color: var(--bg);
+  color: var(--fg);
+  font-size: 18px;
+  line-height: 24px;
+  font-family: sans-serif;
+}
+.content {
+  max-width: 65ch;
+  margin: 1lh auto;
+}
+.content a {
+  color: inherit;
+  text-decoration: underline;
+}
+.spacer {
+  height: 1lh;
+}
+.half-spacer {
+  height: 0.5lh;
+}
+
+.green, a.green {
+  color: var(--green);
+}
+
+img {
+  max-width: 100%;
+}
+
+.p-2 {
+  padding: 1rem;
+}
+.px-2 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.py-1 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.border {
+  border-width: 1px;
+  border-style: solid;
+}
+.border-gray {
+  border-color: var(--gray);
+}
+.hover-bg-bright-black:hover {
+  background-color: var(--bright-black);
+}
+.hover-bg-blue:hover {
+  background-color: var(--blue);
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+
+
