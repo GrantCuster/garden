@@ -36,6 +36,7 @@
 }
 html,
 body {
+  margin: 0;
   background-color: var(--dark-black);
   color: var(--fg);
   font-size: 18px;
