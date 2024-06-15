@@ -6,6 +6,10 @@ window.onload = () => {
     if (href && /^(https?:)?\/\//.test(href)) {
       postLink.target = '_blank';
     }
+    postLink.addEventListener('click', (event) => {
+      // Prevent link click from triggering post click
+      event.stopPropagation();
+    });
   });
 
   // Add click event listener to images
