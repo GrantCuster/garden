@@ -16,7 +16,7 @@ import { chromium } from "playwright";
 import { Browser, Page } from "playwright";
 import { uploadFileToS3 } from "./upload_image";
 
-const buildImages = false;
+const buildImages = true;
 
 async function generateOgImage(page: Page, url: string, outputPath: string) {
   await page.goto(url, { waitUntil: "networkidle" });
@@ -357,6 +357,7 @@ const main = async () => {
       console.log(`OG image generated for index: ${ogImagePath}`);
       const s3Key = `og-images/index.png`;
       await uploadFileToS3(ogImagePath, "grant-uploader", s3Key);
+      await fs.rm(ogImagePath);
 
       for (const file of markdownFiles) {
         const basename = path.basename(file, ".md");
@@ -372,6 +373,7 @@ const main = async () => {
 
         const s3Key = `og-images/${basename}.png`;
         await uploadFileToS3(ogImagePath, "grant-uploader", s3Key);
+        await fs.rm(ogImagePath);
       }
 
       for (const thread of threads) {
@@ -386,6 +388,7 @@ const main = async () => {
 
         const s3Key = `og-images/${threadBase}.png`;
         await uploadFileToS3(ogImagePath, "grant-uploader", s3Key);
+        await fs.rm(ogImagePath);
       }
 
       await browser.close();
