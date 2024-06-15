@@ -12,6 +12,9 @@
     "@types/node": "^20.14.2"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.598.0",
+    "dotenv": "^16.4.5",
+    "playwright": "^1.44.1",
     "prettier": "^3.3.1"
   }
 }
