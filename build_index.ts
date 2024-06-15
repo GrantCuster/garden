@@ -16,7 +16,7 @@ import { chromium } from "playwright";
 import { Browser, Page } from "playwright";
 import { uploadFileToS3 } from "./upload_image";
 
-const buildImages = true;
+const buildImages = false;
 
 async function generateOgImage(page: Page, url: string, outputPath: string) {
   await page.goto(url, { waitUntil: "networkidle" });
