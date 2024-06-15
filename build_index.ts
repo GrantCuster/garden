@@ -311,7 +311,7 @@ const main = async () => {
     const markdownFiles = (await fs.readdir(inputDir))
       .filter((file) => file.endsWith(".md"))
       .sort()
-      .reverse();
+      .reverse()
     if (markdownFiles.length === 0) {
       console.error(`No markdown files found in ${inputDir}.`);
       process.exit(1);
