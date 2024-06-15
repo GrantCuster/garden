@@ -159,7 +159,7 @@ async function buildNonThreadPages({
       const threadBase =
         "t-" +
         lookup[path.basename(file, ".md")][
-          lookup[path.basename(file, ".md")].length - 1
+        lookup[path.basename(file, ".md")].length - 1
         ];
       const destination = threadBase + "#" + path.basename(file, ".md");
       const content = `<script>function navigate() { window.location = '/${destination}' }; navigate();</script>`;
@@ -345,6 +345,13 @@ const main = async () => {
       postsContent,
     });
     console.log(`Index file created: ${indexFile}`);
+
+    // Add cname to dist
+    await fs.writeFile(
+      path.join(outputDir, "CNAME"),
+      "garden.grantcuster.com",
+      "utf-8",
+    );
 
     if (buildImages) {
       // Launch browser once and reuse page for screenshots
