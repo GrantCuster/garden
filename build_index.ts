@@ -193,7 +193,7 @@ async function buildStandalonePage({
   let postHeadContent = MakePageHead({
     title: `${formattedDate} ${formattedTime}`,
     description: excerpt,
-    image_link: `https://grant-uploader.s3.amazonaws.com/og-images/${basename}`,
+    image_link: `https://grant-uploader.s3.amazonaws.com/og-images/${basename}.png`,
   });
   postHeadContent += optionalRedirect ?? "";
   const templateContentWrapped = MakeWrapper({
