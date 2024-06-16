@@ -48,7 +48,7 @@ const longMonthsOfYear: string[] = [
   "December",
 ];
 
-function formatDateString(dateString: string): string {
+export function formatDateString(dateString: string): string {
   // Extract components from the string
   const [year, month, day, hour, minute, second] = dateString
     .split("-")
@@ -311,10 +311,12 @@ async function generateIndexContent({
     const text = await fs.readFile(filePath, "utf-8");
     let lines = text.trim().split("\n");
     let replyTo: string | null = null;
+    let threadLink: string | null = null;
 
     lines = lines.filter((line) => {
       if (line.startsWith("@reply")) {
-        replyTo = `t-${lookup[basename][lookup[basename].length - 1]}#${basename}`;
+        replyTo = line.split(" ")[1];
+        threadLink = `t-${lookup[basename][lookup[basename].length - 1]}#${basename}`;
         return false;
       }
       return true;

@@ -39,6 +39,9 @@
 .blue {
   color: var(--blue);
 }
+.italic {
+  font-style: italic;
+}
 html,
 body {
   margin: 0;
@@ -204,3 +207,6 @@ h3:before {
   font-size: 16px;
 }
 
+.reply + p {
+  margin-top: 0.5em;
+}
