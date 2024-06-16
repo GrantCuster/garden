@@ -15,7 +15,8 @@ window.onload = () => {
   // Add click event listener to images
   const postImages = document.querySelectorAll('.post img');
   postImages.forEach((postImage) => {
-    postImage.addEventListener('click', () => {
+    postImage.addEventListener('click', (event) => {
+      event.stopPropagation();
       const imageContainer = document.createElement('div');
       imageContainer.classList.add('image-container');
 
