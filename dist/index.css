@@ -78,6 +78,11 @@ a.yellow {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
+.py-2 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
 .border {
   border-width: 1px;
   border-style: solid;
@@ -125,9 +130,9 @@ a.yellow {
   color: var(--green);
   text-decoration: none;
 }
-.home-link:hover {
-  text-decoration: underline;
-}
+/* .home-link:hover { */
+/*   text-decoration: underline; */
+/* } */
 
 h1,
 h2,
@@ -188,3 +193,9 @@ h3:before {
   width: 100%;
   height: 100%;
 }
+
+.mono {
+  /* font-family: monospace; */
+  font-size: 15px;
+}
+

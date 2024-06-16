@@ -18,6 +18,74 @@ import { uploadFileToS3 } from "./upload_image";
 
 const buildImages = false;
 
+function formatDateString(dateString: string): string {
+  // Extract components from the string
+  const [year, month, day, hour, minute, second] = dateString
+    .split("-")
+    .map(Number);
+
+  // Create a new Date object
+  const date = new Date(year, month - 1, day, hour, minute, second);
+
+  // Array of day names and month names
+  const daysOfWeek: string[] = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  const monthsOfYear: string[] = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
+  // Get the day of the week and month name
+  const dayOfWeek: string = daysOfWeek[date.getDay()];
+  const monthName: string = monthsOfYear[date.getMonth()];
+
+  // Function to get the ordinal suffix
+  function getOrdinalSuffix(day: number): string {
+    if (day > 3 && day < 21) return "th";
+    switch (day % 10) {
+      case 1:
+        return "st";
+      case 2:
+        return "nd";
+      case 3:
+        return "rd";
+      default:
+        return "th";
+    }
+  }
+
+  // Format the date and time
+  const formattedDate: string = `${dayOfWeek}, ${monthName} ${day}${getOrdinalSuffix(day)}`;
+  const formattedTime: string = date.toLocaleTimeString("en-US", {
+    hour: "numeric",
+    minute: "numeric",
+    hour12: true,
+  });
+
+  return `${formattedDate} &middot; ${formattedTime}`;
+}
+
+// Example usage
+const dateString: string = "2024-06-15-07-31-52";
+console.log(formatDateString(dateString));
+
 async function generateOgImage(page: Page, url: string, outputPath: string) {
   await page.goto(url, { waitUntil: "networkidle" });
 
@@ -75,12 +143,7 @@ async function generateThreadContent({ thread }: { thread: string[] }) {
     const filePath = path.join(inputDir, basename + ".md");
     const text = await fs.readFile(filePath, "utf-8");
 
-    const datePart =
-      basename.match(
-        /^([0-9]{4}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2})/,
-      )?.[1] ?? "";
-    const formattedDate = datePart.split("-").slice(0, 3).join("-");
-    const formattedTime = datePart.split("-").slice(3, 6).join(":");
+    const timestamp = formatDateString(basename);
 
     const lines = text.split("\n").filter((line) => !line.startsWith("@reply"));
     const joined = lines.join("\n").trim();
@@ -90,8 +153,7 @@ async function generateThreadContent({ thread }: { thread: string[] }) {
     }).toString();
 
     postsContent += MakePostInThread({
-      formattedDate,
-      formattedTime,
+      timestamp,
       htmlContent: generatedHtmlContent,
     });
   }
@@ -127,7 +189,7 @@ async function saveThreadContent({
   thread: string[];
   content: string;
 }) {
-  const threadBase = "t-" + thread[0];
+  const threadBase = "t-" + thread[thread.length - 1];
   const dirName = path.join(outputDir, threadBase);
   await fs.mkdir(dirName, { recursive: true });
   await fs.writeFile(path.join(dirName, "index.html"), content);
@@ -177,12 +239,7 @@ async function buildStandalonePage({
   optionalRedirect: string | null;
 }) {
   const basename = path.basename(file, ".md");
-  const datePart =
-    basename.match(
-      /^([0-9]{4}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2})/,
-    )?.[1] ?? "";
-  const formattedDate = datePart.split("-").slice(0, 3).join("-");
-  const formattedTime = datePart.split("-").slice(3, 6).join(":");
+  const timestamp = formatDateString(basename);
 
   const content = await fs.readFile(path.join(inputDir, file), "utf-8");
   const generatedHtmlContent = execSync(`pandoc -f markdown-smart -t html`, {
@@ -191,14 +248,14 @@ async function buildStandalonePage({
 
   const excerpt = content.split("\n")[0];
   let postHeadContent = MakePageHead({
-    title: `${formattedDate} ${formattedTime}`,
+    title: timestamp,
     description: excerpt,
     image_link: `https://grant-uploader.s3.amazonaws.com/og-images/${basename}.png`,
   });
   postHeadContent += optionalRedirect ?? "";
   const templateContentWrapped = MakeWrapper({
     head: postHeadContent,
-    content: MakePostPage(formattedDate, formattedTime, generatedHtmlContent),
+    content: MakePostPage(timestamp, generatedHtmlContent),
   });
 
   const formattedContent = await prettier.format(templateContentWrapped, {
@@ -222,13 +279,6 @@ async function generateIndexContent({
     const filePath = path.join(inputDir, file);
     const basename = path.basename(file, ".md");
 
-    const datePart =
-      basename.match(
-        /^([0-9]{4}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2})/,
-      )?.[1] ?? "";
-    const formattedDate = datePart.split("-").slice(0, 3).join("-");
-    const formattedTime = datePart.split("-").slice(3, 6).join(":");
-
     const text = await fs.readFile(filePath, "utf-8");
     let lines = text.trim().split("\n");
     let replyTo: string | null = null;
@@ -248,9 +298,9 @@ async function generateIndexContent({
 
     if (inThread) {
       const index = inThread.indexOf(basename);
-      destination = `t-${lookup[basename][lookup[basename].length - 1]}#${basename}`;
+      destination = `t-${lookup[basename][0]}#${basename}`;
       if (index !== inThread.length - 1) {
-        isReplied = `t-${lookup[basename][lookup[basename].length - 1]}#${basename}`;
+        isReplied = `t-${lookup[basename][0]}#${basename}`;
       }
     }
 
@@ -259,16 +309,17 @@ async function generateIndexContent({
     let truncated = false;
     if (paragraphs.length > 2) {
       truncated = true;
-      replied = paragraphs.slice(0, 3).join("\n\n");
+      replied = paragraphs.slice(0, 2).join("\n\n");
     }
     const generatedHtmlContent = execSync(`pandoc -f markdown-smart -t html`, {
       input: replied,
     }).toString();
 
+    const timestamp = formatDateString(basename);
+
     const postContent = MakePostLink(
       replyTo,
-      formattedDate,
-      formattedTime,
+      timestamp,
       generatedHtmlContent,
       isReplied !== null,
       truncated,
@@ -311,7 +362,7 @@ const main = async () => {
     const markdownFiles = (await fs.readdir(inputDir))
       .filter((file) => file.endsWith(".md"))
       .sort()
-      .reverse()
+      .reverse();
     if (markdownFiles.length === 0) {
       console.error(`No markdown files found in ${inputDir}.`);
       process.exit(1);
@@ -337,7 +388,9 @@ const main = async () => {
       await saveThreadContent({ thread, content: threadContent });
     }
 
+    console.log(threads);
     const lookup = buildLookupTable({ threads });
+    console.log(lookup);
     await buildNonThreadPages({ markdownFiles, lookup });
 
     const postsContent = await generateIndexContent({ markdownFiles, lookup });
@@ -384,7 +437,7 @@ const main = async () => {
       }
 
       for (const thread of threads) {
-        const basename = thread[0];
+        const basename = thread[thread.length - 1];
         const threadBase = "t-" + basename;
         const postUrl = `http://localhost:8000/${threadBase}`;
         const ogImagePath = path.join(outputDir, threadBase, "preview.png");
