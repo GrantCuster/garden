@@ -18,6 +18,36 @@ import { uploadFileToS3 } from "./upload_image";
 
 const buildImages = false;
 
+const monthsOfYear: string[] = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
+
+const longMonthsOfYear: string[] = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
 function formatDateString(dateString: string): string {
   // Extract components from the string
   const [year, month, day, hour, minute, second] = dateString
@@ -37,21 +67,6 @@ function formatDateString(dateString: string): string {
     "Friday",
     "Saturday",
   ];
-  const monthsOfYear: string[] = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
-
   // Get the day of the week and month name
   const dayOfWeek: string = daysOfWeek[date.getDay()];
   const monthName: string = monthsOfYear[date.getMonth()];
@@ -79,7 +94,7 @@ function formatDateString(dateString: string): string {
     hour12: true,
   });
 
-  return `${formattedDate} &middot; ${formattedTime}`;
+  return `${dayOfWeek} &middot; ${monthName} ${day}, ${year} &middot; ${formattedTime}`;
 }
 
 // Example usage
@@ -275,6 +290,20 @@ async function generateIndexContent({
 }) {
   let postsContent = "";
 
+  let currentMonth = "";
+  let monthsLookup: Record<string, number> = {};
+
+  for (const file of markdownFiles) {
+    const basename = path.basename(file, ".md");
+    const splits = basename.split("-");
+    const yearMonth = splits.slice(0, 2).join("-");
+    if (monthsLookup[yearMonth] === undefined) {
+      monthsLookup[yearMonth] = 1;
+    } else {
+      monthsLookup[yearMonth] = monthsLookup[yearMonth] + 1;
+    }
+  }
+
   for (const file of markdownFiles) {
     const filePath = path.join(inputDir, file);
     const basename = path.basename(file, ".md");
@@ -311,6 +340,17 @@ async function generateIndexContent({
       truncated = true;
       replied = paragraphs.slice(0, 2).join("\n\n");
     }
+
+    if (currentMonth !== basename.slice(0, 7)) {
+      const splits = basename.split("-");
+      const yearMonth = splits.slice(0, 2).join("-");
+      const year = splits[0];
+      const month = Number(splits[1]) - 1;
+      const postCount = monthsLookup[yearMonth];
+      postsContent += `<div class="spacer"></div><div class="blue px-2 mono">${longMonthsOfYear[month]} ${year} &middot; ${postCount} post${postCount > 1 ? 's' :''}</div>`;
+      currentMonth = basename.slice(0, 7);
+    }
+
     const generatedHtmlContent = execSync(`pandoc -f markdown-smart -t html`, {
       input: replied,
     }).toString();
