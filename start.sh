@@ -8,7 +8,7 @@ declare -A COMMANDS=(
     ["deploy"]="npm run deploy"
     ["build"]="npm run build"
     ["new post"]="bash new_post.sh"
-    ["dev"]="python -m http.server --directory dist"
+    ["dev"]="python3 -m http.server --directory dist"
     ["edit"]="nvim ."
     ["status"]="git status"
     ["update"]="git pull origin main --rebase"
@@ -33,7 +33,7 @@ show_menu() {
     fi
 
     # Show the menu using fzf
-    selected=$(echo "$sorted_commands" | fzf --height=40% --reverse)
+    selected=$(echo "$sorted_commands" | fzf --height=40% --prompt="Working in the garden: " --reverse)
 
     echo "$selected"
 }
