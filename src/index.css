@@ -554,6 +554,18 @@ video {
   --tw-contain-style:  ;
 }
 
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+.-top-4 {
+  top: -1rem;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -573,10 +585,6 @@ video {
 
 .mt-4 {
   margin-top: 1rem;
-}
-
-.max-w-\[60ch\] {
-  max-width: 60ch;
 }
 
 .max-w-\[55ch\] {
@@ -635,11 +643,6 @@ video {
   color: rgb(152 151 26 / var(--tw-text-opacity));
 }
 
-.text-aqua {
-  --tw-text-opacity: 1;
-  color: rgb(104 157 106 / var(--tw-text-opacity));
-}
-
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
 }
@@ -668,11 +671,15 @@ h3:before {
   content: '### ';
 }
 
-.markdown ul li li {
+.markdown ul li {
+  position: relative;
   margin-left: 1.25rem;
 }
 
 .markdown ul li:before {
+  position: absolute;
+  top: 0;
+  left: -1.25rem;
   content: '- ';
   color: #7c6f64;
   font-weight: 700;

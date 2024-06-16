@@ -169,6 +169,7 @@ async function generateThreadContent({ thread }: { thread: string[] }) {
     }).toString();
 
     postsContent += MakePostInThread({
+      basename,
       timestamp,
       htmlContent: generatedHtmlContent,
     });
@@ -379,8 +380,8 @@ async function generateIndexContent({
 async function saveIndexContent({ postsContent }: { postsContent: string }) {
   const wrapper = MakeWrapper({
     head: MakePageHead({
-      title: "Grant's Garden",
-      description: "Work in progress",
+      title: "Home",
+      description: "Work and writing in progress",
       image_link: "https://grant-uploader.s3.amazonaws.com/og-images/index.png",
     }),
     content: MakeHeader({ isHome: true }) + postsContent,

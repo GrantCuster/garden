@@ -1,3 +1,4 @@
+import { time } from "console";
 import { formatDateString } from "../build_index";
 
 export function html(strings: TemplateStringsArray, ...values: string[]) {
@@ -49,17 +50,17 @@ export function MakePostLink({
       onclick="${postlinkFunction}"
     >
       ${replyTo
-        ? `<div class="italic mt-2 text-sm text-dark4">Reply to ${formatDateString(replyTo)}</div>`
-        : ""}
+      ? `<div class="italic mt-2 text-sm text-dark4">Reply to ${formatDateString(replyTo)}</div>`
+      : ""}
       <div class="markdown">${htmlContent}</div>
       ${truncated
-        ? `<div class="text-dark4 mb-2 text-sm">Read more</div>
+      ? `<div class="text-dark4 mb-2 text-sm">Read more</div>
 `
-        : ""}
+      : ""}
       ${isReplied
-        ? `<div class="text-dark4 mb-2 text-sm">Read replies</div>
+      ? `<div class="text-dark4 mb-2 text-sm">Read replies</div>
 `
-        : ""}
+      : ""}
     </div>
   </div>`;
 }
@@ -114,13 +115,18 @@ export function MakeThreadPage({
 }
 
 export function MakePostInThread({
+  basename,
   timestamp,
   htmlContent,
 }: {
+  basename: string;
   timestamp: string;
   htmlContent: string;
 }) {
-  return html`<div class="px-4 text-sm text-dark4 mb-2">${timestamp}</div>
+  return html`<div class="relative px-4 text-sm text-dark4 mb-2">
+    <div class="absolute -top-4" id="${basename}"></div>
+      ${timestamp}
+    </div>
     <div class="px-4 border border-dark1 mb-4 post">
       <div class="markdown">${htmlContent}</div>
     </div>`;
