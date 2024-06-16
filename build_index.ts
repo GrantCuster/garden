@@ -9,7 +9,8 @@ import {
   MakeWrapper,
   MakePostInThread,
   MakePageHead,
-  MakeIndexHeader,
+  MakeDateHeader,
+  MakeHeader,
 } from "./src/templateMakers";
 import { chromium } from "playwright";
 
@@ -175,7 +176,7 @@ async function generateThreadContent({ thread }: { thread: string[] }) {
   postsContent += `<div style="height: 70vh"></div>`;
 
   const ThreadContent = MakeThreadPage({
-    threadLength: thread.length,
+    threadLength: thread.length.toString(),
     posts: postsContent,
   });
 
@@ -236,7 +237,7 @@ async function buildNonThreadPages({
       const threadBase =
         "t-" +
         lookup[path.basename(file, ".md")][
-        lookup[path.basename(file, ".md")].length - 1
+          lookup[path.basename(file, ".md")].length - 1
         ];
       const destination = threadBase + "#" + path.basename(file, ".md");
       const content = `<script>function navigate() { window.location = '/${destination}' }; navigate();</script>`;
@@ -349,7 +350,9 @@ async function generateIndexContent({
       const year = splits[0];
       const month = Number(splits[1]) - 1;
       const postCount = monthsLookup[yearMonth];
-      postsContent += `<div class="spacer"></div><div class="blue px-2 mono">${longMonthsOfYear[month]} ${year} &middot; ${postCount} post${postCount > 1 ? 's' :''}</div>`;
+      postsContent += MakeDateHeader({
+        content: `${longMonthsOfYear[month]} ${year} &middot; ${postCount} post${postCount > 1 ? "s" : ""}`,
+      });
       currentMonth = basename.slice(0, 7);
     }
 
@@ -359,14 +362,14 @@ async function generateIndexContent({
 
     const timestamp = formatDateString(basename);
 
-    const postContent = MakePostLink(
+    const postContent = MakePostLink({
       replyTo,
       timestamp,
-      generatedHtmlContent,
-      isReplied !== null,
+      htmlContent: generatedHtmlContent,
+      isReplied: isReplied !== null,
       truncated,
-      destinationFunc,
-    );
+      postlinkFunction: destinationFunc,
+    });
     postsContent += postContent;
   }
 
@@ -380,7 +383,7 @@ async function saveIndexContent({ postsContent }: { postsContent: string }) {
       description: "Work in progress",
       image_link: "https://grant-uploader.s3.amazonaws.com/og-images/index.png",
     }),
-    content: MakeIndexHeader() + postsContent,
+    content: MakeHeader({ isHome: true }) + postsContent,
   });
   const formattedIndex = await prettier.format(wrapper, {
     parser: "html",

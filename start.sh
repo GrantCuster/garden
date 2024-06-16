@@ -12,7 +12,7 @@ declare -A COMMANDS=(
     ["edit"]="nvim ."
     ["status"]="git status"
     ["update"]="git pull origin main --rebase"
-    ["commit"]="git add . && git_commit"
+    ["commit"]="git add . && git commit"
     ["push"]="git push origin main"
     ["exit"]="exit"
     # Add more commands here
@@ -20,9 +20,9 @@ declare -A COMMANDS=(
 
 # Function to display the menu
 show_menu() {
-    # Sort commands by most recently used
+    # Sort commands by most recently used and remove duplicates
     if [ -f "$HISTORY_FILE" ]; then
-        sorted_commands=$(awk '{print $2}' "$HISTORY_FILE" | tac)
+        sorted_commands=$(awk '{print $2}' "$HISTORY_FILE" | tac | awk '!seen[$0]++')
         for cmd in "${!COMMANDS[@]}"; do
             if ! grep -q "^$cmd\$" <<< "$sorted_commands"; then
                 sorted_commands="$sorted_commands"$'\n'"$cmd"
@@ -46,6 +46,7 @@ run_command() {
 }
 
 while true; do
+    clear
     selected_command=$(show_menu)
     if [ -n "$selected_command" ]; then
         run_command "$selected_command"

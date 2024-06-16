@@ -1,4 +1,4 @@
-<html>
+<html class="bg-hard0 text-foreground">
   <head>
     <title>Monday &middot; Jun 3, 2024 &middot; 8:53 PM - Grant's Garden</title>
     <meta name="description" content="# Gif recording workflow" />
@@ -21,70 +21,69 @@
     <link rel="stylesheet" href="/index.css" />
   </head>
   <body>
-    <div class="content">
-      <div class="px-2" style="">
-        <div class="green">
-          <a href="/" class="home-link">Grant's garden</a>
-        </div>
+    <div class="max-w-[55ch] mx-auto">
+      <div class="text-green mt-4 mb-2 px-4">
+        <a href="/">Grant's garden</a>
       </div>
-      <div class="gray px-2 mono">
+      <div class="px-4 text-sm text-dark4 mb-2">
         Monday &middot; Jun 3, 2024 &middot; 8:53 PM
       </div>
-      <div class="half-spacer"></div>
-      <div class="px-2 border relative post border-gray-800">
-        <h1 id="gif-recording-workflow">Gif recording workflow</h1>
-        <p>
-          One of the best things I had going with my old linux set up was my gif
-          recording workflow. I had a few helper scripts connected to dmenu (and
-          then I think rofi and fzf), where I could record the screen and then
-          convert into gif. It was still a bit janky. But it made it pretty
-          quick to take work-in-progress clips and post to
-          <a href="https://feed.grantcuster.com">my feed</a>.
-        </p>
-        <p>
-          Since I tore down my set-up and rebuilt on Ubuntu server install and
-          Nix home-manager I haven't had a good gif set up. Tonight I think I
-          got it fixed up though I'm sure I will continue to tinker.
-        </p>
-        <p>
-          The bulk of what makes it work is in
-          <a
-            href="https://github.com/GrantCuster/nix-simple/blob/a8569ed3c3b25ba11066d449bdcdb0276f07856f/home/scripts/gif.sh"
-            >gif.sh</a
-          >. The majority of which is from
-          <a
-            href="https://www.reddit.com/r/swaywm/comments/vr78q2/comment/l0atg5j/?utm_source=share&amp;utm_medium=web3x&amp;utm_name=web3xcss&amp;utm_term=1"
-            >this comment by IntelligentPerson_ on Reddit</a
-          >. Slightly modified to fit with keyboard shortcuts. It's even got
-          nice little notifications.
-        </p>
-        <p>
-          The rest of what makes it work are in my
-          <a
-            href="https://github.com/GrantCuster/nix-simple/blob/a8569ed3c3b25ba11066d449bdcdb0276f07856f/home/sway/config"
-            >sway config</a
-          >
-          and
-          <a
-            href="https://github.com/GrantCuster/nix-simple/blob/a8569ed3c3b25ba11066d449bdcdb0276f07856f/home/sway/status.sh"
-            >status script</a
-          >. I even have a little recording indicator this time around.
-          Something I never had in the last one.
-        </p>
-        <p>
-          I can't say I enjoy writing bash, but I'm starting to see more
-          patterns, and have more of a base to reuse snippets from.
-        </p>
-        <p>Here's an example gif:</p>
-        <figure>
-          <img
-            src="https://db-feed.s3.us-east-1.amazonaws.com/next-s3-uploads/4531ea8b-91d0-4d4b-8872-d1fd9a8cec84/2024-06-04_00-39-08.gif"
-            alt="My sway setup featuring pokemon oblique strategies script"
-          />
-          <figcaption aria-hidden="true">
-            My sway setup featuring pokemon oblique strategies script
-          </figcaption>
-        </figure>
+      <div class="px-4 border border-dark1 mb-4 post">
+        <div class="markdown">
+          <h1 id="gif-recording-workflow">Gif recording workflow</h1>
+          <p>
+            One of the best things I had going with my old linux set up was my
+            gif recording workflow. I had a few helper scripts connected to
+            dmenu (and then I think rofi and fzf), where I could record the
+            screen and then convert into gif. It was still a bit janky. But it
+            made it pretty quick to take work-in-progress clips and post to
+            <a href="https://feed.grantcuster.com">my feed</a>.
+          </p>
+          <p>
+            Since I tore down my set-up and rebuilt on Ubuntu server install and
+            Nix home-manager I haven't had a good gif set up. Tonight I think I
+            got it fixed up though I'm sure I will continue to tinker.
+          </p>
+          <p>
+            The bulk of what makes it work is in
+            <a
+              href="https://github.com/GrantCuster/nix-simple/blob/a8569ed3c3b25ba11066d449bdcdb0276f07856f/home/scripts/gif.sh"
+              >gif.sh</a
+            >. The majority of which is from
+            <a
+              href="https://www.reddit.com/r/swaywm/comments/vr78q2/comment/l0atg5j/?utm_source=share&amp;utm_medium=web3x&amp;utm_name=web3xcss&amp;utm_term=1"
+              >this comment by IntelligentPerson_ on Reddit</a
+            >. Slightly modified to fit with keyboard shortcuts. It's even got
+            nice little notifications.
+          </p>
+          <p>
+            The rest of what makes it work are in my
+            <a
+              href="https://github.com/GrantCuster/nix-simple/blob/a8569ed3c3b25ba11066d449bdcdb0276f07856f/home/sway/config"
+              >sway config</a
+            >
+            and
+            <a
+              href="https://github.com/GrantCuster/nix-simple/blob/a8569ed3c3b25ba11066d449bdcdb0276f07856f/home/sway/status.sh"
+              >status script</a
+            >. I even have a little recording indicator this time around.
+            Something I never had in the last one.
+          </p>
+          <p>
+            I can't say I enjoy writing bash, but I'm starting to see more
+            patterns, and have more of a base to reuse snippets from.
+          </p>
+          <p>Here's an example gif:</p>
+          <figure>
+            <img
+              src="https://db-feed.s3.us-east-1.amazonaws.com/next-s3-uploads/4531ea8b-91d0-4d4b-8872-d1fd9a8cec84/2024-06-04_00-39-08.gif"
+              alt="My sway setup featuring pokemon oblique strategies script"
+            />
+            <figcaption aria-hidden="true">
+              My sway setup featuring pokemon oblique strategies script
+            </figcaption>
+          </figure>
+        </div>
       </div>
     </div>
   </body>
