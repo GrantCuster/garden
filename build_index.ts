@@ -164,7 +164,7 @@ async function generateThreadContent({ thread }: { thread: string[] }) {
     const lines = text.split("\n").filter((line) => !line.startsWith("@reply"));
     const joined = lines.join("\n").trim();
 
-    const generatedHtmlContent = execSync(`pandoc -f markdown-smart -t html`, {
+    const generatedHtmlContent = execSync(`pandoc -f markdown-smart-markdown_in_html_blocks+raw_html -t html`, {
       input: joined,
     }).toString();
 
@@ -174,7 +174,6 @@ async function generateThreadContent({ thread }: { thread: string[] }) {
       htmlContent: generatedHtmlContent,
     });
   }
-  postsContent += `<div style="height: 70vh"></div>`;
 
   const ThreadContent = MakeThreadPage({
     threadLength: thread.length.toString(),
@@ -259,7 +258,7 @@ async function buildStandalonePage({
   const timestamp = formatDateString(basename);
 
   const content = await fs.readFile(path.join(inputDir, file), "utf-8");
-  const generatedHtmlContent = execSync(`pandoc -f markdown-smart -t html`, {
+  const generatedHtmlContent = execSync(`pandoc -f markdown-smart-markdown_in_html_blocks+raw_html -t html`, {
     input: content,
   }).toString();
 
@@ -340,9 +339,9 @@ async function generateIndexContent({
     const destinationFunc = `function navigate() { window.location = '${destination}' }; navigate();`;
     const paragraphs = replied.split("\n\n");
     let truncated = false;
-    if (paragraphs.length > 2) {
+    if (paragraphs.length > 3) {
       truncated = true;
-      replied = paragraphs.slice(0, 2).join("\n\n");
+      replied = paragraphs.slice(0, 3).join("\n\n");
     }
 
     if (currentMonth !== basename.slice(0, 7)) {
@@ -357,7 +356,7 @@ async function generateIndexContent({
       currentMonth = basename.slice(0, 7);
     }
 
-    const generatedHtmlContent = execSync(`pandoc -f markdown-smart -t html`, {
+    const generatedHtmlContent = execSync(`pandoc -f markdown-smart-markdown_in_html_blocks+raw_html -t html`, {
       input: replied,
     }).toString();
 
