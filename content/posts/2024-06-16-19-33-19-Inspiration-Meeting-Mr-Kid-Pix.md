@@ -1,6 +1,6 @@
 # Inspiration: Meeting Mr. Kid Pix
 
-<figure><video width="640" height="480" controls src="https://grant-uploader.s3.amazonaws.com/2024-06-16-19-32-10.mp4" type="video/mp4"></video></figure>
+<figure><video width="640" height="480" controls src="https://grant-uploader.s3.amazonaws.com/2024-06-16-19-32-10.mp4" type="video/mp4" poster="https://grant-uploader.s3.amazonaws.com/2024-06-17-23-32-17-800.jpg"></video></figure>
 
 I really enjoyed [Meeting Mr. Kid Pix](https://www.youtube.com/watch?v=csalhuSixQU) by jeffrey aka [Whistlegraph on Twitter](https://x.com/whistlegraph). I appreciated the sincerity of both him and Craig Hickman. So nice to see people putting effort to understand + be understood.
 
