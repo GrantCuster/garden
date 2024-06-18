@@ -13,6 +13,7 @@ import {
   MakeHeader,
 } from "./src/templateMakers";
 import { chromium } from "playwright";
+import RSS from "rss";
 
 import { Browser, Page } from "playwright";
 import { uploadFileToS3 } from "./upload_image";
@@ -164,9 +165,12 @@ async function generateThreadContent({ thread }: { thread: string[] }) {
     const lines = text.split("\n").filter((line) => !line.startsWith("@reply"));
     const joined = lines.join("\n").trim();
 
-    const generatedHtmlContent = execSync(`pandoc -f markdown-smart-markdown_in_html_blocks+raw_html -t html`, {
-      input: joined,
-    }).toString();
+    const generatedHtmlContent = execSync(
+      `pandoc -f markdown-smart-markdown_in_html_blocks+raw_html -t html`,
+      {
+        input: joined,
+      },
+    ).toString();
 
     postsContent += MakePostInThread({
       basename,
@@ -237,7 +241,7 @@ async function buildNonThreadPages({
       const threadBase =
         "t-" +
         lookup[path.basename(file, ".md")][
-          lookup[path.basename(file, ".md")].length - 1
+        lookup[path.basename(file, ".md")].length - 1
         ];
       const destination = threadBase + "#" + path.basename(file, ".md");
       const content = `<script>function navigate() { window.location = '/${destination}' }; navigate();</script>`;
@@ -258,9 +262,12 @@ async function buildStandalonePage({
   const timestamp = formatDateString(basename);
 
   const content = await fs.readFile(path.join(inputDir, file), "utf-8");
-  const generatedHtmlContent = execSync(`pandoc -f markdown-smart-markdown_in_html_blocks+raw_html -t html`, {
-    input: content,
-  }).toString();
+  const generatedHtmlContent = execSync(
+    `pandoc -f markdown-smart-markdown_in_html_blocks+raw_html -t html`,
+    {
+      input: content,
+    },
+  ).toString();
 
   const excerpt = content.split("\n")[0];
   let postHeadContent = MakePageHead({
@@ -356,9 +363,12 @@ async function generateIndexContent({
       currentMonth = basename.slice(0, 7);
     }
 
-    const generatedHtmlContent = execSync(`pandoc -f markdown-smart-markdown_in_html_blocks+raw_html -t html`, {
-      input: replied,
-    }).toString();
+    const generatedHtmlContent = execSync(
+      `pandoc -f markdown-smart-markdown_in_html_blocks+raw_html -t html`,
+      {
+        input: replied,
+      },
+    ).toString();
 
     const timestamp = formatDateString(basename);
 
@@ -374,6 +384,62 @@ async function generateIndexContent({
   }
 
   return postsContent;
+}
+
+type RSSPost = {
+  title: string;
+  url: string;
+  description: string;
+  date: string;
+};
+
+async function generateRSS({
+  markdownFiles,
+  lookup,
+}: {
+  markdownFiles: string[];
+  lookup: Record<string, string[]>;
+}) {
+  const posts: RSSPost[] = [];
+
+  function parseCustomDate(dateString: string): Date {
+    const [year, month, day, hour, minute, second] = dateString
+      .split("-")
+      .map(Number);
+    // Note: In JavaScript, months are 0-indexed, so we need to subtract 1 from the month.
+    return new Date(year, month - 1, day, hour, minute, second);
+  }
+  for (const file of markdownFiles) {
+    const filePath = path.join(inputDir, file);
+    const basename = path.basename(file, ".md");
+    const markdownContent = await fs.readFile(filePath, "utf-8");
+    posts.push({
+      title: basename,
+      url: `https://garden.grantcuster.com/${basename}`,
+      description: markdownContent,
+      date: parseCustomDate(basename).toUTCString(),
+    });
+  }
+
+  const feed = new RSS({
+    title: "Grant's Garden",
+    description: "Work and writing in progress",
+    feed_url: "https://garden.grantcuster.com/rss.xml",
+    site_url: "https://garden.grantcuster.com",
+    image_url: "https://grant-uploader.s3.amazonaws.com/og-images/index.png",
+    managingEditor: "Grant Custer",
+    pubDate: new Date().toUTCString(),
+  });
+
+  posts.forEach((post) => {
+    feed.item(post);
+  });
+
+  await fs.writeFile(
+    path.join(outputDir, "rss.xml"),
+    feed.xml({ indent: true }),
+    "utf-8",
+  );
 }
 
 async function saveIndexContent({ postsContent }: { postsContent: string }) {
@@ -443,6 +509,8 @@ const main = async () => {
       postsContent,
     });
     console.log(`Index file created: ${indexFile}`);
+
+    await generateRSS({ markdownFiles, lookup });
 
     // Add cname to dist
     await fs.writeFile(

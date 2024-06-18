@@ -17,8 +17,10 @@
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.598.0",
+    "@types/rss": "^0.0.32",
     "dotenv": "^16.4.5",
     "playwright": "^1.44.1",
-    "prettier": "^3.3.1"
+    "prettier": "^3.3.1",
+    "rss": "^1.2.2"
   }
 }
