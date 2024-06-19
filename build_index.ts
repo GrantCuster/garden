@@ -18,7 +18,7 @@ import RSS from "rss";
 import { Browser, Page } from "playwright";
 import { uploadFileToS3 } from "./upload_image";
 
-const buildImages = false;
+const buildImages = true;
 
 const monthsOfYear: string[] = [
   "Jan",
