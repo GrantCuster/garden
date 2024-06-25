@@ -54,6 +54,11 @@ h3:before {
   color: theme('colors.purple');
   text-decoration: underline;
 }
+.markdown blockquote {
+  border-left: 0.25rem solid theme('colors.dark4');
+  padding-left: 1rem;
+  margin-left: 0;
+}
 
 .image-container {
   position: fixed;
