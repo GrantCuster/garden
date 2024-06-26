@@ -9,10 +9,27 @@
             <link>https://garden.grantcuster.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 25 Jun 2024 23:40:18 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 26 Jun 2024 01:29:24 GMT</lastBuildDate>
         <atom:link href="https://garden.grantcuster.com/rss.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Tue, 25 Jun 2024 23:40:18 GMT</pubDate>
+        <pubDate>Wed, 26 Jun 2024 01:29:24 GMT</pubDate>
         <managingEditor><![CDATA[Grant Custer]]></managingEditor>
+        <item>
+            <title><![CDATA[2024-06-25-20-53-23]]></title>
+            <description><![CDATA[
+It varies a lot day-to-day but I think it's safe to say I'm mildly stressed about the overall impact of AI. I've worked with machine learning for a long time now -- falling into with Fast Forward Labs ten years ago.
+
+At their best, I think current developments encourage me to think about what I want -- out of work, out of computers. There's parts of some of my past work where I think the idea was part of what made it interesting to others, but also a big part was that I put in more work (as the Penn and Teller quote goes) than a reasonable person was willing too. The need to put in work in that specific way seems to be going away (the code could be generated instead). 
+
+There's still places to put in the work: [carving the joints](https://garden.grantcuster.com/2024-05-31-07-16-31-Carving-at-the-joints/) is partly me trying to work that out. In figuring out how to put systems together, and the experience of that past work will aid in that... but it does feel like it will be different.
+
+Maybe part of it is just more career-based. Somewhere in my head I think I had software developer as relatively interesting work I could always fall back on. I don't think it's going away, but I don't think it will continue as it has been either.
+
+Stopping for tonight but I want to keep exploring and drilling into this.
+]]></description>
+            <link>https://garden.grantcuster.com/2024-06-25-20-53-23</link>
+            <guid isPermaLink="true">https://garden.grantcuster.com/2024-06-25-20-53-23</guid>
+            <pubDate>Wed, 26 Jun 2024 00:53:23 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-06-25-16-42-08]]></title>
             <description><![CDATA[Riding home on the train. The repo on my work computer isn't up-to-date, but since these are all markdown files I can write and trust it will work when I upload later.
