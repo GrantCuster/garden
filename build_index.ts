@@ -18,7 +18,7 @@ import RSS from "rss";
 import { Browser, Page } from "playwright";
 import { uploadFileToS3 } from "./upload_image";
 
-const buildImages = true;
+const buildImages = false;
 
 const monthsOfYear: string[] = [
   "Jan",
@@ -240,9 +240,7 @@ async function buildNonThreadPages({
     if (lookup[path.basename(file, ".md")]) {
       const threadBase =
         "t-" +
-        lookup[path.basename(file, ".md")][
-        lookup[path.basename(file, ".md")].length - 1
-        ];
+        lookup[path.basename(file, ".md")][0];
       const destination = threadBase + "#" + path.basename(file, ".md");
       const content = `<script>function navigate() { window.location = '/${destination}' }; navigate();</script>`;
       optionalRedirect = content;
