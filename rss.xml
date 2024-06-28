@@ -9,10 +9,42 @@
             <link>https://garden.grantcuster.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Wed, 26 Jun 2024 01:29:24 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 28 Jun 2024 14:36:00 GMT</lastBuildDate>
         <atom:link href="https://garden.grantcuster.com/rss.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Wed, 26 Jun 2024 01:29:24 GMT</pubDate>
+        <pubDate>Fri, 28 Jun 2024 14:36:00 GMT</pubDate>
         <managingEditor><![CDATA[Grant Custer]]></managingEditor>
+        <item>
+            <title><![CDATA[2024-06-28-09-52-07-Thinking-about-codegen]]></title>
+            <description><![CDATA[# Thinking about codegen
+
+In recent LLM model experiments I've been thinking a lot about how to get codegen into the workflow. For a lot of tasks, conventional (javascript) code would be faster, cheaper and less prone to error than an LLM call. I'd like to have the LLM generate that code once -- then the game becomes how to encapsulate, verify and sometimes modify the code it generates.
+
+## Some inspiration:
+
+### Future of Coding: Pygmalion
+
+[The Pygmalion podcast episode of Future of Coding](https://futureofcoding.org/episodes/072). This keeps turning over in my head. Particularly the 'code by example' bits, and the partial execution. Feels to me like there's some loop for an LLM to try generating a call, and then if the result doesn't parse or pass some verification process, it opens up a teach-by-example workflow.
+
+### Parameter tweaking
+
+![](https://grant-uploader.s3.amazonaws.com/2024-06-28-10-14-02-800.jpg)
+
+[Silicon Jungle exploring parsing generated code for parameters](https://x.com/JungleSilicon/status/1806415376512893255). This has ties to parametric UI like dat.gui. I also see people generating things like this with Claude artifacts. Maybe parametric tweakability is another piece of the puzzle.
+
+### Reactive flows
+
+![](https://grant-uploader.s3.amazonaws.com/2024-06-28-10-15-21-800.jpg)
+
+[Orion Reed on stitching elements reactively together](https://x.com/OrionReedOne/status/1805602416659673116). This is a slightly different path, I think, but lots of great patterns.
+
+## Starting point
+
+I need to pick some simple-but-not-too-simple task, and start working through the workflow.
+]]></description>
+            <link>https://garden.grantcuster.com/2024-06-28-09-52-07-Thinking-about-codegen</link>
+            <guid isPermaLink="true">https://garden.grantcuster.com/2024-06-28-09-52-07-Thinking-about-codegen</guid>
+            <pubDate>Fri, 28 Jun 2024 13:52:07 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-06-25-20-53-23]]></title>
             <description><![CDATA[
