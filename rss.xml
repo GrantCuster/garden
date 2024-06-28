@@ -9,10 +9,21 @@
             <link>https://garden.grantcuster.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 28 Jun 2024 15:19:19 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 28 Jun 2024 15:38:54 GMT</lastBuildDate>
         <atom:link href="https://garden.grantcuster.com/rss.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Fri, 28 Jun 2024 15:19:19 GMT</pubDate>
+        <pubDate>Fri, 28 Jun 2024 15:38:54 GMT</pubDate>
         <managingEditor><![CDATA[Grant Custer]]></managingEditor>
+        <item>
+            <title><![CDATA[2024-06-28-11-37-36]]></title>
+            <description><![CDATA[@reply 2024-06-28-10-51-26
+
+Notebooks (Jupyter, Observable) are another related pattern here. Maybe a noetbook like linear flow but with horizontally scrolling generated functions...
+
+]]></description>
+            <link>https://garden.grantcuster.com/2024-06-28-11-37-36</link>
+            <guid isPermaLink="true">https://garden.grantcuster.com/2024-06-28-11-37-36</guid>
+            <pubDate>Fri, 28 Jun 2024 15:37:36 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-06-28-10-51-26]]></title>
             <description><![CDATA[@reply 2024-06-28-09-52-07-Thinking-about-codegen
