@@ -9,10 +9,22 @@
             <link>https://garden.grantcuster.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 28 Jun 2024 14:36:00 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 28 Jun 2024 14:53:18 GMT</lastBuildDate>
         <atom:link href="https://garden.grantcuster.com/rss.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Fri, 28 Jun 2024 14:36:00 GMT</pubDate>
+        <pubDate>Fri, 28 Jun 2024 14:53:18 GMT</pubDate>
         <managingEditor><![CDATA[Grant Custer]]></managingEditor>
+        <item>
+            <title><![CDATA[2024-06-28-10-51-26]]></title>
+            <description><![CDATA[@reply 2024-06-28-09-52-07-Thinking-about-codegen
+
+This pattern actually is pretty similar to the flow for Copilot-like autocomplete. But I'd be interested in taking it out of the editor and also making the encapsulation clearer.
+
+I guess the risk is the usual spaghetti-hairball nodes-and-wires issues. I should develop some sort of plan for avoiding that.
+]]></description>
+            <link>https://garden.grantcuster.com/2024-06-28-10-51-26</link>
+            <guid isPermaLink="true">https://garden.grantcuster.com/2024-06-28-10-51-26</guid>
+            <pubDate>Fri, 28 Jun 2024 14:51:26 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-06-28-09-52-07-Thinking-about-codegen]]></title>
             <description><![CDATA[# Thinking about codegen
