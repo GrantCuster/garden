@@ -9,10 +9,22 @@
             <link>https://garden.grantcuster.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 28 Jun 2024 15:38:54 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 30 Jun 2024 20:36:17 GMT</lastBuildDate>
         <atom:link href="https://garden.grantcuster.com/rss.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Fri, 28 Jun 2024 15:38:54 GMT</pubDate>
+        <pubDate>Sun, 30 Jun 2024 20:36:17 GMT</pubDate>
         <managingEditor><![CDATA[Grant Custer]]></managingEditor>
+        <item>
+            <title><![CDATA[2024-06-30-16-34-30-Erosion]]></title>
+            <description><![CDATA[# Erosion
+
+Turns out a self-healing image looks a lot like a fading paint brush. More to try.
+
+https://grant-uploader.s3.amazonaws.com/2024-06-30-16-33-55.gif
+]]></description>
+            <link>https://garden.grantcuster.com/2024-06-30-16-34-30-Erosion</link>
+            <guid isPermaLink="true">https://garden.grantcuster.com/2024-06-30-16-34-30-Erosion</guid>
+            <pubDate>Sun, 30 Jun 2024 20:34:30 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-06-28-11-37-36]]></title>
             <description><![CDATA[@reply 2024-06-28-10-51-26
