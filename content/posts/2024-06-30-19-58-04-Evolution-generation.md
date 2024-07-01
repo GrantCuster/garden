@@ -1,6 +1,6 @@
 # Evolution generation
 
-A lot of us are trying to figure out how to use LLMs as a creative tool. There's a set of projects related to creative coding that I've been thinking about lately and want to roundup.
+A lot of us are trying to figure out how to use LLMs as a creative tool. There's a set of projects related to creative coding that I've been thinking about lately and want to round up.
 
 ## SerenedipityLM
 
@@ -26,10 +26,10 @@ All of this is laid out in a node and wire interface that easily allows multiple
 
 ## Clicksynth and River
 
-[Clicksynth](https://clicksynth.com) by Max Bittker lets you click through generated shaders to explore themes. Clicking into one gives you additive themes to add.
+[Clicksynth](https://clicksynth.com) by Max Bittker lets you click through generated shaders to explore themes. Clicking into one gives you additional themes to steer it towards.
 
 [River](https://maxbittker.com/river-notes) is similar, but focused on exploring a dataset. Clicking an image sends you into a space of similar images. The sound effects are very satisfying.
 
-## What do I think?
+## Exploring a space
 
-These are some of the best examples of interfaces for LLMs as creative tools. I think the actually most useful thing for me to do is to investigate what I still feel is missing, to look for other possible approaches.
+Looking over these, I think a lot about how AI generation is about exploring a space. Even chat is about steering the model into a space. For my own prototypes, it makes me think about experimenting more with the kind of transcripts I send to the model. For the model, a transcript is just a map to a certain space, where it then generates from. This makes me see transcripts (which can be procedurally edited or generated) as a tool, rather than an actual conversation record. I feel like there's something to do with that...
