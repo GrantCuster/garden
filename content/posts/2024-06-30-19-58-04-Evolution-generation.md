@@ -1,6 +1,6 @@
 # Evolution generation
 
-A lot of us are trying to figure out how to use LLMs as a creative tool. I'm interested in thinking more about approaches that focus on evolution - mutation and selection. There's a set of projects related to creative coding, that I've been interesting in thinking about more deeply.
+A lot of us are trying to figure out how to use LLMs as a creative tool. There's a set of projects related to creative coding that I've been thinking about lately and want to roundup.
 
 ## SerenedipityLM
 
@@ -15,8 +15,11 @@ The process is admirably clear. It starts with a prompt. Experiments are generat
 [Spellburst](https://spellburstllm.github.io/) is a paper and video demo made by [Tyler](https://x.com/tylerangert) and collaborators. It'd been a while since I'd looked at Spellburst and I think it really gets a lot of things right in terms of accomodating different levels of control for different parts of the process.
 
 There's:
+
 - prompts: for starting out and trying out conceptual changes in the creative code sketches. This is nice because these are often the changes that are tedious to try out quickly in code
+
 - parameter tweaking: a dat.gui-like interface for tweaking experiment parameters. Sometimes you do want to tweak values specifically and interactively, and input elements like sliders are definitely a better interface for this than a prompt
+
 - editing code: for real fine-tuned changes there's no substitute for direct code editing.
 
 All of this is laid out in a node and wire interface that easily allows multiple versions and branches.
@@ -29,4 +32,4 @@ All of this is laid out in a node and wire interface that easily allows multiple
 
 ## What do I think?
 
-These are some of the best examples of interfaces for LLMs as creative tools. I think the actually most useful thing for me to do is to investigate what I see as the things I still feel are missing. To come in another post.
+These are some of the best examples of interfaces for LLMs as creative tools. I think the actually most useful thing for me to do is to investigate what I still feel is missing, to look for other possible approaches.
