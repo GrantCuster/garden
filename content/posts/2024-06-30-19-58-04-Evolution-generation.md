@@ -32,4 +32,6 @@ All of this is laid out in a node and wire interface that easily allows multiple
 
 ## Exploring a space
 
-Looking over these, I think a lot about how AI generation is about exploring a space. Even chat is about steering the model into a space. For my own prototypes, it makes me think about experimenting more with the kind of transcripts I send to the model. For the model, a transcript is just a map to a certain space, where it then generates from. This makes me see transcripts (which can be procedurally edited or generated) as a tool, rather than an actual conversation record. I feel like there's something to do with that...
+Looking over these, I think a lot about how AI generation is about exploring a space. Even a chat transcript is about steering the model into a space.
+
+For my own prototypes, it makes me think about experimenting more with the kind of transcripts I send to the model. I'm starting to see transcripts (which can be procedurally edited or generated) more as a tool, rather than an actual conversation record.

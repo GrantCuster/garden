@@ -9,9 +9,9 @@
             <link>https://garden.grantcuster.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 01 Jul 2024 15:32:43 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 01 Jul 2024 15:36:06 GMT</lastBuildDate>
         <atom:link href="https://garden.grantcuster.com/rss.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Mon, 01 Jul 2024 15:32:43 GMT</pubDate>
+        <pubDate>Mon, 01 Jul 2024 15:36:06 GMT</pubDate>
         <managingEditor><![CDATA[Grant Custer]]></managingEditor>
         <item>
             <title><![CDATA[2024-06-30-19-58-04-Evolution-generation]]></title>
@@ -49,7 +49,9 @@ All of this is laid out in a node and wire interface that easily allows multiple
 
 ## Exploring a space
 
-Looking over these, I think a lot about how AI generation is about exploring a space. Even chat is about steering the model into a space. For my own prototypes, it makes me think about experimenting more with the kind of transcripts I send to the model. For the model, a transcript is just a map to a certain space, where it then generates from. This makes me see transcripts (which can be procedurally edited or generated) as a tool, rather than an actual conversation record. I feel like there's something to do with that...
+Looking over these, I think a lot about how AI generation is about exploring a space. Even a chat transcript is about steering the model into a space.
+
+For my own prototypes, it makes me think about experimenting more with the kind of transcripts I send to the model. I'm starting to see transcripts (which can be procedurally edited or generated) more as a tool, rather than an actual conversation record.
 ]]></description>
             <link>https://garden.grantcuster.com/2024-06-30-19-58-04-Evolution-generation</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-06-30-19-58-04-Evolution-generation</guid>
