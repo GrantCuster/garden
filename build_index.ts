@@ -277,9 +277,6 @@ async function generateIndexContent({
           break;
         }
         let threadContent = "";
-        // always show truncated first post
-        // always show previous post - check if first post
-        // always show truncated current post
         const threadBase = "t-" + path.basename(thread[0], ".md");
 
         let truncatedThread: string[] = [];
@@ -289,6 +286,7 @@ async function generateIndexContent({
         if (thread.length > 2) truncatedThread.push(thread[thread.length - 2]);
         // Always include last
         truncatedThread.push(thread[thread.length - 1]);
+        // truncatedThread = truncatedThread.reverse();
 
         for (const file of truncatedThread) {
           const filePath = path.join(inputDir, file);
