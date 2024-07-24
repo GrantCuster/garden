@@ -9,10 +9,19 @@
             <link>https://garden.grantcuster.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Wed, 24 Jul 2024 20:50:49 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 24 Jul 2024 20:57:51 GMT</lastBuildDate>
         <atom:link href="https://garden.grantcuster.com/rss.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Wed, 24 Jul 2024 20:50:49 GMT</pubDate>
+        <pubDate>Wed, 24 Jul 2024 20:57:51 GMT</pubDate>
         <managingEditor><![CDATA[Grant Custer]]></managingEditor>
+        <item>
+            <title><![CDATA[2024-07-24-16-56-56]]></title>
+            <description><![CDATA[
+Redid the way I do threads on this garden. Now a separate file with newline separted posts. Cautiously optimistic. Still more work to be done to make posting here feel easy.
+]]></description>
+            <link>https://garden.grantcuster.com/2024-07-24-16-56-56</link>
+            <guid isPermaLink="true">https://garden.grantcuster.com/2024-07-24-16-56-56</guid>
+            <pubDate>Wed, 24 Jul 2024 20:56:56 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-07-08-10-19-55-About-Constraint-Systems]]></title>
             <description><![CDATA[# Constraint Systems draft
