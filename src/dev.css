@@ -9,19 +9,19 @@ h1 {
   color: theme('colors.yellow');
 }
 h1:before {
-  content: '# ';
+  /* content: '# '; */
 }
 h2 {
   color: theme('colors.green');
 }
 h2:before {
-  content: '## ';
+  /* content: '## '; */
 }
 h3 {
   color: theme('colors.blue');
 }
 h3:before {
-  content: '### ';
+  /* content: '### '; */
 }
 
 .markdown ul li {

@@ -11,7 +11,6 @@ import {
   MakePageHead,
   MakeDateHeader,
   MakeHeader,
-  MakeThreadLink,
 } from "./src/templateMakers";
 import { chromium } from "playwright";
 import RSS from "rss";
@@ -112,19 +111,137 @@ async function generateOgImage(page: Page, url: string, outputPath: string) {
 // Directory and file paths
 const srcDir = "src";
 const inputDir = "content/posts";
-const threadInputDir = "content/threads";
 const outputDir = "dist";
 const cssFile = "index.css";
 const jsFile = "index.js";
 const indexFile = "index.html";
 
+async function checkReply({
+  threads,
+  visited,
+  basename,
+  level,
+}: {
+  threads: string[][];
+  visited: string[];
+  basename: string;
+  level: number;
+}) {
+  const filePath = path.join(inputDir, basename + ".md");
+  const text = await fs.readFile(filePath, "utf-8");
+  const lines = text.split("\n");
+
+  if (level !== 0 && !visited.includes(basename)) {
+    threads[threads.length - 1].push(basename);
+    visited.push(basename);
+  }
+
+  for (const line of lines) {
+    if (line.startsWith("@reply")) {
+      if (level === 0) threads.push([basename]);
+      await checkReply({
+        threads,
+        visited,
+        basename: line.split(" ")[1],
+        level: level + 1,
+      });
+    }
+  }
+}
+
+async function generateThreadContent({ thread }: { thread: string[] }) {
+  let postsContent = "";
+
+  for (const basename of thread.slice().reverse()) {
+    const filePath = path.join(inputDir, basename + ".md");
+    const text = await fs.readFile(filePath, "utf-8");
+
+    const timestamp = formatDateString(basename);
+
+    const lines = text.split("\n").filter((line) => !line.startsWith("@reply"));
+    const joined = lines.join("\n").trim();
+
+    const generatedHtmlContent = execSync(
+      `pandoc -f markdown-smart-markdown_in_html_blocks+raw_html -t html`,
+      {
+        input: joined,
+      },
+    ).toString();
+
+    postsContent += MakePostInThread({
+      basename,
+      timestamp,
+      htmlContent: generatedHtmlContent,
+    });
+  }
+
+  const ThreadContent = MakeThreadPage({
+    threadLength: thread.length.toString(),
+    posts: postsContent,
+  });
+
+  const ThreadHead = MakePageHead({
+    title: `Thread: ${thread[0]}`,
+    description: "Thread",
+    image_link: `https://grant-uploader.s3.amazonaws.com/og-images/t-${thread[0]}.png`,
+  });
+
+  const templateContentWrapped = MakeWrapper({
+    head: ThreadHead,
+    content: ThreadContent,
+  });
+
+  const formattedContent = await prettier.format(templateContentWrapped, {
+    parser: "html",
+  });
+
+  return formattedContent;
+}
+
+async function saveThreadContent({
+  thread,
+  content,
+}: {
+  thread: string[];
+  content: string;
+}) {
+  const threadBase = "t-" + thread[thread.length - 1];
+  const dirName = path.join(outputDir, threadBase);
+  await fs.mkdir(dirName, { recursive: true });
+  await fs.writeFile(path.join(dirName, "index.html"), content);
+}
+
+function buildLookupTable({ threads }: { threads: string[][] }) {
+  const lookup: Record<string, string[]> = {};
+
+  for (const thread of threads) {
+    const reversed = thread.slice().reverse();
+    for (const basename of thread) {
+      lookup[basename] = reversed;
+    }
+  }
+
+  return lookup;
+}
+
 async function buildNonThreadPages({
   markdownFiles,
+  lookup,
 }: {
   markdownFiles: string[];
+  lookup: Record<string, string[]>;
 }) {
   for (const file of markdownFiles) {
-    await buildStandalonePage({ file, optionalRedirect: null });
+    let optionalRedirect: string | null = null;
+    if (lookup[path.basename(file, ".md")]) {
+      const threadBase =
+        "t-" +
+        lookup[path.basename(file, ".md")][0];
+      const destination = threadBase + "#" + path.basename(file, ".md");
+      const content = `<script>function navigate() { window.location = '/${destination}' }; navigate();</script>`;
+      optionalRedirect = content;
+    }
+    await buildStandalonePage({ file, optionalRedirect });
   }
 }
 
@@ -166,63 +283,12 @@ async function buildStandalonePage({
   await fs.writeFile(path.join(dirName, "index.html"), formattedContent);
 }
 
-async function buildThread({ files }: { files: string[] }) {
-  const firstPost = files[0];
-  const threadBasename = "t-" + path.basename(firstPost, ".md");
-
-  let threadContent = "";
-  for (const file of files) {
-    const basename = path.basename(file, ".md");
-    const timestamp = formatDateString(basename);
-    const content = await fs.readFile(path.join(inputDir, file), "utf-8");
-    const generatedHtmlContent = execSync(
-      `pandoc -f markdown-smart-markdown_in_html_blocks+raw_html -t html`,
-      {
-        input: content,
-      },
-    ).toString();
-    const postContent = MakePostInThread({
-      basename,
-      timestamp,
-      htmlContent: generatedHtmlContent,
-      index: files.indexOf(file),
-    });
-
-    threadContent += postContent;
-  }
-
-  let postHeadContent = MakePageHead({
-    title: "Thread",
-    description: "placeholder",
-    image_link: `https://grant-uploader.s3.amazonaws.com/og-images/t-${path.basename(
-      firstPost,
-      ".md",
-    )}.png`,
-  });
-
-  const templateContentWrapped = MakeWrapper({
-    head: postHeadContent,
-    content: MakeThreadPage({
-      threadLength: files.length.toString(),
-      posts: threadContent,
-    }),
-  });
-
-  const formattedContent = await prettier.format(templateContentWrapped, {
-    parser: "html",
-  });
-
-  const dirName = path.join(outputDir, threadBasename);
-  await fs.mkdir(dirName, { recursive: true });
-  await fs.writeFile(path.join(dirName, "index.html"), formattedContent);
-}
-
 async function generateIndexContent({
   markdownFiles,
-  threads,
+  lookup,
 }: {
   markdownFiles: string[];
-  threads: string[][];
+  lookup: Record<string, string[]>;
 }) {
   let postsContent = "";
 
@@ -245,15 +311,38 @@ async function generateIndexContent({
     const basename = path.basename(file, ".md");
 
     const text = await fs.readFile(filePath, "utf-8");
+    let lines = text.trim().split("\n");
+    let replyTo: string | null = null;
+    let threadLink: string | null = null;
+
+    lines = lines.filter((line) => {
+      if (line.startsWith("@reply")) {
+        replyTo = line.split(" ")[1];
+        threadLink = `t-${lookup[basename][lookup[basename].length - 1]}#${basename}`;
+        return false;
+      }
+      return true;
+    });
+
+    let replied = lines.join("\n").trim();
+    const inThread = lookup[basename];
+    let isReplied: string | null = null;
     let destination = basename;
 
+    if (inThread) {
+      const index = inThread.indexOf(basename);
+      destination = `t-${lookup[basename][0]}#${basename}`;
+      if (index !== inThread.length - 1) {
+        isReplied = `t-${lookup[basename][0]}#${basename}`;
+      }
+    }
+
     const destinationFunc = `function navigate() { window.location = '${destination}' }; navigate();`;
-    const paragraphs = text.split("\n\n");
+    const paragraphs = replied.split("\n\n");
     let truncated = false;
-    let truncatedText = text;
     if (paragraphs.length > 3) {
       truncated = true;
-      truncatedText = paragraphs.slice(0, 3).join("\n\n");
+      replied = paragraphs.slice(0, 3).join("\n\n");
     }
 
     if (currentMonth !== basename.slice(0, 7)) {
@@ -268,92 +357,24 @@ async function generateIndexContent({
       currentMonth = basename.slice(0, 7);
     }
 
-    let isInThread = false;
-    for (const thread of threads) {
-      // only check if last because only show thread once in index
-      if (thread.includes(file)) {
-        isInThread = true;
-        if (thread[thread.length - 1] !== file) {
-          break;
-        }
-        let threadContent = "";
-        // always show truncated first post
-        // always show previous post - check if first post
-        // always show truncated current post
-        const threadBase = "t-" + path.basename(thread[0], ".md");
+    const generatedHtmlContent = execSync(
+      `pandoc -f markdown-smart-markdown_in_html_blocks+raw_html -t html`,
+      {
+        input: replied,
+      },
+    ).toString();
 
-        let truncatedThread: string[] = [];
-        // It has to have more than one to be a thread
-        truncatedThread.push(thread[0]);
-        // If longer than 2 include the penultimate
-        if (thread.length > 2) truncatedThread.push(thread[thread.length - 2]);
-        // Always include last
-        truncatedThread.push(thread[thread.length - 1]);
+    const timestamp = formatDateString(basename);
 
-        for (const file of truncatedThread) {
-          const filePath = path.join(inputDir, file);
-          const basename = path.basename(file, ".md");
-          const index = thread.indexOf(file);
-
-          const text = await fs.readFile(filePath, "utf-8");
-          let destination = threadBase + "#" + basename;
-
-          const destinationFunc = `function navigate() { window.location = '${destination}' }; navigate();`;
-          const paragraphs = text.split("\n\n");
-          let truncated = false;
-          let truncatedText = text;
-          if (paragraphs.length > 3) {
-            truncated = true;
-            truncatedText = paragraphs.slice(0, 3).join("\n\n");
-          }
-
-          const generatedHtmlContent = execSync(
-            `pandoc -f markdown-smart-markdown_in_html_blocks+raw_html -t html`,
-            {
-              input: truncatedText,
-            },
-          ).toString();
-
-          const timestamp = formatDateString(basename);
-
-          const postContent = MakePostLink({
-            postCount: index + 1,
-            timestamp: timestamp,
-            htmlContent: generatedHtmlContent,
-            truncated,
-            postlinkFunction: destinationFunc,
-          });
-          threadContent += postContent;
-        }
-
-        postsContent += MakeThreadLink({
-          timestamp: formatDateString(
-            path.basename(thread[thread.length - 1], ".md"),
-          ),
-          htmlContent: threadContent,
-        });
-        break;
-      }
-    }
-
-    if (!isInThread) {
-      const generatedHtmlContent = execSync(
-        `pandoc -f markdown-smart-markdown_in_html_blocks+raw_html -t html`,
-        {
-          input: truncatedText,
-        },
-      ).toString();
-
-      const timestamp = formatDateString(basename);
-
-      const postContent = MakePostLink({
-        timestamp,
-        htmlContent: generatedHtmlContent,
-        truncated,
-        postlinkFunction: destinationFunc,
-      });
-      postsContent += postContent;
-    }
+    const postContent = MakePostLink({
+      replyTo,
+      timestamp,
+      htmlContent: generatedHtmlContent,
+      isReplied: isReplied !== null,
+      truncated,
+      postlinkFunction: destinationFunc,
+    });
+    postsContent += postContent;
   }
 
   return postsContent;
@@ -366,7 +387,13 @@ type RSSPost = {
   date: string;
 };
 
-async function generateRSS({ markdownFiles }: { markdownFiles: string[] }) {
+async function generateRSS({
+  markdownFiles,
+  lookup,
+}: {
+  markdownFiles: string[];
+  lookup: Record<string, string[]>;
+}) {
   const posts: RSSPost[] = [];
 
   function parseCustomDate(dateString: string): Date {
@@ -437,39 +464,6 @@ const main = async () => {
       path.join(outputDir, "index.js"),
     );
 
-    const threadFiles = (await fs.readdir(threadInputDir)).filter((file) =>
-      file.endsWith(".txt"),
-    );
-    if (threadFiles.length === 0) {
-      console.error(`No thread files found`);
-      process.exit(1);
-    }
-    let threads: string[][] = [];
-    for (const file of threadFiles) {
-      const content = await fs.readFile(
-        path.join(threadInputDir, file),
-        "utf-8",
-      );
-      const sections = content
-        .split("\n\n")
-        .map((chunk) =>
-          chunk
-            .split("\n")
-            .filter((line) => !line.startsWith("#") && line.trim() !== ""),
-        );
-      threads.push(...sections);
-    }
-
-    // if thread includes post make standalone page that redirects
-    // think about image handling later
-    // also build threads
-    // could start by building threads, do not worry about filtering standalone
-    // thread links start with first post + t
-
-    for (const thread of threads) {
-      await buildThread({ files: thread });
-    }
-    //
     const markdownFiles = (await fs.readdir(inputDir))
       .filter((file) => file.endsWith(".md"))
       .sort()
@@ -479,17 +473,38 @@ const main = async () => {
       process.exit(1);
     }
 
-    // Temporary disable to speed up
-    await buildNonThreadPages({ markdownFiles });
+    const reversed = markdownFiles.slice().reverse();
+    const threads: string[][] = [];
+    const visited: string[] = [];
 
-    const postsContent = await generateIndexContent({ markdownFiles, threads });
+    for (const file of reversed) {
+      await checkReply({
+        threads,
+        visited,
+        basename: path.basename(file, ".md"),
+        level: 0,
+      });
+    }
+
+    for (const thread of threads) {
+      const threadContent = await generateThreadContent({
+        thread,
+      });
+      await saveThreadContent({ thread, content: threadContent });
+    }
+
+    console.log(threads);
+    const lookup = buildLookupTable({ threads });
+    console.log(lookup);
+    await buildNonThreadPages({ markdownFiles, lookup });
+
+    const postsContent = await generateIndexContent({ markdownFiles, lookup });
     await saveIndexContent({
       postsContent,
     });
     console.log(`Index file created: ${indexFile}`);
 
-    // Temporary disable to speed up
-    await generateRSS({ markdownFiles });
+    await generateRSS({ markdownFiles, lookup });
 
     // Add cname to dist
     await fs.writeFile(
@@ -514,6 +529,11 @@ const main = async () => {
       for (const file of markdownFiles) {
         const basename = path.basename(file, ".md");
         let postUrl = `http://localhost:8000/${basename}`;
+        if (lookup[basename]) {
+          const thread = lookup[basename];
+          const threadBase = "t-" + thread[thread.length - 1];
+          postUrl = `http://localhost:8000/${threadBase}/#${basename}`;
+        }
         const ogImagePath = path.join(outputDir, basename, "preview.png");
         await generateOgImage(page, postUrl, ogImagePath);
         console.log(`OG image generated for ${file}: ${ogImagePath}`);
@@ -523,20 +543,20 @@ const main = async () => {
         await fs.rm(ogImagePath);
       }
 
-      // for (const thread of threads) {
-      //   const basename = thread[thread.length - 1];
-      //   const threadBase = "t-" + basename;
-      //   const postUrl = `http://localhost:8000/${threadBase}`;
-      //   const ogImagePath = path.join(outputDir, threadBase, "preview.png");
-      //   await generateOgImage(page, postUrl, ogImagePath);
-      //   console.log(
-      //     `OG image generated for thread ${basename}: ${ogImagePath}`,
-      //   );
-      //
-      //   const s3Key = `og-images/${threadBase}.png`;
-      //   await uploadFileToS3(ogImagePath, "grant-uploader", s3Key);
-      //   await fs.rm(ogImagePath);
-      // }
+      for (const thread of threads) {
+        const basename = thread[thread.length - 1];
+        const threadBase = "t-" + basename;
+        const postUrl = `http://localhost:8000/${threadBase}`;
+        const ogImagePath = path.join(outputDir, threadBase, "preview.png");
+        await generateOgImage(page, postUrl, ogImagePath);
+        console.log(
+          `OG image generated for thread ${basename}: ${ogImagePath}`,
+        );
+
+        const s3Key = `og-images/${threadBase}.png`;
+        await uploadFileToS3(ogImagePath, "grant-uploader", s3Key);
+        await fs.rm(ogImagePath);
+      }
 
       await browser.close();
     }

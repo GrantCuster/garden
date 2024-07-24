@@ -29,39 +29,49 @@ export function MakeWrapper({
 }
 
 export function MakePostLink({
-  replyTo,
   timestamp,
   htmlContent,
-  isReplied,
   truncated,
   postlinkFunction,
+  postCount,
 }: {
-  replyTo: string | null;
   timestamp: string;
   htmlContent: string;
-  isReplied: boolean;
   truncated: boolean;
   postlinkFunction: string;
+  postCount?: number;
 }) {
   return html`<div>
-    <div class="px-4 text-sm text-dark4 mb-2">${timestamp}</div>
+    <div class="px-4 text-sm text-dark4 mb-2">
+      ${postCount
+      ? `<span class="text-aqua -ml-3">${postCount}</span> &middot; `
+      : ``}${timestamp}
+    </div>
     <div
       class="px-4 border border-dark1 mb-4 post cursor-pointer"
       onclick="${postlinkFunction}"
     >
-      ${replyTo
-      ? `<div class="italic mt-2 text-sm text-dark4">Reply to ${formatDateString(replyTo)}</div>`
-      : ""}
       <div class="markdown">${htmlContent}</div>
       ${truncated
       ? `<div class="text-dark4 mb-2 text-sm">Read more</div>
 `
       : ""}
-      ${isReplied
-      ? `<div class="text-dark4 mb-2 text-sm">Read replies</div>
-`
-      : ""}
     </div>
+  </div>`;
+}
+
+export function MakeThreadLink({
+  timestamp,
+  htmlContent,
+}: {
+  timestamp: string;
+  htmlContent: string;
+}) {
+  return html`<div>
+    <div class="px-4 text-sm text-dark4 mb-2">
+      <span class="text-aqua">Thread</span> &middot; ${timestamp}
+    </div>
+    <div class="px-4 border border-dark1 mb-4 pt-2">${htmlContent}</div>
   </div>`;
 }
 
@@ -107,7 +117,7 @@ export function MakeThreadPage({
 }) {
   return html`${MakeHeader({ isHome: false })}
     <div class="px-4">
-      <div class="text-blue text-sm mb-2">
+      <div class="text-aqua text-sm mb-2">
         <div>Thread &middot; ${threadLength} posts</div>
       </div>
     </div>
@@ -118,14 +128,16 @@ export function MakePostInThread({
   basename,
   timestamp,
   htmlContent,
+  index,
 }: {
   basename: string;
   timestamp: string;
   htmlContent: string;
+  index: number;
 }) {
   return html`<div class="relative px-4 text-sm text-dark4 mb-2">
-    <div class="absolute -top-4" id="${basename}"></div>
-      ${timestamp}
+      <div class="absolute -top-4" id="${basename}"></div>
+      <span class="text-aqua">${(index + 1).toString()}</span> &middot; ${timestamp}
     </div>
     <div class="px-4 border border-dark1 mb-4 post">
       <div class="markdown">${htmlContent}</div>

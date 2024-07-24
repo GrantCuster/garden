@@ -9,9 +9,9 @@
             <link>https://garden.grantcuster.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 22 Jul 2024 21:56:21 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 24 Jul 2024 20:50:49 GMT</lastBuildDate>
         <atom:link href="https://garden.grantcuster.com/rss.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Mon, 22 Jul 2024 21:56:21 GMT</pubDate>
+        <pubDate>Wed, 24 Jul 2024 20:50:49 GMT</pubDate>
         <managingEditor><![CDATA[Grant Custer]]></managingEditor>
         <item>
             <title><![CDATA[2024-07-08-10-19-55-About-Constraint-Systems]]></title>
@@ -120,9 +120,7 @@ GIFs are probably not going to be kind to this series.
         </item>
         <item>
             <title><![CDATA[2024-06-28-11-37-36]]></title>
-            <description><![CDATA[@reply 2024-06-28-10-51-26
-
-Notebooks (Jupyter, Observable) are another related pattern here. Maybe a noetbook like linear flow but with horizontally scrolling generated functions...
+            <description><![CDATA[Notebooks (Jupyter, Observable) are another related pattern here. Maybe a noetbook like linear flow but with horizontally scrolling generated functions...
 
 ]]></description>
             <link>https://garden.grantcuster.com/2024-06-28-11-37-36</link>
@@ -131,9 +129,7 @@ Notebooks (Jupyter, Observable) are another related pattern here. Maybe a noetbo
         </item>
         <item>
             <title><![CDATA[2024-06-28-10-51-26]]></title>
-            <description><![CDATA[@reply 2024-06-28-09-52-07-Thinking-about-codegen
-
-This pattern actually is pretty similar to the flow for Copilot-like autocomplete. But I'd be interested in taking it out of the editor and also making the encapsulation clearer.
+            <description><![CDATA[This pattern actually is pretty similar to the flow for Copilot-like autocomplete. But I'd be interested in taking it out of the editor and also making the encapsulation clearer.
 
 I guess the risk is the usual spaghetti-hairball nodes-and-wires issues. I should develop some sort of plan for avoiding that.
 ]]></description>
@@ -234,9 +230,7 @@ Kind of comforting.
         </item>
         <item>
             <title><![CDATA[2024-06-17-20-21-46]]></title>
-            <description><![CDATA[@reply 2024-06-17-08-55-11
-
-Now writing this on the porch with the AR glasses. I think I finally got Network Manager set up so I feel more confident I can take these and connect to wifi outside of my own. Maybe I'll take them on their first train ride tomorrow.
+            <description><![CDATA[Now writing this on the porch with the AR glasses. I think I finally got Network Manager set up so I feel more confident I can take these and connect to wifi outside of my own. Maybe I'll take them on their first train ride tomorrow.
 
 I'm happy I've gotten as far as I did on this blog but I'm not quite sure how to use threads and untitled posts yet. Untitled posts feel weird even though part of the goal was to normalize that. Threads feel weird to, like it feels like I'm really declaring something important for it to be a thread. I want it to feel lightweight.
 ]]></description>
@@ -275,10 +269,7 @@ I can't fully articulate it! But it seems useful to keep returning to.
         </item>
         <item>
             <title><![CDATA[2024-06-16-08-43-38]]></title>
-            <description><![CDATA[
-@reply 2024-06-16-07-42-21
-
-It would be cool to make using the garden a fullscreen terminal experience. Fzf menu is already pretty close, maybe I just need like an ASCII art welcome message, and I should clear terminal history on menu open.
+            <description><![CDATA[It would be cool to make using the garden a fullscreen terminal experience. Fzf menu is already pretty close, maybe I just need like an ASCII art welcome message, and I should clear terminal history on menu open.
 ]]></description>
             <link>https://garden.grantcuster.com/2024-06-16-08-43-38</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-06-16-08-43-38</guid>
@@ -341,10 +332,7 @@ I changed from bash scripts to typescript scripts, which has been helpful for or
         </item>
         <item>
             <title><![CDATA[2024-06-11-18-02-59]]></title>
-            <description><![CDATA[
-@reply 2024-05-30-20-37-00
-
-Thinking more about an RGB physical slider
+            <description><![CDATA[Thinking more about an RGB physical slider
 ]]></description>
             <link>https://garden.grantcuster.com/2024-06-11-18-02-59</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-06-11-18-02-59</guid>
