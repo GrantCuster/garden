@@ -281,9 +281,10 @@ async function generateIndexContent({
 
         let truncatedThread: string[] = [];
         // It has to have more than one to be a thread
-        truncatedThread.push(thread[0]);
+        // truncatedThread.push(thread[0]);
         // If longer than 2 include the penultimate
-        if (thread.length > 2) truncatedThread.push(thread[thread.length - 2]);
+        // if (thread.length > 2) truncatedThread.push(thread[thread.length - 2]);
+        truncatedThread.push(thread[thread.length - 2]);
         // Always include last
         truncatedThread.push(thread[thread.length - 1]);
         // truncatedThread = truncatedThread.reverse();
