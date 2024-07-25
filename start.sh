@@ -14,6 +14,7 @@ declare -A COMMANDS=(
     ["update"]="git pull origin main --rebase"
     ["commit"]="git add . && git commit"
     ["push"]="git push origin main"
+    ["all"]="npm run build; git add . && git commit -m updates; git push origin main; npm run deploy;"
     ["exit"]="exit"
     # Add more commands here
 )
