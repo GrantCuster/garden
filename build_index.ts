@@ -270,6 +270,7 @@ async function generateIndexContent({
       currentMonth = basename.slice(0, 7);
     }
 
+    let link = ""
     let threadContent = "";
     let threadStamp = "";
     let isInThread = false;
@@ -281,6 +282,7 @@ async function generateIndexContent({
           break;
         }
         const threadBase = "t-" + path.basename(thread[0], ".md");
+        link = threadBase;
 
         let truncatedThread: string[] = [];
         // It has to have more than one to be a thread
@@ -356,6 +358,7 @@ async function generateIndexContent({
         },
       ).toString();
 
+
       const timestamp = formatDateString(basename);
 
       const postContent = MakePostLink({
@@ -364,11 +367,14 @@ async function generateIndexContent({
         truncated,
         postlinkFunction: destinationFunc,
       });
+
+
+      link = destination;
+
       postsContent += postContent;
     }
 
     if (markdownFiles.indexOf(file) === 0) {
-      console.log(truncatedText);
       await fs.writeFile(socialText, truncatedText, "utf-8");
     }
   }
