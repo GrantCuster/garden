@@ -12,6 +12,7 @@ import {
   MakeDateHeader,
   MakeHeader,
   MakeThreadLink,
+  MakeThreadTruncated,
 } from "./src/templateMakers";
 import { chromium } from "playwright";
 import RSS from "rss";
@@ -117,6 +118,7 @@ const outputDir = "dist";
 const cssFile = "index.css";
 const jsFile = "index.js";
 const indexFile = "index.html";
+const socialText = "content/social/latest_social_text.md";
 
 async function buildNonThreadPages({
   markdownFiles,
@@ -268,6 +270,8 @@ async function generateIndexContent({
       currentMonth = basename.slice(0, 7);
     }
 
+    let threadContent = "";
+    let threadStamp = "";
     let isInThread = false;
     for (const thread of threads) {
       // only check if last because only show thread once in index
@@ -276,7 +280,6 @@ async function generateIndexContent({
         if (thread[thread.length - 1] !== file) {
           break;
         }
-        let threadContent = "";
         const threadBase = "t-" + path.basename(thread[0], ".md");
 
         let truncatedThread: string[] = [];
@@ -288,6 +291,12 @@ async function generateIndexContent({
         // Always include last
         truncatedThread.push(thread[thread.length - 1]);
         // truncatedThread = truncatedThread.reverse();
+
+        if (thread.length > 2) {
+          threadContent += MakeThreadTruncated({
+            content: "1" + (thread.length > 3 ? "-" + (thread.length - 2) : ""),
+          });
+        }
 
         for (const file of truncatedThread) {
           const filePath = path.join(inputDir, file);
@@ -325,17 +334,21 @@ async function generateIndexContent({
           threadContent += postContent;
         }
 
-        postsContent += MakeThreadLink({
-          timestamp: formatDateString(
-            path.basename(thread[thread.length - 1], ".md"),
-          ),
-          htmlContent: threadContent,
-        });
+        threadStamp = formatDateString(
+          path.basename(thread[thread.length - 1], ".md"),
+        );
         break;
       }
     }
 
-    if (!isInThread) {
+    if (isInThread) {
+      // is in thread
+      postsContent += MakeThreadLink({
+        timestamp: threadStamp,
+        htmlContent: threadContent,
+      });
+    } else {
+      // is not in thread
       const generatedHtmlContent = execSync(
         `pandoc -f markdown-smart-markdown_in_html_blocks+raw_html -t html`,
         {
@@ -352,6 +365,11 @@ async function generateIndexContent({
         postlinkFunction: destinationFunc,
       });
       postsContent += postContent;
+    }
+
+    if (markdownFiles.indexOf(file) === 0) {
+      console.log(truncatedText);
+      await fs.writeFile(socialText, truncatedText, "utf-8");
     }
   }
 

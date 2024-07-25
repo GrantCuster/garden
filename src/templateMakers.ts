@@ -28,6 +28,13 @@ export function MakeWrapper({
   </html>`;
 }
 
+export function MakeThreadTruncated({ content }: { content: string }) {
+  return html`<div class="mb-4 pl-1">
+    <span class="text-aqua">${content}</span>
+    <span class="text-dark4 ml-1">...</span>
+  </div>`;
+}
+
 export function MakePostLink({
   timestamp,
   htmlContent,
@@ -44,8 +51,8 @@ export function MakePostLink({
   return html`<div>
     <div class="px-4 text-sm text-dark4 mb-2">
       ${postCount
-      ? `<span class="text-aqua -ml-3">${postCount}</span> &middot; `
-      : ``}${timestamp}
+        ? `<span class="text-aqua -ml-3">${postCount}</span> &middot; `
+        : ``}${timestamp}
     </div>
     <div
       class="px-4 border border-dark1 mb-4 post cursor-pointer"
@@ -53,9 +60,9 @@ export function MakePostLink({
     >
       <div class="markdown">${htmlContent}</div>
       ${truncated
-      ? `<div class="text-dark4 mb-2 text-sm">Read more</div>
+        ? `<div class="text-dark4 mb-2 text-sm">Read more</div>
 `
-      : ""}
+        : ""}
     </div>
   </div>`;
 }
@@ -137,7 +144,8 @@ export function MakePostInThread({
 }) {
   return html`<div class="relative px-4 text-sm text-dark4 mb-2">
       <div class="absolute -top-4" id="${basename}"></div>
-      <span class="text-aqua">${(index + 1).toString()}</span> &middot; ${timestamp}
+      <span class="text-aqua">${(index + 1).toString()}</span> &middot;
+      ${timestamp}
     </div>
     <div class="px-4 border border-dark1 mb-4 post">
       <div class="markdown">${htmlContent}</div>
