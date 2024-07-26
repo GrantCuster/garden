@@ -270,7 +270,7 @@ async function generateIndexContent({
       currentMonth = basename.slice(0, 7);
     }
 
-    let link = ""
+    let link = "";
     let threadContent = "";
     let threadStamp = "";
     let isInThread = false;
@@ -358,7 +358,6 @@ async function generateIndexContent({
         },
       ).toString();
 
-
       const timestamp = formatDateString(basename);
 
       const postContent = MakePostLink({
@@ -368,14 +367,17 @@ async function generateIndexContent({
         postlinkFunction: destinationFunc,
       });
 
-
       link = destination;
 
       postsContent += postContent;
     }
 
     if (markdownFiles.indexOf(file) === 0) {
-      await fs.writeFile(socialText, truncatedText, "utf-8");
+      await fs.writeFile(
+        socialText,
+        truncatedText + "\n" + "https://garden.grantcuster.com/" + link + "/",
+        "utf-8",
+      );
     }
   }
 
