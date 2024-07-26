@@ -9,10 +9,20 @@
             <link>https://garden.grantcuster.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Thu, 25 Jul 2024 23:54:18 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 26 Jul 2024 21:52:02 GMT</lastBuildDate>
         <atom:link href="https://garden.grantcuster.com/rss.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Thu, 25 Jul 2024 23:54:18 GMT</pubDate>
+        <pubDate>Fri, 26 Jul 2024 21:52:02 GMT</pubDate>
         <managingEditor><![CDATA[Grant Custer]]></managingEditor>
+        <item>
+            <title><![CDATA[2024-07-26-17-50-11]]></title>
+            <description><![CDATA[Thumbs up / thumbs down
+
+![Screen recording of demo app where it records if I gave a thumbs up or thumbs down](https://grant-uploader.s3.amazonaws.com/2024-07-26-17-49-51.gif)
+]]></description>
+            <link>https://garden.grantcuster.com/2024-07-26-17-50-11</link>
+            <guid isPermaLink="true">https://garden.grantcuster.com/2024-07-26-17-50-11</guid>
+            <pubDate>Fri, 26 Jul 2024 21:50:11 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-07-25-19-44-00]]></title>
             <description><![CDATA[Finished listening to the Diamond Age. Pretty fun! The primer was maybe a little different than what I expected from hearing it referenced. But man I will always love an experience that secretly teaches you how to run it yourself.  Need to read the Andy Matuschak essay now.
