@@ -9,10 +9,20 @@
             <link>https://garden.grantcuster.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 28 Jul 2024 15:47:46 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 28 Jul 2024 22:35:56 GMT</lastBuildDate>
         <atom:link href="https://garden.grantcuster.com/rss.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Sun, 28 Jul 2024 15:47:46 GMT</pubDate>
+        <pubDate>Sun, 28 Jul 2024 22:35:56 GMT</pubDate>
         <managingEditor><![CDATA[Grant Custer]]></managingEditor>
+        <item>
+            <title><![CDATA[2024-07-28-18-32-48]]></title>
+            <description><![CDATA[Progressive resolution based on difference from average. It's not wrong but it's not quite right.
+
+![Sloth compression attempt](https://grant-uploader.s3.amazonaws.com/2024-07-28-18-33-49-800.jpg)
+]]></description>
+            <link>https://garden.grantcuster.com/2024-07-28-18-32-48</link>
+            <guid isPermaLink="true">https://garden.grantcuster.com/2024-07-28-18-32-48</guid>
+            <pubDate>Sun, 28 Jul 2024 22:32:48 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-07-28-11-47-10]]></title>
             <description><![CDATA[256 colors seems like it should be enough
