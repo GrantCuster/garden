@@ -1,5 +1,3 @@
-Thumbs up / thumbs down
+256 colors seems like it should be enough
 
-![Screen recording of demo app where it records if I gave a thumbs up or thumbs down](https://grant-uploader.s3.amazonaws.com/2024-07-26-17-49-51.gif)
-
-https://garden.grantcuster.com/2024-07-26-17-50-11/
+https://garden.grantcuster.com/2024-07-28-11-47-10/
