@@ -9,10 +9,25 @@
             <link>https://garden.grantcuster.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 29 Jul 2024 02:34:29 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 29 Jul 2024 23:47:48 GMT</lastBuildDate>
         <atom:link href="https://garden.grantcuster.com/rss.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Mon, 29 Jul 2024 02:34:29 GMT</pubDate>
+        <pubDate>Mon, 29 Jul 2024 23:47:48 GMT</pubDate>
         <managingEditor><![CDATA[Grant Custer]]></managingEditor>
+        <item>
+            <title><![CDATA[2024-07-29-19-41-42]]></title>
+            <description><![CDATA[
+Some debug images:
+
+![Sloth to outlines](https://grant-uploader.s3.amazonaws.com/2024-07-29-19-42-55-2000.jpg)
+
+![Sloth to blocks](https://grant-uploader.s3.amazonaws.com/2024-07-29-19-43-21-2000.jpg)
+
+![Me to outlines](https://grant-uploader.s3.amazonaws.com/2024-07-29-19-42-21-2000.jpg)
+]]></description>
+            <link>https://garden.grantcuster.com/2024-07-29-19-41-42</link>
+            <guid isPermaLink="true">https://garden.grantcuster.com/2024-07-29-19-41-42</guid>
+            <pubDate>Mon, 29 Jul 2024 23:41:42 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-07-28-22-29-19]]></title>
             <description><![CDATA[
