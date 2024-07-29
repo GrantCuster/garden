@@ -9,10 +9,20 @@
             <link>https://garden.grantcuster.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 28 Jul 2024 22:35:56 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 29 Jul 2024 00:18:40 GMT</lastBuildDate>
         <atom:link href="https://garden.grantcuster.com/rss.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Sun, 28 Jul 2024 22:35:56 GMT</pubDate>
+        <pubDate>Mon, 29 Jul 2024 00:18:40 GMT</pubDate>
         <managingEditor><![CDATA[Grant Custer]]></managingEditor>
+        <item>
+            <title><![CDATA[2024-07-28-20-16-02]]></title>
+            <description><![CDATA[Debug outtake.
+
+![Debugging the sloth with accidental triangles](https://grant-uploader.s3.amazonaws.com/2024-07-28-20-16-30-2000.jpg)
+]]></description>
+            <link>https://garden.grantcuster.com/2024-07-28-20-16-02</link>
+            <guid isPermaLink="true">https://garden.grantcuster.com/2024-07-28-20-16-02</guid>
+            <pubDate>Mon, 29 Jul 2024 00:16:02 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-07-28-18-32-48]]></title>
             <description><![CDATA[Progressive resolution based on difference from average. It's not wrong but it's not quite right.
