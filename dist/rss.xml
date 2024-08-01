@@ -9,10 +9,20 @@
             <link>https://garden.grantcuster.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 29 Jul 2024 23:50:36 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 01 Aug 2024 22:21:15 GMT</lastBuildDate>
         <atom:link href="https://garden.grantcuster.com/rss.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Mon, 29 Jul 2024 23:50:36 GMT</pubDate>
+        <pubDate>Thu, 01 Aug 2024 22:21:15 GMT</pubDate>
         <managingEditor><![CDATA[Grant Custer]]></managingEditor>
+        <item>
+            <title><![CDATA[2024-08-01-18-18-51]]></title>
+            <description><![CDATA[Trying out flood fill averaging agents. Start in a random spot and eat nearby color values, digest as average.
+
+![Sloth rendered in patches](https://grant-uploader.s3.amazonaws.com/2024-08-01-18-19-55-800.jpg)
+]]></description>
+            <link>https://garden.grantcuster.com/2024-08-01-18-18-51</link>
+            <guid isPermaLink="true">https://garden.grantcuster.com/2024-08-01-18-18-51</guid>
+            <pubDate>Thu, 01 Aug 2024 22:18:51 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-07-29-19-41-42]]></title>
             <description><![CDATA[
