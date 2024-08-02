@@ -9,10 +9,22 @@
             <link>https://garden.grantcuster.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 02 Aug 2024 02:35:45 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 02 Aug 2024 16:44:38 GMT</lastBuildDate>
         <atom:link href="https://garden.grantcuster.com/rss.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Fri, 02 Aug 2024 02:35:45 GMT</pubDate>
+        <pubDate>Fri, 02 Aug 2024 16:44:38 GMT</pubDate>
         <managingEditor><![CDATA[Grant Custer]]></managingEditor>
+        <item>
+            <title><![CDATA[2024-08-02-12-42-40]]></title>
+            <description><![CDATA[RGB winner versus RGB to HSL hue winner
+
+![Sloth color variations](https://grant-uploader.s3.amazonaws.com/2024-08-02-12-42-26-800.jpg)
+
+Hue winner kinda looks like thermal camera.
+]]></description>
+            <link>https://garden.grantcuster.com/2024-08-02-12-42-40</link>
+            <guid isPermaLink="true">https://garden.grantcuster.com/2024-08-02-12-42-40</guid>
+            <pubDate>Fri, 02 Aug 2024 16:42:40 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-08-01-22-32-05]]></title>
             <description><![CDATA[Better pixel glooper. One effect I like here and in palette reduction generally is when the background and foreground start to infect eachother.
