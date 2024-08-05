@@ -9,10 +9,20 @@
             <link>https://garden.grantcuster.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 02 Aug 2024 16:47:38 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 05 Aug 2024 00:48:35 GMT</lastBuildDate>
         <atom:link href="https://garden.grantcuster.com/rss.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Fri, 02 Aug 2024 16:47:38 GMT</pubDate>
+        <pubDate>Mon, 05 Aug 2024 00:48:35 GMT</pubDate>
         <managingEditor><![CDATA[Grant Custer]]></managingEditor>
+        <item>
+            <title><![CDATA[2024-08-04-20-44-38]]></title>
+            <description><![CDATA[OKLCH sloth variations
+
+![Sloth hue winners in HSL and OKLCH](https://grant-uploader.s3.amazonaws.com/2024-08-04-20-47-10-800.jpg)
+]]></description>
+            <link>https://garden.grantcuster.com/2024-08-04-20-44-38</link>
+            <guid isPermaLink="true">https://garden.grantcuster.com/2024-08-04-20-44-38</guid>
+            <pubDate>Mon, 05 Aug 2024 00:44:38 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-08-02-12-42-40]]></title>
             <description><![CDATA[RGB winner versus RGB to HSL hue winner
