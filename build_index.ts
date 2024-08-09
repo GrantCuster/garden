@@ -274,13 +274,15 @@ async function generateIndexContent({
     let threadContent = "";
     let threadStamp = "";
     let isInThread = false;
+    let isLastInThread = false;
     for (const thread of threads) {
       // only check if last because only show thread once in index
       if (thread.includes(file)) {
+        isInThread = true;
         if (thread[thread.length - 1] !== file) {
           break;
         }
-        isInThread = true;
+        isLastInThread = true;
         const threadBase = "t-" + path.basename(thread[0], ".md");
         link = threadBase;
 
@@ -344,11 +346,12 @@ async function generateIndexContent({
     }
 
     if (isInThread) {
-      // is in thread
-      postsContent += MakeThreadLink({
-        timestamp: threadStamp,
-        htmlContent: threadContent,
-      });
+      if (isLastInThread) {
+        postsContent += MakeThreadLink({
+          timestamp: threadStamp,
+          htmlContent: threadContent,
+        });
+      }
     } else {
       // is not in thread
       const generatedHtmlContent = execSync(
