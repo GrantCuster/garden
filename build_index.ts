@@ -277,10 +277,10 @@ async function generateIndexContent({
     for (const thread of threads) {
       // only check if last because only show thread once in index
       if (thread.includes(file)) {
-        isInThread = true;
         if (thread[thread.length - 1] !== file) {
           break;
         }
+        isInThread = true;
         const threadBase = "t-" + path.basename(thread[0], ".md");
         link = threadBase;
 
