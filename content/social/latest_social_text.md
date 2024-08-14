@@ -1,5 +1,3 @@
-Progressive pixelation.
+Doing some real system config work for the first time in a while. Trying to approach that 'sitting down to an empty page of paper' feeling again for sitting down to the computer. It is hard work to make things simple though.
 
-![Sloth in layers of progressively smaller pixels](https://grant-uploader.s3.amazonaws.com/2024-08-09-17-58-45.gif)
-
-https://garden.grantcuster.com/t-2024-07-28-18-32-48/
+https://garden.grantcuster.com/2024-08-13-21-32-02/
