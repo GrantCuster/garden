@@ -1,0 +1,92 @@
+<html class="bg-hard0 text-foreground">
+  <head>
+    <title>
+      Saturday &middot; Jun 8, 2024 &middot; 2:22 PM - Grant's Garden
+    </title>
+    <meta name="description" content="# How this works" />
+    <meta
+      property="og:title"
+      content="Saturday &middot; Jun 8, 2024 &middot; 2:22 PM - Grant's Garden"
+    />
+    <meta property="og:description" content="# How this works" />
+    <meta
+      property="og:image"
+      content="https://grant-uploader.s3.amazonaws.com/og-images/2024-06-08-14-22-12-How-this-works.png"
+    />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:image"
+      content="https://grant-uploader.s3.amazonaws.com/og-images/2024-06-08-14-22-12-How-this-works.png"
+    />
+    <script src="/index.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/index.css" />
+  </head>
+  <body>
+    <div class="max-w-[55ch] mx-auto">
+      <div class="text-green mt-4 mb-2 px-4">
+        <a href="/">Grant's garden</a>
+      </div>
+      <div class="px-4 text-sm text-dark4 mb-2">
+        Saturday &middot; Jun 8, 2024 &middot; 2:22 PM
+      </div>
+      <div class="px-4 border border-dark1 mb-4 post">
+        <div class="markdown">
+          <h1 id="how-this-works">How this works</h1>
+          <p>
+            This site is a bash build script that concats HTML together. I also
+            put together a little start script using fzf that has some common
+            task options new_post / build / commit. I really like the feel of
+            the starting bash script - it makes it feel like writing in this
+            blog is its own little dedicated computer program.
+          </p>
+          <p>
+            The source for this one is viewable
+            <a href="https://github.com/GrantCuster/garden">on github</a>.
+          </p>
+          <p>
+            I think I'm going to try a new blog concept (a continuation of
+            <a href="/2024-06-05-20-27-27-Thread-focused-blog-idea/"
+              >the thread-focused blog idea</a
+            >), that combines what I do on
+            <a href="https://feed.grantcuster.com">feed</a>.
+          </p>
+          <p>
+            Restarting is maybe a bit risky, since I think I have about three
+            blog-like things I've made over the past few years, and this one I'm
+            at least writing in. I resolved to keep writing in this one until
+            the next one's real.
+          </p>
+          <p>
+            I'm hopeful the new one will get going though. I'd really like these
+            kinds of posts to live next to lighter-weight screenshot + gif
+            posts. I feel like I have good sense of how to keep the pieces
+            relatively simple, and as long as I stick to well-trod ground for a
+            lot of the pieces I can get decent AI generated code for a lot of
+            it. Then I can hopefully splice and stitch that together into a
+            lively little website.
+          </p>
+          <p>
+            So far I made an image uploader for s3, when some auto-resizing
+            capabilities built-in. One of the downsides of when I used to have a
+            static blog on github pages was how, over time, the images did come
+            to dominate the repo size. I want to split out that chunk, wrap it
+            up, and plug it in where I need it.
+          </p>
+          <p>
+            I (with ChatGPT assistance) got the uploader tool up on a password
+            protected subdomain, being served through a droplet. Even did the
+            nginx reverse proxy with SSL and feel like I pretty much understand
+            how it's all working.
+          </p>
+          <p>
+            Basically want to put together a bunch of little web tool
+            capabilities for myself and then start putting them together.
+            Keeping the pieces big and blocky so they can be torn down or
+            replaced or reconfigured.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
