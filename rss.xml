@@ -9,10 +9,20 @@
             <link>https://garden.grantcuster.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Wed, 14 Aug 2024 01:35:18 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 18 Aug 2024 12:06:02 GMT</lastBuildDate>
         <atom:link href="https://garden.grantcuster.com/rss.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Wed, 14 Aug 2024 01:35:18 GMT</pubDate>
+        <pubDate>Sun, 18 Aug 2024 12:06:02 GMT</pubDate>
         <managingEditor><![CDATA[Grant Custer]]></managingEditor>
+        <item>
+            <title><![CDATA[2024-08-18-08-04-04]]></title>
+            <description><![CDATA[Pixelation layers
+
+![Adjusting a pixelation layer on top of sloth image](https://grant-uploader.s3.amazonaws.com/2024-08-18-08-04-28.gif)
+]]></description>
+            <link>https://garden.grantcuster.com/2024-08-18-08-04-04</link>
+            <guid isPermaLink="true">https://garden.grantcuster.com/2024-08-18-08-04-04</guid>
+            <pubDate>Sun, 18 Aug 2024 12:04:04 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-08-13-21-32-02]]></title>
             <description><![CDATA[Doing some real system config work for the first time in a while. Trying to approach that 'sitting down to an empty page of paper' feeling again for sitting down to the computer. It is hard work to make things simple though.
