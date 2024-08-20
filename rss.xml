@@ -9,10 +9,18 @@
             <link>https://garden.grantcuster.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 19 Aug 2024 22:20:29 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 20 Aug 2024 23:37:00 GMT</lastBuildDate>
         <atom:link href="https://garden.grantcuster.com/rss.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Mon, 19 Aug 2024 22:20:29 GMT</pubDate>
+        <pubDate>Tue, 20 Aug 2024 23:37:00 GMT</pubDate>
         <managingEditor><![CDATA[Grant Custer]]></managingEditor>
+        <item>
+            <title><![CDATA[2024-08-20-19-33-27]]></title>
+            <description><![CDATA[Finally wearing my AR glasses combo out on the commute. Made some decent progress trying to paginate this blog today. Pushed the scale up to 2x which is helping. Also think I've got a good base system set up (refined from reinstalling across a bunch of computers of all the time) and that's helping.
+]]></description>
+            <link>https://garden.grantcuster.com/2024-08-20-19-33-27</link>
+            <guid isPermaLink="true">https://garden.grantcuster.com/2024-08-20-19-33-27</guid>
+            <pubDate>Tue, 20 Aug 2024 19:33:27 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-08-19-18-17-26]]></title>
             <description><![CDATA[
@@ -22,7 +30,7 @@ Ambient TV is on the wall now.
 ]]></description>
             <link>https://garden.grantcuster.com/2024-08-19-18-17-26</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-08-19-18-17-26</guid>
-            <pubDate>Mon, 19 Aug 2024 22:17:26 GMT</pubDate>
+            <pubDate>Mon, 19 Aug 2024 18:17:26 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2024-08-19-09-55-41-Ambient-TV]]></title>
@@ -34,7 +42,7 @@ First ambient TV prototype is put together. Laptop strapped to a monitor with a 
 ]]></description>
             <link>https://garden.grantcuster.com/2024-08-19-09-55-41-Ambient-TV</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-08-19-09-55-41-Ambient-TV</guid>
-            <pubDate>Mon, 19 Aug 2024 13:55:41 GMT</pubDate>
+            <pubDate>Mon, 19 Aug 2024 09:55:41 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2024-08-18-08-04-04]]></title>
@@ -44,7 +52,7 @@ First ambient TV prototype is put together. Laptop strapped to a monitor with a 
 ]]></description>
             <link>https://garden.grantcuster.com/2024-08-18-08-04-04</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-08-18-08-04-04</guid>
-            <pubDate>Sun, 18 Aug 2024 12:04:04 GMT</pubDate>
+            <pubDate>Sun, 18 Aug 2024 08:04:04 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2024-08-13-21-32-02]]></title>
@@ -52,7 +60,7 @@ First ambient TV prototype is put together. Laptop strapped to a monitor with a 
 ]]></description>
             <link>https://garden.grantcuster.com/2024-08-13-21-32-02</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-08-13-21-32-02</guid>
-            <pubDate>Wed, 14 Aug 2024 01:32:02 GMT</pubDate>
+            <pubDate>Tue, 13 Aug 2024 21:32:02 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2024-08-09-18-00-21]]></title>
@@ -62,7 +70,7 @@ First ambient TV prototype is put together. Laptop strapped to a monitor with a 
 ]]></description>
             <link>https://garden.grantcuster.com/2024-08-09-18-00-21</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-08-09-18-00-21</guid>
-            <pubDate>Fri, 09 Aug 2024 22:00:21 GMT</pubDate>
+            <pubDate>Fri, 09 Aug 2024 18:00:21 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2024-08-04-20-44-38]]></title>
@@ -72,7 +80,7 @@ First ambient TV prototype is put together. Laptop strapped to a monitor with a 
 ]]></description>
             <link>https://garden.grantcuster.com/2024-08-04-20-44-38</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-08-04-20-44-38</guid>
-            <pubDate>Mon, 05 Aug 2024 00:44:38 GMT</pubDate>
+            <pubDate>Sun, 04 Aug 2024 20:44:38 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2024-08-02-12-42-40]]></title>
@@ -84,7 +92,7 @@ Hue winner kinda looks like thermal camera.
 ]]></description>
             <link>https://garden.grantcuster.com/2024-08-02-12-42-40</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-08-02-12-42-40</guid>
-            <pubDate>Fri, 02 Aug 2024 16:42:40 GMT</pubDate>
+            <pubDate>Fri, 02 Aug 2024 12:42:40 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2024-08-01-22-32-05]]></title>
@@ -94,7 +102,7 @@ Hue winner kinda looks like thermal camera.
 ]]></description>
             <link>https://garden.grantcuster.com/2024-08-01-22-32-05</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-08-01-22-32-05</guid>
-            <pubDate>Fri, 02 Aug 2024 02:32:05 GMT</pubDate>
+            <pubDate>Thu, 01 Aug 2024 22:32:05 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2024-08-01-18-18-51]]></title>
@@ -104,7 +112,7 @@ Hue winner kinda looks like thermal camera.
 ]]></description>
             <link>https://garden.grantcuster.com/2024-08-01-18-18-51</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-08-01-18-18-51</guid>
-            <pubDate>Thu, 01 Aug 2024 22:18:51 GMT</pubDate>
+            <pubDate>Thu, 01 Aug 2024 18:18:51 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2024-07-29-19-41-42]]></title>
@@ -119,7 +127,7 @@ Some debug images:
 ]]></description>
             <link>https://garden.grantcuster.com/2024-07-29-19-41-42</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-07-29-19-41-42</guid>
-            <pubDate>Mon, 29 Jul 2024 23:41:42 GMT</pubDate>
+            <pubDate>Mon, 29 Jul 2024 19:41:42 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2024-07-28-22-29-19]]></title>
@@ -134,7 +142,7 @@ Part of the question will be how to get people to look closer and realize the ar
 ]]></description>
             <link>https://garden.grantcuster.com/2024-07-28-22-29-19</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-07-28-22-29-19</guid>
-            <pubDate>Mon, 29 Jul 2024 02:29:19 GMT</pubDate>
+            <pubDate>Sun, 28 Jul 2024 22:29:19 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2024-07-28-20-16-02]]></title>
@@ -144,7 +152,7 @@ Part of the question will be how to get people to look closer and realize the ar
 ]]></description>
             <link>https://garden.grantcuster.com/2024-07-28-20-16-02</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-07-28-20-16-02</guid>
-            <pubDate>Mon, 29 Jul 2024 00:16:02 GMT</pubDate>
+            <pubDate>Sun, 28 Jul 2024 20:16:02 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2024-07-28-18-32-48]]></title>
@@ -154,7 +162,7 @@ Part of the question will be how to get people to look closer and realize the ar
 ]]></description>
             <link>https://garden.grantcuster.com/2024-07-28-18-32-48</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-07-28-18-32-48</guid>
-            <pubDate>Sun, 28 Jul 2024 22:32:48 GMT</pubDate>
+            <pubDate>Sun, 28 Jul 2024 18:32:48 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2024-07-28-11-47-10]]></title>
@@ -162,7 +170,7 @@ Part of the question will be how to get people to look closer and realize the ar
 ]]></description>
             <link>https://garden.grantcuster.com/2024-07-28-11-47-10</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-07-28-11-47-10</guid>
-            <pubDate>Sun, 28 Jul 2024 15:47:10 GMT</pubDate>
+            <pubDate>Sun, 28 Jul 2024 11:47:10 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2024-07-26-17-50-11]]></title>
@@ -172,7 +180,7 @@ Part of the question will be how to get people to look closer and realize the ar
 ]]></description>
             <link>https://garden.grantcuster.com/2024-07-26-17-50-11</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-07-26-17-50-11</guid>
-            <pubDate>Fri, 26 Jul 2024 21:50:11 GMT</pubDate>
+            <pubDate>Fri, 26 Jul 2024 17:50:11 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2024-07-25-19-44-00]]></title>
@@ -180,7 +188,7 @@ Part of the question will be how to get people to look closer and realize the ar
 ]]></description>
             <link>https://garden.grantcuster.com/2024-07-25-19-44-00</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-07-25-19-44-00</guid>
-            <pubDate>Thu, 25 Jul 2024 23:44:00 GMT</pubDate>
+            <pubDate>Thu, 25 Jul 2024 19:44:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2024-07-24-17-07-32]]></title>
@@ -191,7 +199,7 @@ Part of the question will be how to get people to look closer and realize the ar
 ]]></description>
             <link>https://garden.grantcuster.com/2024-07-24-17-07-32</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-07-24-17-07-32</guid>
-            <pubDate>Wed, 24 Jul 2024 21:07:32 GMT</pubDate>
+            <pubDate>Wed, 24 Jul 2024 17:07:32 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2024-07-24-16-56-56]]></title>
@@ -200,7 +208,7 @@ Redid the way I do threads on this garden. Now a separate file with newline sepa
 ]]></description>
             <link>https://garden.grantcuster.com/2024-07-24-16-56-56</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-07-24-16-56-56</guid>
-            <pubDate>Wed, 24 Jul 2024 20:56:56 GMT</pubDate>
+            <pubDate>Wed, 24 Jul 2024 16:56:56 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2024-07-08-10-19-55-About-Constraint-Systems]]></title>
@@ -247,7 +255,7 @@ Especially in the early days, I thought about the text editor Vim inrelation to 
 ]]></description>
             <link>https://garden.grantcuster.com/2024-07-08-10-19-55-About-Constraint-Systems</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-07-08-10-19-55-About-Constraint-Systems</guid>
-            <pubDate>Mon, 08 Jul 2024 14:19:55 GMT</pubDate>
+            <pubDate>Mon, 08 Jul 2024 10:19:55 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2024-06-30-19-58-04-Evolution-generation]]></title>
@@ -291,7 +299,7 @@ For my own prototypes, it makes me think about experimenting more with the kind 
 ]]></description>
             <link>https://garden.grantcuster.com/2024-06-30-19-58-04-Evolution-generation</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-06-30-19-58-04-Evolution-generation</guid>
-            <pubDate>Sun, 30 Jun 2024 23:58:04 GMT</pubDate>
+            <pubDate>Sun, 30 Jun 2024 19:58:04 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2024-06-30-16-34-30-Erosion]]></title>
@@ -305,7 +313,7 @@ GIFs are probably not going to be kind to this series.
 ]]></description>
             <link>https://garden.grantcuster.com/2024-06-30-16-34-30-Erosion</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-06-30-16-34-30-Erosion</guid>
-            <pubDate>Sun, 30 Jun 2024 20:34:30 GMT</pubDate>
+            <pubDate>Sun, 30 Jun 2024 16:34:30 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2024-06-28-11-37-36]]></title>
@@ -314,7 +322,7 @@ GIFs are probably not going to be kind to this series.
 ]]></description>
             <link>https://garden.grantcuster.com/2024-06-28-11-37-36</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-06-28-11-37-36</guid>
-            <pubDate>Fri, 28 Jun 2024 15:37:36 GMT</pubDate>
+            <pubDate>Fri, 28 Jun 2024 11:37:36 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2024-06-28-10-51-26]]></title>
@@ -324,7 +332,7 @@ I guess the risk is the usual spaghetti-hairball nodes-and-wires issues. I shoul
 ]]></description>
             <link>https://garden.grantcuster.com/2024-06-28-10-51-26</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-06-28-10-51-26</guid>
-            <pubDate>Fri, 28 Jun 2024 14:51:26 GMT</pubDate>
+            <pubDate>Fri, 28 Jun 2024 10:51:26 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2024-06-28-09-52-07-Thinking-about-codegen]]></title>
@@ -356,7 +364,7 @@ I need to pick some simple-but-not-too-simple task, and start working through th
 ]]></description>
             <link>https://garden.grantcuster.com/2024-06-28-09-52-07-Thinking-about-codegen</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-06-28-09-52-07-Thinking-about-codegen</guid>
-            <pubDate>Fri, 28 Jun 2024 13:52:07 GMT</pubDate>
+            <pubDate>Fri, 28 Jun 2024 09:52:07 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2024-06-25-20-53-23]]></title>
@@ -373,7 +381,7 @@ Stopping for tonight but I want to keep exploring and drilling into this.
 ]]></description>
             <link>https://garden.grantcuster.com/2024-06-25-20-53-23</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-06-25-20-53-23</guid>
-            <pubDate>Wed, 26 Jun 2024 00:53:23 GMT</pubDate>
+            <pubDate>Tue, 25 Jun 2024 20:53:23 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2024-06-25-16-42-08]]></title>
@@ -393,7 +401,7 @@ Of course, as was brought up at the event, there's nothing stopping you from doi
 ]]></description>
             <link>https://garden.grantcuster.com/2024-06-25-16-42-08</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-06-25-16-42-08</guid>
-            <pubDate>Tue, 25 Jun 2024 20:42:08 GMT</pubDate>
+            <pubDate>Tue, 25 Jun 2024 16:42:08 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2024-06-19-10-41-31-Knowing-how-to-do-things]]></title>
@@ -415,7 +423,7 @@ Kind of comforting.
 ]]></description>
             <link>https://garden.grantcuster.com/2024-06-19-10-41-31-Knowing-how-to-do-things</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-06-19-10-41-31-Knowing-how-to-do-things</guid>
-            <pubDate>Wed, 19 Jun 2024 14:41:31 GMT</pubDate>
+            <pubDate>Wed, 19 Jun 2024 10:41:31 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2024-06-17-20-21-46]]></title>
@@ -425,7 +433,7 @@ I'm happy I've gotten as far as I did on this blog but I'm not quite sure how to
 ]]></description>
             <link>https://garden.grantcuster.com/2024-06-17-20-21-46</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-06-17-20-21-46</guid>
-            <pubDate>Tue, 18 Jun 2024 00:21:46 GMT</pubDate>
+            <pubDate>Mon, 17 Jun 2024 20:21:46 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2024-06-17-08-55-11]]></title>
@@ -434,7 +442,7 @@ Writing this from the backyard using the AR glasses plus the mini PC in the cros
 ]]></description>
             <link>https://garden.grantcuster.com/2024-06-17-08-55-11</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-06-17-08-55-11</guid>
-            <pubDate>Mon, 17 Jun 2024 12:55:11 GMT</pubDate>
+            <pubDate>Mon, 17 Jun 2024 08:55:11 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2024-06-16-19-33-19-Inspiration-Meeting-Mr-Kid-Pix]]></title>
@@ -454,7 +462,7 @@ I can't fully articulate it! But it seems useful to keep returning to.
 ]]></description>
             <link>https://garden.grantcuster.com/2024-06-16-19-33-19-Inspiration-Meeting-Mr-Kid-Pix</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-06-16-19-33-19-Inspiration-Meeting-Mr-Kid-Pix</guid>
-            <pubDate>Sun, 16 Jun 2024 23:33:19 GMT</pubDate>
+            <pubDate>Sun, 16 Jun 2024 19:33:19 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2024-06-16-08-43-38]]></title>
@@ -462,7 +470,7 @@ I can't fully articulate it! But it seems useful to keep returning to.
 ]]></description>
             <link>https://garden.grantcuster.com/2024-06-16-08-43-38</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-06-16-08-43-38</guid>
-            <pubDate>Sun, 16 Jun 2024 12:43:38 GMT</pubDate>
+            <pubDate>Sun, 16 Jun 2024 08:43:38 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2024-06-16-07-42-21]]></title>
@@ -473,7 +481,7 @@ I have the fzf menu working now. It looks like this:
 ]]></description>
             <link>https://garden.grantcuster.com/2024-06-16-07-42-21</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-06-16-07-42-21</guid>
-            <pubDate>Sun, 16 Jun 2024 11:42:21 GMT</pubDate>
+            <pubDate>Sun, 16 Jun 2024 07:42:21 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2024-06-15-21-10-19]]></title>
@@ -481,7 +489,7 @@ I have the fzf menu working now. It looks like this:
 ]]></description>
             <link>https://garden.grantcuster.com/2024-06-15-21-10-19</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-06-15-21-10-19</guid>
-            <pubDate>Sun, 16 Jun 2024 01:10:19 GMT</pubDate>
+            <pubDate>Sat, 15 Jun 2024 21:10:19 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2024-06-15-08-16-42-Garden-TODO]]></title>
@@ -503,7 +511,7 @@ I have the fzf menu working now. It looks like this:
 ]]></description>
             <link>https://garden.grantcuster.com/2024-06-15-08-16-42-Garden-TODO</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-06-15-08-16-42-Garden-TODO</guid>
-            <pubDate>Sat, 15 Jun 2024 12:16:42 GMT</pubDate>
+            <pubDate>Sat, 15 Jun 2024 08:16:42 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2024-06-15-07-31-52-It-happened-to-me]]></title>
@@ -517,7 +525,7 @@ I changed from bash scripts to typescript scripts, which has been helpful for or
 ]]></description>
             <link>https://garden.grantcuster.com/2024-06-15-07-31-52-It-happened-to-me</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-06-15-07-31-52-It-happened-to-me</guid>
-            <pubDate>Sat, 15 Jun 2024 11:31:52 GMT</pubDate>
+            <pubDate>Sat, 15 Jun 2024 07:31:52 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2024-06-11-18-02-59]]></title>
@@ -525,7 +533,7 @@ I changed from bash scripts to typescript scripts, which has been helpful for or
 ]]></description>
             <link>https://garden.grantcuster.com/2024-06-11-18-02-59</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-06-11-18-02-59</guid>
-            <pubDate>Tue, 11 Jun 2024 22:02:59 GMT</pubDate>
+            <pubDate>Tue, 11 Jun 2024 18:02:59 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2024-06-11-16-27-39]]></title>
@@ -534,7 +542,7 @@ Most of the point of HTML is hyperlinks.
 ]]></description>
             <link>https://garden.grantcuster.com/2024-06-11-16-27-39</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-06-11-16-27-39</guid>
-            <pubDate>Tue, 11 Jun 2024 20:27:39 GMT</pubDate>
+            <pubDate>Tue, 11 Jun 2024 16:27:39 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2024-06-11-16-24-47]]></title>
@@ -545,7 +553,7 @@ I should probably move in the garden posts.
 ]]></description>
             <link>https://garden.grantcuster.com/2024-06-11-16-24-47</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-06-11-16-24-47</guid>
-            <pubDate>Tue, 11 Jun 2024 20:24:47 GMT</pubDate>
+            <pubDate>Tue, 11 Jun 2024 16:24:47 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2024-06-09-21-58-15]]></title>
@@ -555,7 +563,7 @@ Is this good syntax for a thread?
 ]]></description>
             <link>https://garden.grantcuster.com/2024-06-09-21-58-15</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-06-09-21-58-15</guid>
-            <pubDate>Mon, 10 Jun 2024 01:58:15 GMT</pubDate>
+            <pubDate>Sun, 09 Jun 2024 21:58:15 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2024-06-09-20-57-07]]></title>
@@ -564,7 +572,7 @@ Setting up my stream.
 ]]></description>
             <link>https://garden.grantcuster.com/2024-06-09-20-57-07</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-06-09-20-57-07</guid>
-            <pubDate>Mon, 10 Jun 2024 00:57:07 GMT</pubDate>
+            <pubDate>Sun, 09 Jun 2024 20:57:07 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2024-06-08-14-44-53-Blog-post-gif-slideshow]]></title>
@@ -574,7 +582,7 @@ Seeing the OG images I generate for this blog has me thinking. If you split a bl
 ]]></description>
             <link>https://garden.grantcuster.com/2024-06-08-14-44-53-Blog-post-gif-slideshow</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-06-08-14-44-53-Blog-post-gif-slideshow</guid>
-            <pubDate>Sat, 08 Jun 2024 18:44:53 GMT</pubDate>
+            <pubDate>Sat, 08 Jun 2024 14:44:53 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2024-06-08-14-22-12-How-this-works]]></title>
@@ -598,7 +606,7 @@ Basically want to put together a bunch of little web tool capabilities for mysel
 ]]></description>
             <link>https://garden.grantcuster.com/2024-06-08-14-22-12-How-this-works</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-06-08-14-22-12-How-this-works</guid>
-            <pubDate>Sat, 08 Jun 2024 18:22:12 GMT</pubDate>
+            <pubDate>Sat, 08 Jun 2024 14:22:12 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2024-06-07-09-01-29-Lenses]]></title>
@@ -619,7 +627,7 @@ One of my favorite explorations of this idea is China Mieville's The City & the 
 ]]></description>
             <link>https://garden.grantcuster.com/2024-06-07-09-01-29-Lenses</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-06-07-09-01-29-Lenses</guid>
-            <pubDate>Fri, 07 Jun 2024 13:01:29 GMT</pubDate>
+            <pubDate>Fri, 07 Jun 2024 09:01:29 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2024-06-05-20-27-27-Thread-focused-blog-idea]]></title>
@@ -633,7 +641,7 @@ Maybe structuring stuff in the code gets weird, but it's going to be small-scale
 ]]></description>
             <link>https://garden.grantcuster.com/2024-06-05-20-27-27-Thread-focused-blog-idea</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-06-05-20-27-27-Thread-focused-blog-idea</guid>
-            <pubDate>Thu, 06 Jun 2024 00:27:27 GMT</pubDate>
+            <pubDate>Wed, 05 Jun 2024 20:27:27 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2024-06-05-20-07-01-Garden-plans]]></title>
@@ -657,7 +665,7 @@ A thread focused blog... hmmm. Or would that just be overkill in terms of comple
 ]]></description>
             <link>https://garden.grantcuster.com/2024-06-05-20-07-01-Garden-plans</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-06-05-20-07-01-Garden-plans</guid>
-            <pubDate>Thu, 06 Jun 2024 00:07:01 GMT</pubDate>
+            <pubDate>Wed, 05 Jun 2024 20:07:01 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2024-06-03-20-53-00-Gif-recording-workflow]]></title>
@@ -679,7 +687,7 @@ Here's an example gif:
 ]]></description>
             <link>https://garden.grantcuster.com/2024-06-03-20-53-00-Gif-recording-workflow</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-06-03-20-53-00-Gif-recording-workflow</guid>
-            <pubDate>Tue, 04 Jun 2024 00:53:00 GMT</pubDate>
+            <pubDate>Mon, 03 Jun 2024 20:53:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2024-06-02-14-52-50-Is-everything-a-prototype]]></title>
@@ -709,7 +717,7 @@ But I think a lot of objects aspire to a feeling of 'completeness' that is unecc
 ]]></description>
             <link>https://garden.grantcuster.com/2024-06-02-14-52-50-Is-everything-a-prototype</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-06-02-14-52-50-Is-everything-a-prototype</guid>
-            <pubDate>Sun, 02 Jun 2024 18:52:50 GMT</pubDate>
+            <pubDate>Sun, 02 Jun 2024 14:52:50 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2024-05-31-07-16-31-Carving-at-the-joints]]></title>
@@ -737,7 +745,7 @@ I like the idea of 'looking for the joints' when I approach any system. I've bee
 ]]></description>
             <link>https://garden.grantcuster.com/2024-05-31-07-16-31-Carving-at-the-joints</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-05-31-07-16-31-Carving-at-the-joints</guid>
-            <pubDate>Fri, 31 May 2024 11:16:31 GMT</pubDate>
+            <pubDate>Fri, 31 May 2024 07:16:31 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2024-05-30-20-37-00]]></title>
@@ -764,7 +772,7 @@ There's also the arrows angle, doing something when you draw arrows...
 ]]></description>
             <link>https://garden.grantcuster.com/2024-05-30-20-37-00</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-05-30-20-37-00</guid>
-            <pubDate>Fri, 31 May 2024 00:37:00 GMT</pubDate>
+            <pubDate>Thu, 30 May 2024 20:37:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2024-05-29-22-11-34-I-got-the-bluetooth-paired]]></title>
@@ -776,7 +784,7 @@ Am I writing too many posts now? Still getting a feel for this thing. It is fun 
 ]]></description>
             <link>https://garden.grantcuster.com/2024-05-29-22-11-34-I-got-the-bluetooth-paired</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-05-29-22-11-34-I-got-the-bluetooth-paired</guid>
-            <pubDate>Thu, 30 May 2024 02:11:34 GMT</pubDate>
+            <pubDate>Wed, 29 May 2024 22:11:34 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2024-05-29-20-12-07-Obsessive-bluetooth-pairing]]></title>
@@ -796,7 +804,7 @@ I think this general pattern has probably served me well in many computer and li
 ]]></description>
             <link>https://garden.grantcuster.com/2024-05-29-20-12-07-Obsessive-bluetooth-pairing</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-05-29-20-12-07-Obsessive-bluetooth-pairing</guid>
-            <pubDate>Thu, 30 May 2024 00:12:07 GMT</pubDate>
+            <pubDate>Wed, 29 May 2024 20:12:07 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2024-05-28-07-31-35-Writing-on-the-couch]]></title>
@@ -812,7 +820,7 @@ I want to get clipboard history sorted today. Also want to make the nice gif rec
 ]]></description>
             <link>https://garden.grantcuster.com/2024-05-28-07-31-35-Writing-on-the-couch</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-05-28-07-31-35-Writing-on-the-couch</guid>
-            <pubDate>Tue, 28 May 2024 11:31:35 GMT</pubDate>
+            <pubDate>Tue, 28 May 2024 07:31:35 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2024-05-26-20-43-14-Writing-on-the-porch]]></title>
@@ -834,7 +842,7 @@ The battery / glasses / mini PC combo was recommended on Reddit and I'm happy it
 ]]></description>
             <link>https://garden.grantcuster.com/2024-05-26-20-43-14-Writing-on-the-porch</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-05-26-20-43-14-Writing-on-the-porch</guid>
-            <pubDate>Mon, 27 May 2024 00:43:14 GMT</pubDate>
+            <pubDate>Sun, 26 May 2024 20:43:14 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2024-05-26-12-21-28-Today-in-computer-projects]]></title>
@@ -846,7 +854,7 @@ Mini PC: I'm working on getting a mini PC set up with the my current go-to Ubunt
 ]]></description>
             <link>https://garden.grantcuster.com/2024-05-26-12-21-28-Today-in-computer-projects</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-05-26-12-21-28-Today-in-computer-projects</guid>
-            <pubDate>Sun, 26 May 2024 16:21:28 GMT</pubDate>
+            <pubDate>Sun, 26 May 2024 12:21:28 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2024-05-25-16-28-31-Posting-from-a-mac]]></title>
@@ -858,7 +866,7 @@ Edit: also had to replace a `grep P` with a `sed`.
 ]]></description>
             <link>https://garden.grantcuster.com/2024-05-25-16-28-31-Posting-from-a-mac</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-05-25-16-28-31-Posting-from-a-mac</guid>
-            <pubDate>Sat, 25 May 2024 20:28:31 GMT</pubDate>
+            <pubDate>Sat, 25 May 2024 16:28:31 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2024-05-25-15-17-44-Mic-check]]></title>
@@ -872,7 +880,7 @@ I want to keep things short.
 ]]></description>
             <link>https://garden.grantcuster.com/2024-05-25-15-17-44-Mic-check</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-05-25-15-17-44-Mic-check</guid>
-            <pubDate>Sat, 25 May 2024 19:17:44 GMT</pubDate>
+            <pubDate>Sat, 25 May 2024 15:17:44 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2024-04-15-20-35-17-Lowstakes-physical-materials]]></title>
@@ -894,7 +902,7 @@ Compared to digital constructions, there is a higher cost to starting over with 
 ]]></description>
             <link>https://garden.grantcuster.com/2024-04-15-20-35-17-Lowstakes-physical-materials</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-04-15-20-35-17-Lowstakes-physical-materials</guid>
-            <pubDate>Tue, 16 Apr 2024 00:35:17 GMT</pubDate>
+            <pubDate>Mon, 15 Apr 2024 20:35:17 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2023-10-09-10-38-38-What-did-pokemon-do]]></title>
@@ -919,7 +927,7 @@ How much can you put that difference down to the shift in combat? There are defi
 ]]></description>
             <link>https://garden.grantcuster.com/2023-10-09-10-38-38-What-did-pokemon-do</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2023-10-09-10-38-38-What-did-pokemon-do</guid>
-            <pubDate>Mon, 09 Oct 2023 14:38:38 GMT</pubDate>
+            <pubDate>Mon, 09 Oct 2023 10:38:38 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2022-09-04-09-58-24-Expressive-tools-for-thought]]></title>
@@ -959,7 +967,7 @@ I think expressivity has been under-addresssed. I also think html and CSS have a
 ]]></description>
             <link>https://garden.grantcuster.com/2022-09-04-09-58-24-Expressive-tools-for-thought</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2022-09-04-09-58-24-Expressive-tools-for-thought</guid>
-            <pubDate>Sun, 04 Sep 2022 13:58:24 GMT</pubDate>
+            <pubDate>Sun, 04 Sep 2022 09:58:24 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2020-07-28-21-37-28-Bushido-Blade-2-a-design-appreciationi]]></title>
@@ -977,7 +985,7 @@ Bushido Blade 2, like most of the games I played, was well-reviewed but never re
 ]]></description>
             <link>https://garden.grantcuster.com/2020-07-28-21-37-28-Bushido-Blade-2-a-design-appreciationi</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2020-07-28-21-37-28-Bushido-Blade-2-a-design-appreciationi</guid>
-            <pubDate>Wed, 29 Jul 2020 01:37:28 GMT</pubDate>
+            <pubDate>Tue, 28 Jul 2020 21:37:28 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2020-07-12-21-24-56-Swapping-color-schemes-across-all-terminals-and-Vim-with-Pywal-and-Base16]]></title>
@@ -1127,7 +1135,7 @@ Part of why I'm exploring Linux and scripting is to get a feel for how software 
 ]]></description>
             <link>https://garden.grantcuster.com/2020-07-12-21-24-56-Swapping-color-schemes-across-all-terminals-and-Vim-with-Pywal-and-Base16</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2020-07-12-21-24-56-Swapping-color-schemes-across-all-terminals-and-Vim-with-Pywal-and-Base16</guid>
-            <pubDate>Mon, 13 Jul 2020 01:24:56 GMT</pubDate>
+            <pubDate>Sun, 12 Jul 2020 21:24:56 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2020-06-25-14-20-43-Vimlike]]></title>
@@ -1151,7 +1159,7 @@ There's a whole series of [Vim-like programs](https://reversed.top/2016-08-13/bi
 ]]></description>
             <link>https://garden.grantcuster.com/2020-06-25-14-20-43-Vimlike</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2020-06-25-14-20-43-Vimlike</guid>
-            <pubDate>Thu, 25 Jun 2020 18:20:43 GMT</pubDate>
+            <pubDate>Thu, 25 Jun 2020 14:20:43 GMT</pubDate>
         </item>
     </channel>
 </rss>
