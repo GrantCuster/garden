@@ -1,6 +1,3 @@
+Finally wearing my AR glasses combo out on the commute. Made some decent progress trying to paginate this blog today. Pushed the scale up to 2x which is helping. Also think I've got a good base system set up (refined from reinstalling across a bunch of computers of all the time) and that's helping.
 
-Ambient TV is on the wall now.
-
-![Flipping through channels on the ambient TV setup](https://grant-uploader.s3.amazonaws.com/2024-08-19-18-18-52.gif)
-
-https://garden.grantcuster.com/t-2024-08-19-09-55-41-Ambient-TV/
+https://garden.grantcuster.com/2024-08-20-19-33-27/
