@@ -86,10 +86,12 @@ export function MakePageHead({
   title,
   description,
   image_link,
+  optional_head,
 }: {
   title: string;
   description: string;
   image_link: string;
+  optional_head?: string;
 }) {
   return html`<title>${title} - Grant's Garden</title>
     <meta name="description" content="${description}" />
@@ -98,7 +100,8 @@ export function MakePageHead({
     <meta property="og:image" content="${image_link}" />
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:image" content="${image_link}" />
-    <script src="/index.js"></script>`;
+    <script src="/index.js"></script>
+    ${optional_head ? optional_head : ""}`;
 }
 
 export function MakeHeader({ isHome }: { isHome: boolean }) {
