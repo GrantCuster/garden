@@ -16,11 +16,10 @@ import {
 } from "./src/templateMakers";
 import { chromium } from "playwright";
 // @ts-ignore
-// import RSS from "rss";
+import RSS from "rss";
 
 import { Browser, Page } from "playwright";
 import { uploadFileToS3 } from "./upload_image";
-import { unzip } from "zlib";
 
 const buildImages = false;
 
@@ -231,8 +230,6 @@ async function generateIndexContent({
   markdownFiles: string[];
   threads: string[][];
 }) {
-  let postsContent = "";
-
   let currentMonth = "";
   let monthsLookup: Record<string, number> = {};
 
@@ -263,7 +260,9 @@ async function generateIndexContent({
   );
 
   for (const activeMonth of activeMonths) {
+    let postsContent = "<div class='posts'>";
     const monthName = Object.keys(activeMonth)[0];
+
     const files = Object.values(activeMonth)[0];
     for (const file of files) {
       const filePath = path.join(inputDir, file);
@@ -404,23 +403,31 @@ async function generateIndexContent({
         );
       }
     }
+
+    postsContent += "</div>";
+
     const activeMonthNames = Object.values(activeMonths).map(
       (section) => Object.keys(section)[0],
     );
     const monthIndex = activeMonthNames.indexOf(monthName);
     const targetName = monthIndex === 0 ? "index.html" : monthName + ".html";
-    // console.log(postsContent)
-    console.log(monthIndex);
     const script = `const monthNames = ${JSON.stringify(activeMonthNames)};
-console.log(monthNames);
-let index = 0;
+let index = window.location.pathname === '/' ? 0 : monthNames.indexOf(window.location.pathname)
 window.addEventListener('scroll', (e) => {
   if (document.body.scrollTop + window.innerHeight > document.body.scrollHeight - 200) {
-      ij
-    console.log('load it')
+    index++;
+    if (index < monthNames.length) {
+      const target = monthNames[index];
+      const url = window.location.origin + '/' + target + '.html';
+      const content = fetch(url).then(response => response.text()).then(text => {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(text, 'text/html');
+        const newPosts = doc.querySelector('.posts');
+        document.querySelector('.posts').appendChild(newPosts);
+      })
+    }
   }
 });`;
-    console.log(script);
 
     await fs.writeFile(path.join(outputDir, "infinite.js"), script, "utf-8");
 
@@ -440,48 +447,48 @@ type RSSPost = {
   date: string;
 };
 
-// async function generateRSS({ markdownFiles }: { markdownFiles: string[] }) {
-//   const posts: RSSPost[] = [];
-//
-//   function parseCustomDate(dateString: string): Date {
-//     const [year, month, day, hour, minute, second] = dateString
-//       .split("-")
-//       .map(Number);
-//     // Note: In JavaScript, months are 0-indexed, so we need to subtract 1 from the month.
-//     return new Date(year, month - 1, day, hour, minute, second);
-//   }
-//   for (const file of markdownFiles) {
-//     const filePath = path.join(inputDir, file);
-//     const basename = path.basename(file, ".md");
-//     const markdownContent = await fs.readFile(filePath, "utf-8");
-//     posts.push({
-//       title: basename,
-//       url: `https://garden.grantcuster.com/${basename}`,
-//       description: markdownContent,
-//       date: parseCustomDate(basename).toUTCString(),
-//     });
-//   }
-//
-//   const feed = new RSS({
-//     title: "Grant's Garden",
-//     description: "Work and writing in progress",
-//     feed_url: "https://garden.grantcuster.com/rss.xml",
-//     site_url: "https://garden.grantcuster.com",
-//     image_url: "https://grant-uploader.s3.amazonaws.com/og-images/index.png",
-//     managingEditor: "Grant Custer",
-//     pubDate: new Date().toUTCString(),
-//   });
-//
-//   posts.forEach((post) => {
-//     feed.item(post);
-//   });
-//
-//   await fs.writeFile(
-//     path.join(outputDir, "rss.xml"),
-//     feed.xml({ indent: true }),
-//     "utf-8",
-//   );
-// }
+async function generateRSS({ markdownFiles }: { markdownFiles: string[] }) {
+  const posts: RSSPost[] = [];
+
+  function parseCustomDate(dateString: string): Date {
+    const [year, month, day, hour, minute, second] = dateString
+      .split("-")
+      .map(Number);
+    // Note: In JavaScript, months are 0-indexed, so we need to subtract 1 from the month.
+    return new Date(year, month - 1, day, hour, minute, second);
+  }
+  for (const file of markdownFiles) {
+    const filePath = path.join(inputDir, file);
+    const basename = path.basename(file, ".md");
+    const markdownContent = await fs.readFile(filePath, "utf-8");
+    posts.push({
+      title: basename,
+      url: `https://garden.grantcuster.com/${basename}`,
+      description: markdownContent,
+      date: parseCustomDate(basename).toUTCString(),
+    });
+  }
+
+  const feed = new RSS({
+    title: "Grant's Garden",
+    description: "Work and writing in progress",
+    feed_url: "https://garden.grantcuster.com/rss.xml",
+    site_url: "https://garden.grantcuster.com",
+    image_url: "https://grant-uploader.s3.amazonaws.com/og-images/index.png",
+    managingEditor: "Grant Custer",
+    pubDate: new Date().toUTCString(),
+  });
+
+  posts.forEach((post) => {
+    feed.item(post);
+  });
+
+  await fs.writeFile(
+    path.join(outputDir, "rss.xml"),
+    feed.xml({ indent: true }),
+    "utf-8",
+  );
+}
 
 async function saveIndexContent({
   optionHead,

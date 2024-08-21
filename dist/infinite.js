@@ -1,10 +1,17 @@
 const monthNames = ["2024-08","2024-07","2024-06","2024-05","2024-04","2023-10","2022-09","2020-07","2020-06"];
-console.log(monthNames);
-let index = 0;
+let index = 8;
 window.addEventListener('scroll', (e) => {
-console.log(document.body.scrollTop + window.innerHeight)
-console.log(document.body.scrollHeight)
-if (document.body.scrollTop + window.innerHeight > document.body.scrollHeight - 100) {
-console.log('load it')
-}
+  if (document.body.scrollTop + window.innerHeight > document.body.scrollHeight - 200) {
+    index++;
+    if (index < monthNames.length) {
+      const target = monthNames[index];
+      const url = window.location.origin + '/' + target + '.html';
+      const content = fetch(url).then(response => response.text()).then(text => {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(text, 'text/html');
+        const newPosts = doc.querySelector('.posts');
+        document.querySelector('.posts').appendChild(newPosts);
+      })
+    }
+  }
 });
