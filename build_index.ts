@@ -20,6 +20,7 @@ import { chromium } from "playwright";
 
 import { Browser, Page } from "playwright";
 import { uploadFileToS3 } from "./upload_image";
+import { unzip } from "zlib";
 
 const buildImages = false;
 
@@ -408,9 +409,24 @@ async function generateIndexContent({
     );
     const monthIndex = activeMonthNames.indexOf(monthName);
     const targetName = monthIndex === 0 ? "index.html" : monthName + ".html";
-    console.log(postsContent)
+    // console.log(postsContent)
+    console.log(monthIndex);
+    const script = `const monthNames = ${JSON.stringify(activeMonthNames)};
+console.log(monthNames);
+let index = 0;
+window.addEventListener('scroll', (e) => {
+  if (document.body.scrollTop + window.innerHeight > document.body.scrollHeight - 200) {
+      ij
+    console.log('load it')
+  }
+});`;
+    console.log(script);
+
+    await fs.writeFile(path.join(outputDir, "infinite.js"), script, "utf-8");
+
     await saveIndexContent({
-      postsContent,
+      optionHead: `<script src="/infinite.js"></script>`,
+      postsContent: postsContent,
       target: targetName,
     });
     console.log(`Index file created: ${targetName}`);
@@ -468,9 +484,11 @@ type RSSPost = {
 // }
 
 async function saveIndexContent({
+  optionHead,
   postsContent,
   target,
 }: {
+  optionHead?: string;
   postsContent: string;
   target: string;
 }) {
@@ -479,6 +497,7 @@ async function saveIndexContent({
       title: "Home",
       description: "Work and writing in progress",
       image_link: "https://grant-uploader.s3.amazonaws.com/og-images/index.png",
+      optional_head: optionHead,
     }),
     content: MakeHeader({ isHome: true }) + postsContent,
   });
