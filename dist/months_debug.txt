@@ -74,6 +74,7 @@
 2022-09-04-09-58-24-Expressive-tools-for-thought.md
 
 2020-07
+2020-07-30-10-34-10-Automadraw-release-notes.md
 2020-07-28-21-37-28-Bushido-Blade-2-a-design-appreciationi.md
 2020-07-12-21-24-56-Swapping-color-schemes-across-all-terminals-and-Vim-with-Pywal-and-Base16.md
 
