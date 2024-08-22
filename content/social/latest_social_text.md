@@ -2,4 +2,4 @@ I think this is actually the 'right' progressive pixelation. Had to step away fo
 
 ![Pixelated sloth redux](https://grant-uploader.s3.amazonaws.com/2024-08-21-20-44-01-2000.jpg)
 
-https://garden.grantcuster.com/2024-08-21-20-44-19/
+https://garden.grantcuster.com/t-2024-07-28-18-32-48/
