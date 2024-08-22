@@ -1,6 +1,3 @@
-# The benefits of limitations in application launchers
+Got month-based index pages working here. Along with infinite scroll loading. Still want to get incremental rebuild working. Then I'll feel better about doing lots of little posts here.
 
-In my Linux set-up, I use dmenu as an application launcher. dmenu is basically autocomplete for applications and scripts. In many ways, it's not so different from launching things using Spotlight on a Mac.
-
-![Opening 750words.com with dmenu and a launcher script.](https://grant-uploader.s3.amazonaws.com/2024-08-21-20-15-51.gif)
-https://garden.grantcuster.com/2024-08-21-20-15-06-The-benefits-of-limitations-in-application-launchers/
+https://garden.grantcuster.com/2024-08-21-19-55-38/
