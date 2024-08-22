@@ -1,5 +1,4 @@
 2024-08
-2024-08-21-20-15-06-The-benefits-of-limitations-in-application-launchers.md
 2024-08-21-19-55-38.md
 2024-08-20-19-33-27.md
 2024-08-19-18-17-26.md
@@ -75,6 +74,7 @@
 2022-09-04-09-58-24-Expressive-tools-for-thought.md
 
 2020-09
+2020-09-12-12-09-04-The-benefits-of-limitations-in-application-launchers.md
 2020-09-01-11-50-28-Sift-release-notes.md
 
 2020-08
