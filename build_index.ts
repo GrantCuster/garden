@@ -370,7 +370,9 @@ async function buildMonthIndex(
 
   const monthIndex = activeMonthNames.indexOf(monthName);
   const targetName = monthIndex === 0 ? "index.html" : monthName + ".html";
-  const script = `const monthNames = ${JSON.stringify(activeMonthNames)};
+
+  if (fullRebuild) {
+    const script = `const monthNames = ${JSON.stringify(activeMonthNames)};
 let index = window.location.pathname === '/' ? 0 : monthNames.indexOf(window.location.pathname)
 window.addEventListener('scroll', (e) => {
   if (document.body.scrollTop + window.innerHeight > document.body.scrollHeight - 200) {
@@ -387,8 +389,8 @@ window.addEventListener('scroll', (e) => {
     }
   }
 });`;
-
-  await fs.writeFile(path.join(outputDir, "infinite.js"), script, "utf-8");
+    await fs.writeFile(path.join(outputDir, "infinite.js"), script, "utf-8");
+  }
 
   await saveIndexContent({
     optionHead: `<script src="/infinite.js"></script>`,
@@ -506,7 +508,7 @@ async function saveIndexContent({
   await fs.writeFile(path.join(outputDir, target), formattedIndex);
 }
 
-const incrementalRebuild = process.argv[2] && process.argv[2] === 'incremental';
+const incrementalRebuild = process.argv[2] && process.argv[2] === "incremental";
 const fullRebuild = !incrementalRebuild;
 const main = async () => {
   try {
@@ -587,7 +589,7 @@ const main = async () => {
           }
         }
         if (threadTouched) {
-          console.log('build thread')
+          console.log("build thread");
           await buildThread({ files: thread });
         }
       } else {
