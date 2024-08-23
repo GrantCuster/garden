@@ -7,6 +7,7 @@ HISTORY_FILE="/tmp/menu_history"
 declare -A COMMANDS=(
     ["deploy"]="npm run deploy"
     ["build"]="npm run build"
+    ["incremental"]="npm run build incremental"
     ["new_post"]="bash new_post.sh"
     ["dev"]="python3 -m http.server --directory dist"
     ["edit"]="nvim ."

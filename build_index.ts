@@ -18,7 +18,7 @@ import { chromium } from "playwright";
 // @ts-ignore
 import RSS from "rss";
 
-import { Browser, Page } from "playwright";
+import { Page } from "playwright";
 import { uploadFileToS3 } from "./upload_image";
 
 const buildImages = false;
@@ -118,9 +118,7 @@ const threadInputDir = "content/threads";
 const outputDir = "dist";
 const cssFile = "index.css";
 const jsFile = "index.js";
-const indexFile = "index.html";
 const socialText = "content/social/latest_social_text.md";
-const monthsDebug = "months_debug.txt";
 
 // in each month, for a thread, include the last two posts (last being last in that month)
 
@@ -130,6 +128,7 @@ async function buildNonThreadPages({
   markdownFiles: string[];
 }) {
   for (const file of markdownFiles) {
+    console.log(file);
     await buildStandalonePage({ file, optionalRedirect: null });
   }
 }
@@ -223,195 +222,155 @@ async function buildThread({ files }: { files: string[] }) {
   await fs.writeFile(path.join(dirName, "index.html"), formattedContent);
 }
 
-async function generateIndexContent({
-  markdownFiles,
-  threads,
-}: {
-  markdownFiles: string[];
-  threads: string[][];
-}) {
-  let currentMonth = "";
-  let monthsLookup: Record<string, number> = {};
+async function buildMonthIndex(
+  monthName: string,
+  files: string[],
+  threads: string[][],
+  activeMonthNames: string[],
+) {
+  let postsContent = "<div class='posts'>";
 
-  const activeMonths: Record<string, string[]>[] = [];
-  for (const file of markdownFiles) {
+  const splits = monthName.split("-");
+  const year = splits[0];
+  const month = Number(splits[1]) - 1;
+  const postCount = files.length;
+  postsContent += MakeDateHeader({
+    content: `${longMonthsOfYear[month]} ${year} &middot; ${postCount} post${postCount > 1 ? "s" : ""}`,
+  });
+
+  for (const file of files) {
+    const filePath = path.join(inputDir, file);
     const basename = path.basename(file, ".md");
-    const splits = basename.split("-");
-    const yearMonth = splits.slice(0, 2).join("-");
-    if (monthsLookup[yearMonth] === undefined) {
-      monthsLookup[yearMonth] = 1;
-      activeMonths.push({ [yearMonth]: [file] });
-    } else {
-      monthsLookup[yearMonth] = monthsLookup[yearMonth] + 1;
-      activeMonths[activeMonths.length - 1][yearMonth].push(file);
+
+    const text = await fs.readFile(filePath, "utf-8");
+    let destination = basename;
+
+    const destinationFunc = `function navigate() { window.location = '${destination}' }; navigate();`;
+    const paragraphs = text.split("\n\n");
+    let truncated = false;
+    let truncatedText = text;
+    if (paragraphs.length > 3) {
+      truncated = true;
+      truncatedText = paragraphs.slice(0, 3).join("\n\n");
     }
-  }
 
-  await fs.writeFile(
-    path.join(outputDir, monthsDebug),
-    activeMonths
-      .map((section) => {
-        const name = Object.keys(section)[0];
-        const files = section[name].join("\n");
-        return name + "\n" + files;
-      })
-      .join("\n\n"),
-    "utf-8",
-  );
-
-  for (const activeMonth of activeMonths) {
-    let postsContent = "<div class='posts'>";
-    const monthName = Object.keys(activeMonth)[0];
-
-    const files = Object.values(activeMonth)[0];
-    for (const file of files) {
-      const filePath = path.join(inputDir, file);
-      const basename = path.basename(file, ".md");
-
-      const text = await fs.readFile(filePath, "utf-8");
-      let destination = basename;
-
-      const destinationFunc = `function navigate() { window.location = '${destination}' }; navigate();`;
-      const paragraphs = text.split("\n\n");
-      let truncated = false;
-      let truncatedText = text;
-      if (paragraphs.length > 3) {
-        truncated = true;
-        truncatedText = paragraphs.slice(0, 3).join("\n\n");
-      }
-
-      if (currentMonth !== basename.slice(0, 7)) {
-        const splits = basename.split("-");
-        const yearMonth = splits.slice(0, 2).join("-");
-        const year = splits[0];
-        const month = Number(splits[1]) - 1;
-        const postCount = monthsLookup[yearMonth];
-        postsContent += MakeDateHeader({
-          content: `${longMonthsOfYear[month]} ${year} &middot; ${postCount} post${postCount > 1 ? "s" : ""}`,
-        });
-        currentMonth = basename.slice(0, 7);
-      }
-
-      let link = "";
-      let threadContent = "";
-      let threadStamp = "";
-      let isInThread = false;
-      let isLastInThread = false;
-      for (const thread of threads) {
-        // only check if last because only show thread once in index
-        if (thread.includes(file)) {
-          isInThread = true;
-          if (thread[thread.length - 1] !== file) {
-            break;
-          }
-          isLastInThread = true;
-          const threadBase = "t-" + path.basename(thread[0], ".md");
-          link = threadBase;
-
-          let truncatedThread: string[] = [];
-
-          // Last and second to last
-          truncatedThread.push(thread[thread.length - 2]);
-          truncatedThread.push(thread[thread.length - 1]);
-
-          if (thread.length > 2) {
-            threadContent += MakeThreadTruncated({
-              content:
-                "1" + (thread.length > 3 ? "-" + (thread.length - 2) : ""),
-            });
-          }
-
-          for (const file of truncatedThread) {
-            const filePath = path.join(inputDir, file);
-            const basename = path.basename(file, ".md");
-            const index = thread.indexOf(file);
-
-            const text = await fs.readFile(filePath, "utf-8");
-            let destination = threadBase + "#" + basename;
-
-            const destinationFunc = `function navigate() { window.location = '${destination}' }; navigate();`;
-            const paragraphs = text.split("\n\n");
-            let truncated = false;
-            let truncatedText = text;
-            if (paragraphs.length > 3) {
-              truncated = true;
-              truncatedText = paragraphs.slice(0, 3).join("\n\n");
-            }
-
-            const generatedHtmlContent = execSync(
-              `pandoc -f markdown-smart-markdown_in_html_blocks+raw_html -t html`,
-              {
-                input: truncatedText,
-              },
-            ).toString();
-
-            const timestamp = formatDateString(basename);
-
-            const postContent = MakePostLink({
-              postCount: index + 1,
-              timestamp: timestamp,
-              htmlContent: generatedHtmlContent,
-              truncated,
-              postlinkFunction: destinationFunc,
-            });
-            threadContent += postContent;
-          }
-
-          threadStamp = formatDateString(
-            path.basename(thread[thread.length - 1], ".md"),
-          );
+    let link = "";
+    let threadContent = "";
+    let threadStamp = "";
+    let isInThread = false;
+    let isLastInThread = false;
+    for (const thread of threads) {
+      // only check if last because only show thread once in index
+      if (thread.includes(file)) {
+        isInThread = true;
+        if (thread[thread.length - 1] !== file) {
           break;
         }
-      }
+        isLastInThread = true;
+        const threadBase = "t-" + path.basename(thread[0], ".md");
+        link = threadBase;
 
-      if (isInThread) {
-        if (isLastInThread) {
-          // only add to index for last
-          postsContent += MakeThreadLink({
-            timestamp: threadStamp,
-            htmlContent: threadContent,
+        let truncatedThread: string[] = [];
+
+        // Last and second to last
+        truncatedThread.push(thread[thread.length - 2]);
+        truncatedThread.push(thread[thread.length - 1]);
+
+        if (thread.length > 2) {
+          threadContent += MakeThreadTruncated({
+            content: "1" + (thread.length > 3 ? "-" + (thread.length - 2) : ""),
           });
         }
-      } else {
-        // is not in thread
-        const generatedHtmlContent = execSync(
-          `pandoc -f markdown-smart-markdown_in_html_blocks+raw_html -t html`,
-          {
-            input: truncatedText,
-          },
-        ).toString();
 
-        const timestamp = formatDateString(basename);
+        for (const file of truncatedThread) {
+          const filePath = path.join(inputDir, file);
+          const basename = path.basename(file, ".md");
+          const index = thread.indexOf(file);
 
-        const postContent = MakePostLink({
-          timestamp,
-          htmlContent: generatedHtmlContent,
-          truncated,
-          postlinkFunction: destinationFunc,
-        });
+          const text = await fs.readFile(filePath, "utf-8");
+          let destination = threadBase + "#" + basename;
 
-        link = destination;
+          const destinationFunc = `function navigate() { window.location = '${destination}' }; navigate();`;
+          const paragraphs = text.split("\n\n");
+          let truncated = false;
+          let truncatedText = text;
+          if (paragraphs.length > 3) {
+            truncated = true;
+            truncatedText = paragraphs.slice(0, 3).join("\n\n");
+          }
 
-        postsContent += postContent;
-      }
+          const generatedHtmlContent = execSync(
+            `pandoc -f markdown-smart-markdown_in_html_blocks+raw_html -t html`,
+            {
+              input: truncatedText,
+            },
+          ).toString();
 
-      if (markdownFiles.indexOf(file) === 0) {
-        await fs.writeFile(
-          socialText,
-          truncatedText + "\n" + "https://garden.grantcuster.com/" + link + "/",
-          "utf-8",
+          const timestamp = formatDateString(basename);
+
+          const postContent = MakePostLink({
+            postCount: index + 1,
+            timestamp: timestamp,
+            htmlContent: generatedHtmlContent,
+            truncated,
+            postlinkFunction: destinationFunc,
+          });
+          threadContent += postContent;
+        }
+
+        threadStamp = formatDateString(
+          path.basename(thread[thread.length - 1], ".md"),
         );
+        break;
       }
     }
 
-    postsContent += "</div>";
+    if (isInThread) {
+      if (isLastInThread) {
+        // only add to index for last
+        postsContent += MakeThreadLink({
+          timestamp: threadStamp,
+          htmlContent: threadContent,
+        });
+      }
+    } else {
+      // is not in thread
+      const generatedHtmlContent = execSync(
+        `pandoc -f markdown-smart-markdown_in_html_blocks+raw_html -t html`,
+        {
+          input: truncatedText,
+        },
+      ).toString();
 
-    const activeMonthNames = Object.values(activeMonths).map(
-      (section) => Object.keys(section)[0],
-    );
-    const monthIndex = activeMonthNames.indexOf(monthName);
-    const targetName = monthIndex === 0 ? "index.html" : monthName + ".html";
-    const script = `const monthNames = ${JSON.stringify(activeMonthNames)};
+      const timestamp = formatDateString(basename);
+
+      const postContent = MakePostLink({
+        timestamp,
+        htmlContent: generatedHtmlContent,
+        truncated,
+        postlinkFunction: destinationFunc,
+      });
+
+      link = destination;
+
+      postsContent += postContent;
+    }
+
+    // TODO redo social text
+    // if (markdownFiles.indexOf(file) === 0) {
+    //   await fs.writeFile(
+    //     socialText,
+    //     truncatedText + "\n" + "https://garden.grantcuster.com/" + link + "/",
+    //     "utf-8",
+    //   );
+    // }
+  }
+
+  postsContent += "</div>";
+
+  const monthIndex = activeMonthNames.indexOf(monthName);
+  const targetName = monthIndex === 0 ? "index.html" : monthName + ".html";
+  const script = `const monthNames = ${JSON.stringify(activeMonthNames)};
 let index = window.location.pathname === '/' ? 0 : monthNames.indexOf(window.location.pathname)
 window.addEventListener('scroll', (e) => {
   if (document.body.scrollTop + window.innerHeight > document.body.scrollHeight - 200) {
@@ -429,14 +388,47 @@ window.addEventListener('scroll', (e) => {
   }
 });`;
 
-    await fs.writeFile(path.join(outputDir, "infinite.js"), script, "utf-8");
+  await fs.writeFile(path.join(outputDir, "infinite.js"), script, "utf-8");
 
-    await saveIndexContent({
-      optionHead: `<script src="/infinite.js"></script>`,
-      postsContent: postsContent,
-      target: targetName,
-    });
-    console.log(`Index file created: ${targetName}`);
+  await saveIndexContent({
+    optionHead: `<script src="/infinite.js"></script>`,
+    postsContent: postsContent,
+    target: targetName,
+  });
+  console.log(`Index file created: ${targetName}`);
+}
+
+async function generateIndexContent({
+  markdownFiles,
+  threads,
+}: {
+  markdownFiles: string[];
+  threads: string[][];
+}) {
+  let monthsLookup: Record<string, number> = {};
+
+  const activeMonths: Record<string, string[]>[] = [];
+  for (const file of markdownFiles) {
+    const basename = path.basename(file, ".md");
+    const splits = basename.split("-");
+    const yearMonth = splits.slice(0, 2).join("-");
+    if (monthsLookup[yearMonth] === undefined) {
+      monthsLookup[yearMonth] = 1;
+      activeMonths.push({ [yearMonth]: [file] });
+    } else {
+      monthsLookup[yearMonth] = monthsLookup[yearMonth] + 1;
+      activeMonths[activeMonths.length - 1][yearMonth].push(file);
+    }
+  }
+
+  const activeMonthNames = Object.values(activeMonths).map(
+    (section) => Object.keys(section)[0],
+  );
+
+  for (const activeMonth of activeMonths) {
+    const monthName = Object.keys(activeMonth)[0];
+    const files = Object.values(activeMonth)[0];
+    buildMonthIndex(monthName, files, threads, activeMonthNames);
   }
 }
 
@@ -514,19 +506,52 @@ async function saveIndexContent({
   await fs.writeFile(path.join(outputDir, target), formattedIndex);
 }
 
+const incrementalRebuild = process.argv[2] && process.argv[2] === 'incremental';
+const fullRebuild = !incrementalRebuild;
 const main = async () => {
   try {
-    // rebuild
-    await fs.rm(outputDir, { recursive: true });
-    await fs.mkdir(outputDir, { recursive: true });
-    await fs.copyFile(
-      path.join(srcDir, cssFile),
-      path.join(outputDir, "index.css"),
-    );
-    await fs.copyFile(
-      path.join(srcDir, jsFile),
-      path.join(outputDir, "index.js"),
-    );
+    if (fullRebuild) {
+      // rebuild
+      await fs.rm(outputDir, { recursive: true });
+      await fs.mkdir(outputDir, { recursive: true });
+      await fs.copyFile(
+        path.join(srcDir, cssFile),
+        path.join(outputDir, "index.css"),
+      );
+      await fs.copyFile(
+        path.join(srcDir, jsFile),
+        path.join(outputDir, "index.js"),
+      );
+    }
+
+    const _markdownFiles = (await fs.readdir(inputDir))
+      .filter((file) => file.endsWith(".md"))
+      .sort()
+      .reverse();
+    if (_markdownFiles.length === 0) {
+      console.error(`No markdown files found in ${inputDir}.`);
+      process.exit(1);
+    }
+
+    // build non  thread incremental limit
+    const markdownFiles = incrementalRebuild
+      ? _markdownFiles.slice(0, 4)
+      : _markdownFiles;
+
+    let thisMonthsFiles = _markdownFiles;
+    if (incrementalRebuild) {
+      const thisYearMonth = _markdownFiles[0].split("-").slice(0, 2).join("-");
+      let _files: string[] = [];
+      for (let file of _markdownFiles) {
+        const yearMonth = file.split("-").slice(0, 2).join("-");
+        if (yearMonth !== thisYearMonth) {
+          break;
+        } else {
+          _files.push(file);
+        }
+      }
+      thisMonthsFiles = _files;
+    }
 
     const threadFiles = (await fs.readdir(threadInputDir)).filter((file) =>
       file.endsWith(".txt"),
@@ -553,22 +578,29 @@ const main = async () => {
 
     // Build threads
     for (const thread of threads) {
-      await buildThread({ files: thread });
+      if (incrementalRebuild) {
+        let threadTouched = false;
+        for (const file of markdownFiles) {
+          if (thread.includes(file)) {
+            threadTouched = true;
+            break;
+          }
+        }
+        if (threadTouched) {
+          console.log('build thread')
+          await buildThread({ files: thread });
+        }
+      } else {
+        await buildThread({ files: thread });
+      }
     }
 
-    const markdownFiles = (await fs.readdir(inputDir))
-      .filter((file) => file.endsWith(".md"))
-      .sort()
-      .reverse();
-    if (markdownFiles.length === 0) {
-      console.error(`No markdown files found in ${inputDir}.`);
-      process.exit(1);
-    }
-
+    // build pages
     await buildNonThreadPages({ markdownFiles });
 
-    const postsContent = await generateIndexContent({ markdownFiles, threads });
-    // await generateRSS({ markdownFiles });
+    await generateIndexContent({ markdownFiles: thisMonthsFiles, threads });
+
+    await generateRSS({ markdownFiles });
 
     await fs.writeFile(
       path.join(outputDir, "CNAME"),
