@@ -1,4 +1,4 @@
-const monthNames = ["2024-08","2024-07","2024-06","2024-05","2024-04","2023-10","2022-09","2020-09","2020-08","2020-07","2020-06"];
+const monthNames = ["2024-08"];
 let index = window.location.pathname === '/' ? 0 : monthNames.indexOf(window.location.pathname)
 window.addEventListener('scroll', (e) => {
   if (document.body.scrollTop + window.innerHeight > document.body.scrollHeight - 200) {
