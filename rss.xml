@@ -9,10 +9,18 @@
             <link>https://garden.grantcuster.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 23 Aug 2024 14:44:51 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 23 Aug 2024 14:54:28 GMT</lastBuildDate>
         <atom:link href="https://garden.grantcuster.com/rss.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Fri, 23 Aug 2024 14:44:51 GMT</pubDate>
+        <pubDate>Fri, 23 Aug 2024 14:54:28 GMT</pubDate>
         <managingEditor><![CDATA[Grant Custer]]></managingEditor>
+        <item>
+            <title><![CDATA[2024-08-23-10-52-52]]></title>
+            <description><![CDATA[Incremental build all wired up. Trying building the last four posts and any threads they may be a part of. Maybe I'll also build a web UI for posting soon... but before that, time to import the rest of the writing posts and some posts from feed.
+]]></description>
+            <link>https://garden.grantcuster.com/2024-08-23-10-52-52</link>
+            <guid isPermaLink="true">https://garden.grantcuster.com/2024-08-23-10-52-52</guid>
+            <pubDate>Fri, 23 Aug 2024 14:52:52 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-08-22-13-34-23]]></title>
             <description><![CDATA[Testing incremental rebuild from the high line.
@@ -38,14 +46,6 @@
             <link>https://garden.grantcuster.com/2024-08-21-19-55-38</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-08-21-19-55-38</guid>
             <pubDate>Wed, 21 Aug 2024 23:55:38 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-08-20-19-33-27]]></title>
-            <description><![CDATA[Finally wearing my AR glasses combo out on the commute. Made some decent progress trying to paginate this blog today. Pushed the scale up to 2x which is helping. Also think I've got a good base system set up (refined from reinstalling across a bunch of computers of all the time) and that's helping.
-]]></description>
-            <link>https://garden.grantcuster.com/2024-08-20-19-33-27</link>
-            <guid isPermaLink="true">https://garden.grantcuster.com/2024-08-20-19-33-27</guid>
-            <pubDate>Tue, 20 Aug 2024 23:33:27 GMT</pubDate>
         </item>
     </channel>
 </rss>
