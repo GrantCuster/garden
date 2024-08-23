@@ -1,0 +1,93 @@
+<html class="bg-hard0 text-foreground">
+  <head>
+    <title>
+      Thursday &middot; Aug 26, 2021 &middot; 5:54 PM - Grant's Garden
+    </title>
+    <meta
+      name="description"
+      content="# State of mind: scattered thoughts on Typescript, three.js, and class-based architecture"
+    />
+    <meta
+      property="og:title"
+      content="Thursday &middot; Aug 26, 2021 &middot; 5:54 PM - Grant's Garden"
+    />
+    <meta
+      property="og:description"
+      content="# State of mind: scattered thoughts on Typescript, three.js, and class-based architecture"
+    />
+    <meta
+      property="og:image"
+      content="https://grant-uploader.s3.amazonaws.com/og-images/2021-08-26-17-54-05-State-of-mind-scattered-thoughts-on-Typescript-threejs-and-classbased-architecture.png"
+    />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:image"
+      content="https://grant-uploader.s3.amazonaws.com/og-images/2021-08-26-17-54-05-State-of-mind-scattered-thoughts-on-Typescript-threejs-and-classbased-architecture.png"
+    />
+    <script src="/index.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/index.css" />
+  </head>
+  <body>
+    <div class="max-w-[55ch] mx-auto">
+      <div class="text-green mt-4 mb-2 px-4">
+        <a href="/">Grant's garden</a>
+      </div>
+      <div class="px-4 text-sm text-dark4 mb-2">
+        Thursday &middot; Aug 26, 2021 &middot; 5:54 PM
+      </div>
+      <div class="px-4 border border-dark1 mb-4 post">
+        <div class="markdown">
+          <h1
+            id="state-of-mind-scattered-thoughts-on-typescript-three.js-and-class-based-architecture"
+          >
+            State of mind: scattered thoughts on Typescript, three.js, and
+            class-based architecture
+          </h1>
+          <p>
+            I'm possibly in the midst of revising a bunch of my assumptions
+            about how I like to code projects, so I wanted to write down my
+            current thoughts. I'm probably in a honeymoon phase with the new
+            set-up, so it's possible as I work longer I'll run into a bunch of
+            walls and complications and end up re-revising.
+          </p>
+          <h2 id="typescript">Typescript</h2>
+          <p>
+            I have been avoiding trying Typescript, but I've now seen too much
+            work from people working on involved interfaces (mainly Steve Ruiz's
+            work and the Excalidraw project) to justify not at least trying it.
+            So I've been trying it on the new prototype and I think I like it.
+            Barring running into some tremendous catch, I think I'll use it from
+            here on out.
+          </p>
+          <h2 id="combined-with-three.js">Combined with three.js</h2>
+          <p>
+            I think a part of why I was prepared for Typescript was because I've
+            been using three.js a lot lately and gotten increasingly used to
+            it's class based architecture for things like meshes and vectors. I
+            got a lot more interested in the possibilities of Typescript when I
+            realized it could help me create classes (or extend existing ones)
+            to augment three.js with capabilities purpose-built for my project.
+            The boundary between the library code and my code feels less set,
+            which feels powerful to me.
+          </p>
+          <h2 id="moving-away-from-the-dom">Moving away from the DOM</h2>
+          <p>
+            Another contributing factor is that since the project I'm working
+            out is all in WebGL world, I don't have the DOM to organize around.
+            Which has made organization using things like classes more
+            important. I wouldn't say it's an easy process, but rebuilding some
+            of the things (like mouse over events) built into the DOM has been a
+            good exercise in realizing that nothing is magic, and that the
+            methods behind this kind of thing are approachable. I think it's
+            also clarifying for me why things like the DOM and the javascript
+            API are built the way they are. Decisions that seemed impenetrable
+            before are now being revealed as a way to strike a balance between
+            flexibility and organizational clarity.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

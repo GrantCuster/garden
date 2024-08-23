@@ -9,10 +9,64 @@
             <link>https://garden.grantcuster.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 23 Aug 2024 14:57:09 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 23 Aug 2024 22:09:38 GMT</lastBuildDate>
         <atom:link href="https://garden.grantcuster.com/rss.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Fri, 23 Aug 2024 14:57:09 GMT</pubDate>
+        <pubDate>Fri, 23 Aug 2024 22:09:38 GMT</pubDate>
         <managingEditor><![CDATA[Grant Custer]]></managingEditor>
+        <item>
+            <title><![CDATA[2024-08-23-17-53-12]]></title>
+            <description><![CDATA[
+
+]]></description>
+            <link>https://garden.grantcuster.com/2024-08-23-17-53-12</link>
+            <guid isPermaLink="true">https://garden.grantcuster.com/2024-08-23-17-53-12</guid>
+            <pubDate>Fri, 23 Aug 2024 21:53:12 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[2024-08-23-17-52-56-Screenshot-vs-artwork-games-vs-creative-tools]]></title>
+            <description><![CDATA[# Screenshot vs artwork: games vs creative tools
+
+I take a lot of inspiration from video games but I want to make creative tools. What's the difference between a game and a creative tool? 
+
+One big difference seems to be the end goal: with a creative tool you make something you want to share outside of the tool. You export something, often an image or a text document. In a game, you're normally working within the game world. Often you're completing quests. For more creation-oriented games like Minecraft, you're building something and you may even share your creation in the form of screenshots or recordings, but still there's a sense that what you made belongs in the game world and is best experienced there.
+
+Another big difference is primitives. In drawing and painting applications, you're often working at a pretty low-level, defining shapes and colors and paths. In games, you're often acting within a world using an avatar. It's more like making scenes with dolls and action figures (or in Minecraft's case, legos) than it is painting or drawing. The distinction seems to carry over pretty cleanly from the physical world. 3D graphics programs or game development tools like Unity possibly make things a little fuzzier, but even there I think the distinction between playing and creating can mostly be classified according to what level you're intervening at.
+ 
+There's something of the idea of ownership in there as well. I know there's been some work done in taking artistically composed screenshots of games. That feels like more of a collaboration to me, between the game creators and the artist staging the photos, versus an independent creative work. I know I'm not being technically rigorous in how I define this stuff, and there's probably lots of great work that blurs and interrogates this kind of thing. I'm trying to write out my general feelings about the differences even if they're not totally consistent or well-reasoned.
+
+I'm interested in something like: 'what does Minecraft look like if you can bring in your own blocks'? I know there's a modding scene that gets at some of this, I did a little bit of work creating my own skins for games I played when I was yonger. It was kind of thrilling opening up and modifying the game files, seeing that it was all pieces put together. But yea, what if there was something where you could bring in things from the outside world (images) modify them in a 'game-like' manner, with the goal being an output (an image) that could go elsewhere (and that could feel whole into itself, not like a 'screenshot of a game')? Would that feel like a 'creative tool'? Is it mostly a manner of framing? Can you use a bunch of game mechanics (and yes, I should be more concrete here, but later) in a creative tool just by making sure that those import and export actions are positioned as the main goal? Maybe?
+]]></description>
+            <link>https://garden.grantcuster.com/2024-08-23-17-52-56-Screenshot-vs-artwork-games-vs-creative-tools</link>
+            <guid isPermaLink="true">https://garden.grantcuster.com/2024-08-23-17-52-56-Screenshot-vs-artwork-games-vs-creative-tools</guid>
+            <pubDate>Fri, 23 Aug 2024 21:52:56 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[2024-08-23-17-52-23-Seams-and-possibilities-Minecraft]]></title>
+            <description><![CDATA[# Seams and possibilities: Minecraft
+
+I meant to write about this quote [last time](https://writing.grantcuster.com/posts/2021-07-28-seams-and-possibilities/) but got sidetracked:
+
+> okay, to start, an analogy: long ago, a single person could build the best video game that existed. Adventure didn't require 200 developers and 18 months to get out the door. as technology improved, so did expectations. Adventure was my goal. Today's kids' goal is fortnite. 
+—[@steveklabnik](https://twitter.com/steveklabnik/status/1397931260136284166?s=20)
+
+The quote, and the thread it comes from, is about how complexity increases as a technology develops. It makes changing the system or proposing alternatives feel less approachable, because it's more difficult to hold the entire system in your head and think through how it could be modified.
+
+There's lots of echoes and analogs of that idea in my relationship to programming and tech. I was able to enter web development because it was relatively approachable at the time. I've been able to work at small start-ups because there's a similar dynamic at play in business, where a small entrant that is less conceptually confused can sometimes outmaneuver larger competitors. I wonder how much this approaches some sort of natural law and how much it's a result of the systems we've set up. Regardless, I'm glad it is the way it is, because I like working on small stuff I can hold conceptually in my head.
+
+## The hope of Minecraft
+
+Even though I believe that dynamic holds, I still get nervous about it in relation to my own work. I worry that I should have specialized more, become part of some larger project. I'd like to make things people engage with and I worry I won't get to the level of polish or features necessary with the small experiments I run. I worry that maybe there was a place for lower-level experiments earlier on but now web/software development has grown beyond it.
+
+Then I think about Minecraft (I also think about [100 Rabbits' work](https://100r.co/site/home.html) which I should write about another time). The barriers for an indie game maker versus AAA game studios, in terms of the scope and polish they can afford, is much greater than web development, but indie studios have found a way  (my impression from following game developers on Twitter is that it is a tough one). In Minecraft's case, it became one of the biggest games of all time, while deliberately avoiding competing on graphics.
+
+Minecraft shows the possibilities of visible seams. Anything you see built in the world, you know it would be possible to construct yourself. Any grand construction you see online, you have some idea of how you could make it. I think a lot about the repetiveness of building a wall in Minecraft, which sort of cries out for some sort of scripting programming loop solution (can you automate building a wall with Redstone, maybe?). There's something pure about the mundane repetetiveness of it, though, it seems to bring it closer to DIY building in the real world.
+  
+Minecraft puts you in a world with a simple and universal mental model of how things are constructed (though crafting is a less elemental secondary system). I want to do something like that, but with software, and rather than keeping you in this constructed world, I want that software to open out, so you can bring in outside things and create things that can go outside. And maybe, also, the mental model I introduce in the software opens out into more general programming, and gives you a foundational mental model to build on.
+]]></description>
+            <link>https://garden.grantcuster.com/2024-08-23-17-52-23-Seams-and-possibilities-Minecraft</link>
+            <guid isPermaLink="true">https://garden.grantcuster.com/2024-08-23-17-52-23-Seams-and-possibilities-Minecraft</guid>
+            <pubDate>Fri, 23 Aug 2024 21:52:23 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-08-23-10-52-52]]></title>
             <description><![CDATA[Incremental build all wired up. Trying building the last four posts and any threads they may be a part of. Maybe I'll also build a web UI for posting soon... but before that, time to import the rest of the writing posts and some posts from feed.
@@ -20,32 +74,6 @@
             <link>https://garden.grantcuster.com/2024-08-23-10-52-52</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-08-23-10-52-52</guid>
             <pubDate>Fri, 23 Aug 2024 14:52:52 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-08-22-13-34-23]]></title>
-            <description><![CDATA[Testing incremental rebuild from the high line.
-]]></description>
-            <link>https://garden.grantcuster.com/2024-08-22-13-34-23</link>
-            <guid isPermaLink="true">https://garden.grantcuster.com/2024-08-22-13-34-23</guid>
-            <pubDate>Thu, 22 Aug 2024 17:34:23 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-08-21-20-44-19]]></title>
-            <description><![CDATA[I think this is actually the 'right' progressive pixelation. Had to step away for a while and come back.
-
-![Pixelated sloth redux](https://grant-uploader.s3.amazonaws.com/2024-08-21-20-44-01-2000.jpg)
-]]></description>
-            <link>https://garden.grantcuster.com/2024-08-21-20-44-19</link>
-            <guid isPermaLink="true">https://garden.grantcuster.com/2024-08-21-20-44-19</guid>
-            <pubDate>Thu, 22 Aug 2024 00:44:19 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-08-21-19-55-38]]></title>
-            <description><![CDATA[Got month-based index pages working here. Along with infinite scroll loading. Still want to get incremental rebuild working. Then I'll feel better about doing lots of little posts here.
-]]></description>
-            <link>https://garden.grantcuster.com/2024-08-21-19-55-38</link>
-            <guid isPermaLink="true">https://garden.grantcuster.com/2024-08-21-19-55-38</guid>
-            <pubDate>Wed, 21 Aug 2024 23:55:38 GMT</pubDate>
         </item>
     </channel>
 </rss>
