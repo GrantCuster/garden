@@ -1,0 +1,62 @@
+<html class="bg-hard0 text-foreground">
+  <head>
+    <title>Home - Grant's Garden</title>
+    <meta name="description" content="Work and writing in progress" />
+    <meta property="og:title" content="Home - Grant's Garden" />
+    <meta property="og:description" content="Work and writing in progress" />
+    <meta
+      property="og:image"
+      content="https://grant-uploader.s3.amazonaws.com/og-images/index.png"
+    />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:image"
+      content="https://grant-uploader.s3.amazonaws.com/og-images/index.png"
+    />
+    <script src="/index.js"></script>
+    <script src="/infinite.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/index.css" />
+  </head>
+  <body>
+    <div class="max-w-[55ch] mx-auto">
+      <div class="text-green mt-4 mb-2 px-4">Grant's garden</div>
+      <div class="posts">
+        <div class="px-4 mb-2 text-sm text-blue">
+          September 2021 &middot; 1 post
+        </div>
+        <div>
+          <div class="px-4 text-sm text-dark4 mb-2">
+            Wednesday &middot; Sep 15, 2021 &middot; 5:54 PM
+          </div>
+          <div
+            class="px-4 border border-dark1 mb-4 post cursor-pointer"
+            onclick="function navigate() { window.location = '2021-09-15-17-54-42-Towards-more-manageable-pointer-events' }; navigate();"
+          >
+            <div class="markdown">
+              <h1 id="towards-more-manageable-pointer-events">
+                Towards more manageable pointer events
+              </h1>
+              <p>
+                Working with mouse and touch events is one of the biggest
+                challenges for me in making interactive web apps. The
+                availability of
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/API/Pointer_events"
+                  >pointer events</a
+                >
+                helps a lot, but I still pretty quickly end up with a mess of
+                conditionals that are hard to reason about. I'm working on some
+                new strategies and abstractions to help with this.
+              </p>
+              <h2 id="pointerone-pointertwo-pointerthree">
+                PointerOne, PointerTwo, PointerThree
+              </h2>
+            </div>
+            <div class="text-dark4 mb-2 text-sm">Read more</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

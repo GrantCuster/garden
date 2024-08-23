@@ -1,0 +1,71 @@
+<html class="bg-hard0 text-foreground">
+  <head>
+    <title>Home - Grant's Garden</title>
+    <meta name="description" content="Work and writing in progress" />
+    <meta property="og:title" content="Home - Grant's Garden" />
+    <meta property="og:description" content="Work and writing in progress" />
+    <meta
+      property="og:image"
+      content="https://grant-uploader.s3.amazonaws.com/og-images/index.png"
+    />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:image"
+      content="https://grant-uploader.s3.amazonaws.com/og-images/index.png"
+    />
+    <script src="/index.js"></script>
+    <script src="/infinite.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/index.css" />
+  </head>
+  <body>
+    <div class="max-w-[55ch] mx-auto">
+      <div class="text-green mt-4 mb-2 px-4">Grant's garden</div>
+      <div class="posts">
+        <div class="px-4 mb-2 text-sm text-blue">
+          November 2020 &middot; 1 post
+        </div>
+        <div>
+          <div class="px-4 text-sm text-dark4 mb-2">
+            Tuesday &middot; Nov 3, 2020 &middot; 5:50 PM
+          </div>
+          <div
+            class="px-4 border border-dark1 mb-4 post cursor-pointer"
+            onclick="function navigate() { window.location = '2020-11-03-17-50-23-WebGL-3D-projection-and-mental-models' }; navigate();"
+          >
+            <div class="markdown">
+              <h1 id="webgl-3d-projection-and-mental-models">
+                WebGL, 3D projection and mental models
+              </h1>
+              <p>
+                I'm working on recreating some graphics editing programs in
+                WebGL. To be able to zoom in on images, I've implemented a
+                pretty standard 3D camera with projection and view matrices.
+                I've found really understanding projection to be difficult. It's
+                one thing to get some cubes placed and rendering in the world,
+                it's another thing to enable mouse interactions, where you have
+                to project and unproject between screen space, view space and
+                world space.
+              </p>
+              <p>
+                Figuring out the steps for transitioning between the spaces has
+                been difficult, but a nice consequence is that I'm developing a
+                mental model of what is happening on screen that I can reason
+                about. The idea is that the screen reperesents a flat window
+                onto 3D space that extends behind it. I'm starting to be able to
+                intuitively reason about when I can keep something in screen
+                space (the cursor), and when I want to project it into world
+                space (creating a bounding box on an image). Mouse-directed zoom
+                (as movement along a ray projected from the mouse), took me a
+                while to get right, but now I feel like I have a better handle
+                on what it is doing then when I've implemented it in a non-3D
+                camera set-up.
+              </p>
+            </div>
+            <div class="text-dark4 mb-2 text-sm">Read more</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
