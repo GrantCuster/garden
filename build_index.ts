@@ -145,7 +145,7 @@ async function buildStandalonePage({
 
   const content = await fs.readFile(path.join(inputDir, file), "utf-8");
   const generatedHtmlContent = execSync(
-    `pandoc -f markdown-smart-markdown_in_html_blocks+raw_html -t html`,
+    `pandoc -f markdown-smart-markdown_in_html_blocks+raw_html+autolink_bare_uris -t html`,
     {
       input: content,
     },
@@ -181,7 +181,7 @@ async function buildThread({ files }: { files: string[] }) {
     const timestamp = formatDateString(basename);
     const content = await fs.readFile(path.join(inputDir, file), "utf-8");
     const generatedHtmlContent = execSync(
-      `pandoc -f markdown-smart-markdown_in_html_blocks+raw_html -t html`,
+      `pandoc -f markdown-smart-markdown_in_html_blocks+raw_html+autolink_bare_uris -t html`,
       {
         input: content,
       },
@@ -300,7 +300,7 @@ async function buildMonthIndex(
           }
 
           const generatedHtmlContent = execSync(
-            `pandoc -f markdown-smart-markdown_in_html_blocks+raw_html -t html`,
+            `pandoc -f markdown-smart-markdown_in_html_blocks+raw_html+autolink_bare_uris -t html`,
             {
               input: truncatedText,
             },
@@ -336,7 +336,7 @@ async function buildMonthIndex(
     } else {
       // is not in thread
       const generatedHtmlContent = execSync(
-        `pandoc -f markdown-smart-markdown_in_html_blocks+raw_html -t html`,
+        `pandoc -f markdown-smart-markdown_in_html_blocks+raw_html+autolink_bare_uris -t html`,
         {
           input: truncatedText,
         },
