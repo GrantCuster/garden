@@ -9,10 +9,18 @@
             <link>https://garden.grantcuster.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sat, 24 Aug 2024 01:00:06 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 24 Aug 2024 11:20:26 GMT</lastBuildDate>
         <atom:link href="https://garden.grantcuster.com/rss.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Sat, 24 Aug 2024 01:00:06 GMT</pubDate>
+        <pubDate>Sat, 24 Aug 2024 11:20:26 GMT</pubDate>
         <managingEditor><![CDATA[Grant Custer]]></managingEditor>
+        <item>
+            <title><![CDATA[2024-08-24-07-16-57]]></title>
+            <description><![CDATA[I turned off threads for now, the roll-ups were too much noise with all the new imported posts in here. I think maybe the right move is to have threads as an extra layer, so you can click through and see the thread page, but the index sticks to 'every post, reverse-chron'. Styling also plays a role here...
+]]></description>
+            <link>https://garden.grantcuster.com/2024-08-24-07-16-57</link>
+            <guid isPermaLink="true">https://garden.grantcuster.com/2024-08-24-07-16-57</guid>
+            <pubDate>Sat, 24 Aug 2024 11:16:57 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-08-23-10-52-52]]></title>
             <description><![CDATA[Incremental build all wired up. Trying building the last four posts and any threads they may be a part of. Maybe I'll also build a web UI for posting soon... but before that, time to import the rest of the writing posts and some posts from feed.
@@ -38,14 +46,6 @@
             <link>https://garden.grantcuster.com/2024-08-21-20-44-19</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-08-21-20-44-19</guid>
             <pubDate>Thu, 22 Aug 2024 00:44:19 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-08-21-19-55-38]]></title>
-            <description><![CDATA[Got month-based index pages working here. Along with infinite scroll loading. Still want to get incremental rebuild working. Then I'll feel better about doing lots of little posts here.
-]]></description>
-            <link>https://garden.grantcuster.com/2024-08-21-19-55-38</link>
-            <guid isPermaLink="true">https://garden.grantcuster.com/2024-08-21-19-55-38</guid>
-            <pubDate>Wed, 21 Aug 2024 23:55:38 GMT</pubDate>
         </item>
     </channel>
 </rss>

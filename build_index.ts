@@ -559,8 +559,7 @@ const main = async () => {
       file.endsWith(".txt"),
     );
     if (threadFiles.length === 0) {
-      console.error(`No thread files found`);
-      process.exit(1);
+      console.log(`No thread files found`);
     }
     let threads: string[][] = [];
     for (const file of threadFiles) {
