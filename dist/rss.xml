@@ -9,10 +9,22 @@
             <link>https://garden.grantcuster.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 26 Aug 2024 13:19:20 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 28 Aug 2024 17:33:05 GMT</lastBuildDate>
         <atom:link href="https://garden.grantcuster.com/rss.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Mon, 26 Aug 2024 13:19:20 GMT</pubDate>
+        <pubDate>Wed, 28 Aug 2024 17:33:05 GMT</pubDate>
         <managingEditor><![CDATA[Grant Custer]]></managingEditor>
+        <item>
+            <title><![CDATA[2024-08-28-13-29-57-Inspiration]]></title>
+            <description><![CDATA[# Inspiration: Departure Mono
+
+![Departure Mono font site](https://grant-uploader.s3.amazonaws.com/2024-08-28-13-29-40-800.jpg)
+
+A great, free pixel font (packaged as vector). Probably too intense to use for a terminal font, but would be fun to try for some of my Linux system UI. Though at this point I have very little system UI to speak of... From https://departuremono.com/
+]]></description>
+            <link>https://garden.grantcuster.com/2024-08-28-13-29-57-Inspiration</link>
+            <guid isPermaLink="true">https://garden.grantcuster.com/2024-08-28-13-29-57-Inspiration</guid>
+            <pubDate>Wed, 28 Aug 2024 17:29:57 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-08-26-09-08-40-Inspiration]]></title>
             <description><![CDATA[# Inspiration
@@ -46,14 +58,6 @@ https://grain.constraint.systems
             <link>https://garden.grantcuster.com/2024-08-24-07-16-57</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-08-24-07-16-57</guid>
             <pubDate>Sat, 24 Aug 2024 11:16:57 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-08-23-10-52-52]]></title>
-            <description><![CDATA[Incremental build all wired up. Trying building the last four posts and any threads they may be a part of. Maybe I'll also build a web UI for posting soon... but before that, time to import the rest of the writing posts and some posts from feed.
-]]></description>
-            <link>https://garden.grantcuster.com/2024-08-23-10-52-52</link>
-            <guid isPermaLink="true">https://garden.grantcuster.com/2024-08-23-10-52-52</guid>
-            <pubDate>Fri, 23 Aug 2024 14:52:52 GMT</pubDate>
         </item>
     </channel>
 </rss>
