@@ -9,10 +9,20 @@
             <link>https://garden.grantcuster.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 30 Aug 2024 01:44:23 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 31 Aug 2024 01:31:30 GMT</lastBuildDate>
         <atom:link href="https://garden.grantcuster.com/rss.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Fri, 30 Aug 2024 01:44:23 GMT</pubDate>
+        <pubDate>Sat, 31 Aug 2024 01:31:30 GMT</pubDate>
         <managingEditor><![CDATA[Grant Custer]]></managingEditor>
+        <item>
+            <title><![CDATA[2024-08-30-21-29-19]]></title>
+            <description><![CDATA[Maybe: everything (source, layout, output) in one big image. WYSIWYG
+
+![Source on the left, output on the right, the beginning of data below](https://grant-uploader.s3.amazonaws.com/2024-08-30-21-30-20-2000.jpg)
+]]></description>
+            <link>https://garden.grantcuster.com/2024-08-30-21-29-19</link>
+            <guid isPermaLink="true">https://garden.grantcuster.com/2024-08-30-21-29-19</guid>
+            <pubDate>Fri, 30 Aug 2024 21:29:19 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-08-29-21-41-43]]></title>
             <description><![CDATA[I have some image blending ideas.
@@ -48,18 +58,6 @@ I'm interested in creating digital spaces with a similar level of solidity. But 
             <link>https://garden.grantcuster.com/2024-08-26-09-08-40-Inspiration</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-08-26-09-08-40-Inspiration</guid>
             <pubDate>Mon, 26 Aug 2024 09:08:40 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-08-25-18-37-13--Grain]]></title>
-            <description><![CDATA[# Grain
-
-![Progressively pixelate an image.](https://grant-uploader.s3.amazonaws.com/2024-08-25-18-38-49.gif)
-
-https://grain.constraint.systems
-]]></description>
-            <link>https://garden.grantcuster.com/2024-08-25-18-37-13--Grain</link>
-            <guid isPermaLink="true">https://garden.grantcuster.com/2024-08-25-18-37-13--Grain</guid>
-            <pubDate>Sun, 25 Aug 2024 18:37:13 GMT</pubDate>
         </item>
     </channel>
 </rss>
