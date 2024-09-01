@@ -9,9 +9,9 @@
             <link>https://garden.grantcuster.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 01 Sep 2024 15:54:28 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 01 Sep 2024 16:09:16 GMT</lastBuildDate>
         <atom:link href="https://garden.grantcuster.com/rss.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Sun, 01 Sep 2024 15:54:28 GMT</pubDate>
+        <pubDate>Sun, 01 Sep 2024 16:09:16 GMT</pubDate>
         <managingEditor><![CDATA[Grant Custer]]></managingEditor>
         <item>
             <title><![CDATA[2024-09-01-11-06-33-Ted-Chiang-Why-AI-isnt-going-to-make-art]]></title>
@@ -20,6 +20,7 @@
 More response writing! Here we go. Same rules, don't summarize, pick out what's interesting to me even if it leaves a bunch of other stuff out.
 
 First his definition:
+
 > art is something that results from making a lot of choices.
 
 In the case of prompting to generate text or images, he argues, you are making very few choices.

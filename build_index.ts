@@ -374,7 +374,8 @@ async function buildMonthIndex(
   if (fullRebuild) {
     const script = `const monthNames = ${JSON.stringify(activeMonthNames)};
 let index = window.location.pathname === '/' ? 0 : monthNames.indexOf(window.location.pathname)
-window.addEventListener('scroll', (e) => {
+function handleScroll() {
+console.log(document.body.scrollHeight - 200)
   if (document.body.scrollTop + window.innerHeight > document.body.scrollHeight - 200) {
     index++;
     if (index < monthNames.length) {
@@ -387,8 +388,10 @@ window.addEventListener('scroll', (e) => {
         document.querySelector('.posts').appendChild(newPosts);
       })
     }
-  }
-});`;
+ }
+}
+window.addEventListener('scroll', handleScroll);
+setTimeout(handleScroll, 1000)`;
     await fs.writeFile(path.join(outputDir, "infinite.js"), script, "utf-8");
   }
 

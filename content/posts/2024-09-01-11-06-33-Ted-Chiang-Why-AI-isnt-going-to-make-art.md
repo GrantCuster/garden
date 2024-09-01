@@ -3,6 +3,7 @@
 More response writing! Here we go. Same rules, don't summarize, pick out what's interesting to me even if it leaves a bunch of other stuff out.
 
 First his definition:
+
 > art is something that results from making a lot of choices.
 
 In the case of prompting to generate text or images, he argues, you are making very few choices.
