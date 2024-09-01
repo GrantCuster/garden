@@ -9,10 +9,30 @@
             <link>https://garden.grantcuster.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sat, 31 Aug 2024 01:31:30 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 01 Sep 2024 01:00:08 GMT</lastBuildDate>
         <atom:link href="https://garden.grantcuster.com/rss.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Sat, 31 Aug 2024 01:31:30 GMT</pubDate>
+        <pubDate>Sun, 01 Sep 2024 01:00:08 GMT</pubDate>
         <managingEditor><![CDATA[Grant Custer]]></managingEditor>
+        <item>
+            <title><![CDATA[2024-08-31-20-42-28-Future-of-Coding-Moving-Beyond-Syntax]]></title>
+            <description><![CDATA[# Future of Coding: Moving Beyond Syntax
+
+I'd like to get into the habit of using this blog to write down responses and appreciations of things. So let's do that:
+
+I've been listening to the "Moving Beyond Syntax" episode from _Future of Coding_ over the past couple days. Overall I've just really been enjoying _Future of Coding_ episodes as a break from AI hype. As a reminder of all the interesting things there are still to do in programming as programming.
+
+I also think the addition of Lu has been great. Now (and especially in this episode) there are three distinct points of view from Lu, Ivan and Jimmy, that bounce off and contrast with each other. I think sometimes I get stuck wanting to know / cover everything, and listening and enjoying the back-and-forth is a good reminder that it's good to be coming from a perspective. That you're part of a larger conversation and you don't have to cover every angle yourself. A good thing for me to write about is what angle I am coming from these days.
+
+The episode was about AgentSheets, a programming language aimed at kids. I think things I enjoyed most in the episode were Jimmy pushing back against the limitations that some 'kid-friendly' languages impose. That his experience of programming was wanting to know what the computer was doing not have it abstracted away. Then again, I enjoyed Ivan pushing on the idea that that can be useful when doing 'computational thinking' about a topic, like how magnets work. In that genre of sort of explorable explanation, you may want to write code to see how a system operates, but you want to stay in the pocket of the system you're exploring, what the computer is doing is a distraction.
+
+Both seem good points. Maybe it shows me that we should be more specific about learning to program. I would get excited about a kid exploring either of those paths, and can imagine both leading to programming. But it does seem like thinking about what the computer is doing is the pursuit of programming in a way the other might not be... not that there's any value attached either way. Probably ther person in pursuit of exploring something through computational thinking becomes a programmer partly out of frustration/necessity - interesting question if the tools were there and stable would they pursue programming, or pursue computational thinking around the things they're exploring... 
+
+I also really enjoyed the discussion of embodiment. I've loved Papert's example of imagining yourself as gears or as the turtle. I don't think I really do that - though actually thinking about it always makes me think I should try more. Again, I loved the variety of experiences, and that you realize a variety of relationships to programming is good, especially in conversation with each other.
+]]></description>
+            <link>https://garden.grantcuster.com/2024-08-31-20-42-28-Future-of-Coding-Moving-Beyond-Syntax</link>
+            <guid isPermaLink="true">https://garden.grantcuster.com/2024-08-31-20-42-28-Future-of-Coding-Moving-Beyond-Syntax</guid>
+            <pubDate>Sat, 31 Aug 2024 20:42:28 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-08-30-21-29-19]]></title>
             <description><![CDATA[Maybe: everything (source, layout, output) in one big image. WYSIWYG
@@ -44,20 +64,6 @@ A great, free pixel font (packaged as vector). Probably too intense to use for a
             <link>https://garden.grantcuster.com/2024-08-28-13-29-57-Inspiration</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-08-28-13-29-57-Inspiration</guid>
             <pubDate>Wed, 28 Aug 2024 13:29:57 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-08-26-09-08-40-Inspiration]]></title>
-            <description><![CDATA[# Inspiration
-
-![A piece by Spacefiller from _Fantasy Parameter Spaces_ Showing bold computational plants](https://grant-uploader.s3.amazonaws.com/2024-08-26-09-07-58-2000.jpg)
-
-Thinking about [Spacefiller](https://spacefiller.space/fantasy-parameter-spaces/)'s work this morning. Specifically wondering how they're able to achieve such a feeling of solidity + presence for the plants. Part of it is the structure but I think a big part of it is the linework. There's no anti-aliasing and line's look like they're maybe four pixels wide (in visible world pixels, probably much higher in actual resolution).
-
-I'm interested in creating digital spaces with a similar level of solidity. But I feel like introducing images often hurts the solidity - because the pixel pieces are too small to see. Obvious solution that I continue to experiment with is scale down the resolution and color of images, so that the pieces are more visible. That could hopefully make them feel more of a piece with a world like Spacefiller's. The dilemma is that often loses a lot of the semantic content (turns a face into a blob). This is part of why I'm interested in progressive pixelation that scales up or down in resolution depending on the content. Though my efforts there I think still lack the solid feel I'm after.
-]]></description>
-            <link>https://garden.grantcuster.com/2024-08-26-09-08-40-Inspiration</link>
-            <guid isPermaLink="true">https://garden.grantcuster.com/2024-08-26-09-08-40-Inspiration</guid>
-            <pubDate>Mon, 26 Aug 2024 09:08:40 GMT</pubDate>
         </item>
     </channel>
 </rss>
