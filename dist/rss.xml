@@ -9,10 +9,20 @@
             <link>https://garden.grantcuster.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 01 Sep 2024 01:00:08 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 01 Sep 2024 01:49:21 GMT</lastBuildDate>
         <atom:link href="https://garden.grantcuster.com/rss.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Sun, 01 Sep 2024 01:00:08 GMT</pubDate>
+        <pubDate>Sun, 01 Sep 2024 01:49:21 GMT</pubDate>
         <managingEditor><![CDATA[Grant Custer]]></managingEditor>
+        <item>
+            <title><![CDATA[2024-08-31-21-48-26]]></title>
+            <description><![CDATA[Source, output, data. More wyswig work.
+
+![](https://grant-uploader.s3.amazonaws.com/2024-08-31-21-48-13-2000.jpg)
+]]></description>
+            <link>https://garden.grantcuster.com/2024-08-31-21-48-26</link>
+            <guid isPermaLink="true">https://garden.grantcuster.com/2024-08-31-21-48-26</guid>
+            <pubDate>Sat, 31 Aug 2024 21:48:26 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-08-31-20-42-28-Future-of-Coding-Moving-Beyond-Syntax]]></title>
             <description><![CDATA[# Future of Coding: Moving Beyond Syntax
@@ -52,18 +62,6 @@ I also really enjoyed the discussion of embodiment. I've loved Papert's example 
             <link>https://garden.grantcuster.com/2024-08-29-21-41-43</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-08-29-21-41-43</guid>
             <pubDate>Thu, 29 Aug 2024 21:41:43 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-08-28-13-29-57-Inspiration]]></title>
-            <description><![CDATA[# Inspiration: Departure Mono
-
-![Departure Mono font site](https://grant-uploader.s3.amazonaws.com/2024-08-28-13-29-40-800.jpg)
-
-A great, free pixel font (packaged as vector). Probably too intense to use for a terminal font, but would be fun to try for some of my Linux system UI. Though at this point I have very little system UI to speak of... From https://departuremono.com/
-]]></description>
-            <link>https://garden.grantcuster.com/2024-08-28-13-29-57-Inspiration</link>
-            <guid isPermaLink="true">https://garden.grantcuster.com/2024-08-28-13-29-57-Inspiration</guid>
-            <pubDate>Wed, 28 Aug 2024 13:29:57 GMT</pubDate>
         </item>
     </channel>
 </rss>
