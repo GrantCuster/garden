@@ -9,10 +9,22 @@
             <link>https://garden.grantcuster.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 01 Sep 2024 16:09:16 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 02 Sep 2024 01:18:30 GMT</lastBuildDate>
         <atom:link href="https://garden.grantcuster.com/rss.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Sun, 01 Sep 2024 16:09:16 GMT</pubDate>
+        <pubDate>Mon, 02 Sep 2024 01:18:30 GMT</pubDate>
         <managingEditor><![CDATA[Grant Custer]]></managingEditor>
+        <item>
+            <title><![CDATA[2024-09-01-21-16-36-Zoom]]></title>
+            <description><![CDATA[# CSS Zoom
+
+Redid CSS zoom method again. Hopefully a base to build on for future projects at https://github.com/GrantCuster/zoom
+
+![Zooming in on the sloth](https://grant-uploader.s3.amazonaws.com/2024-09-01-21-15-17.gif)
+]]></description>
+            <link>https://garden.grantcuster.com/2024-09-01-21-16-36-Zoom</link>
+            <guid isPermaLink="true">https://garden.grantcuster.com/2024-09-01-21-16-36-Zoom</guid>
+            <pubDate>Sun, 01 Sep 2024 21:16:36 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-09-01-11-06-33-Ted-Chiang-Why-AI-isnt-going-to-make-art]]></title>
             <description><![CDATA[# Ted Chiang: Why AI isn't going to make art
@@ -48,7 +60,7 @@ That seems right to me but also limited, if we were looking for sincere intentio
 ]]></description>
             <link>https://garden.grantcuster.com/2024-09-01-11-06-33-Ted-Chiang-Why-AI-isnt-going-to-make-art</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-09-01-11-06-33-Ted-Chiang-Why-AI-isnt-going-to-make-art</guid>
-            <pubDate>Sun, 01 Sep 2024 15:06:33 GMT</pubDate>
+            <pubDate>Sun, 01 Sep 2024 11:06:33 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2024-08-31-21-48-26]]></title>
@@ -58,7 +70,7 @@ That seems right to me but also limited, if we were looking for sincere intentio
 ]]></description>
             <link>https://garden.grantcuster.com/2024-08-31-21-48-26</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-08-31-21-48-26</guid>
-            <pubDate>Sun, 01 Sep 2024 01:48:26 GMT</pubDate>
+            <pubDate>Sat, 31 Aug 2024 21:48:26 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2024-08-31-20-42-28-Future-of-Coding-Moving-Beyond-Syntax]]></title>
@@ -78,17 +90,7 @@ I also really enjoyed the discussion of embodiment. I've loved Papert's example 
 ]]></description>
             <link>https://garden.grantcuster.com/2024-08-31-20-42-28-Future-of-Coding-Moving-Beyond-Syntax</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-08-31-20-42-28-Future-of-Coding-Moving-Beyond-Syntax</guid>
-            <pubDate>Sun, 01 Sep 2024 00:42:28 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-08-30-21-29-19]]></title>
-            <description><![CDATA[Maybe: everything (source, layout, output) in one big image. WYSIWYG
-
-![Source on the left, output on the right, the beginning of data below](https://grant-uploader.s3.amazonaws.com/2024-08-30-21-30-20-2000.jpg)
-]]></description>
-            <link>https://garden.grantcuster.com/2024-08-30-21-29-19</link>
-            <guid isPermaLink="true">https://garden.grantcuster.com/2024-08-30-21-29-19</guid>
-            <pubDate>Sat, 31 Aug 2024 01:29:19 GMT</pubDate>
+            <pubDate>Sat, 31 Aug 2024 20:42:28 GMT</pubDate>
         </item>
     </channel>
 </rss>
