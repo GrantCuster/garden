@@ -1,4 +1,4 @@
-# Artisty and AI: The model makers
+# Artistry and AI: The model makers
 
 Some of the most interesting responses I saw to Ted Chiang's piece:
 
