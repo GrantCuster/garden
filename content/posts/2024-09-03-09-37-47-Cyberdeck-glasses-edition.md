@@ -15,9 +15,9 @@ The parts list - very much inspired by the [Cyberdeck subreddit](https://www.red
 - INIU 45w charger - [link](https://www.amazon.com/dp/B09GJQG5S3?ref_=pe_386300_442618370_TE_sc_as_ri_0)
 - Technikable bluetooth keyboard - [link](https://www.boardsource.xyz/products/Technikable)
 
-The big plus of the mini PC is it has a powered display portout that can run the glasses, and another usb-c in for the battery (or laptop charger) power.
+The big plus of the mini PC is it has a powered display port out that can run the glasses, and another usb-c in for the battery (or laptop charger) power.
 
-Most of the time this all gets transported in Bellroy crossbody bag.
+Most of the time this all gets transported in Bellroy cross-body bag.
 
 - Bellroy bag
 
@@ -31,7 +31,7 @@ For software it runs the same thing I've been running everywhere these days. Ubu
 
 ## Visibility
 
-I run the glasses in monitor mode, so there's no eye-tracking or anything. The compatibility has been great (can plug and unplug just like any other monitor). Readability can be tough, especially when looking at corners. I have the display scaled up to 2xwhich basically solves readability at the cost of information density. Sway helps here, it feels great to have basically no system chrome in the way.
+I run the glasses in monitor mode, so there's no eye-tracking or anything. The compatibility has been great (can plug and unplug just like any other monitor). Readability can be tough, especially when looking at corners. I have the display scaled up to 2x which basically solves readability at the cost of information density. Sway helps here, it feels great to have basically no system chrome in the way.
 
 ![Simulation screenshot, close to what it looks like in practice](https://grant-uploader.s3.amazonaws.com/2024-09-03-16-21-46-2000.jpg)
 
@@ -47,11 +47,11 @@ Bluetooth has been the biggest hiccup, though. Sometimes the connection is chopp
 
 ### Subway
 
-So far I mostly use it on the subway to noodle on side projects or write things like this post. I have about 45 minutes on the train, so it's great to be able to use that time I'd otherwise probably dedicate to podcasts. I've sometimes pulled out a laptop on the subway, this is less obtrusive but probably looks weirder - still I hope it's mostly an enjoyable cyberpunk-ish curiousity for the other riders. Noone has said anything to me about it yet.
+So far I mostly use it on the subway to noodle on side projects or write things like this post. I have about 45 minutes on the train, so it's great to be able to use that time I'd otherwise probably dedicate to podcasts. I've sometimes pulled out a laptop on the subway, this is less obtrusive but probably looks weirder - still I hope it's mostly an enjoyable cyberpunk-ish curiosity for the other riders. No one has said anything to me about it yet.
 
 ### Porch
 
-I've also been using it on the porch, especially when trying to do some writing after the baby's gone to bed. This works OK - it's pretty with the neighbordhood visible in the background, but I also feel like I'm pushing myself to use it there. Part of using it is really appreciating the laptop form factor - the extra screen space (because not scaled), the ability to look at different parts of the screen without it following you around... I wouldn't be surprised if I shift back to that more. The glasses setup really shines for the portability. But it's also a matter of getting the kinks/friction out, it's possible if I get my software set up just the right way I'll reach for the glasses more.
+I've also been using it on the porch, especially when trying to do some writing after the baby's gone to bed. This works OK - it's pretty with the neighborhood visible in the background, but I also feel like I'm pushing myself to use it there. Part of using it is really appreciating the laptop form factor - the extra screen space (because not scaled), the ability to look at different parts of the screen without it following you around... I wouldn't be surprised if I shift back to that more. The glasses setup really shines for the portability. But it's also a matter of getting the kinks/friction out, it's possible if I get my software set up just the right way I'll reach for the glasses more.
 
 ### TV
 

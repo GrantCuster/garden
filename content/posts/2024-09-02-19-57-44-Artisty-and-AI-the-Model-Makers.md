@@ -28,7 +28,7 @@ and this [thread](https://x.com/timhwang/status/1830630445072961903) from Tim Hw
 
 These were _fun_, I like to imagine a world of weird models put forward as art objects to explore.
 
-Does it seem like this is where things are headed thougn?
+Does it seem like this is where things are headed though?
 
 I haven't been thinking this way. I think because I've mainly been focused on using models in a programming context, where I'm looking for capabilities to fit into apps.
 
@@ -42,7 +42,7 @@ Maybe the variety shakes out more after the big capability race settles a bit, m
 
 And the idea of curating a dataset to define a model, does have some nice analogies - it feels like breeding grape varieties for wine or something. Where your intelligence about adding just a hint of this edgy data to balance out a mostly sophisticated set - and then a tasting with notes like 'a hint of this subreddit'.
 
-But in that example what is it you actually do with the model? Maaaybe it's a chatbot? No I think better if it's language then it's some sort of interactive storytelling - in which case the big thing it would need to be is distilled - so that you could see it's value immediately because the potentiol for slop is so high...
+But in that example what is it you actually do with the model? Maaaybe it's a chatbot? No I think better if it's language then it's some sort of interactive storytelling - in which case the big thing it would need to be is distilled - so that you could see it's value immediately because the potential for slop is so high...
 
 So it's fun to think about but gets very fuzzy.
 
