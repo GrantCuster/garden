@@ -9,9 +9,9 @@
             <link>https://garden.grantcuster.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 03 Sep 2024 23:54:30 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 04 Sep 2024 14:50:20 GMT</lastBuildDate>
         <atom:link href="https://garden.grantcuster.com/rss.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Tue, 03 Sep 2024 23:54:30 GMT</pubDate>
+        <pubDate>Wed, 04 Sep 2024 14:50:20 GMT</pubDate>
         <managingEditor><![CDATA[Grant Custer]]></managingEditor>
         <item>
             <title><![CDATA[2024-09-03-09-37-47-Cyberdeck-glasses-edition]]></title>
@@ -32,9 +32,9 @@ The parts list - very much inspired by the [Cyberdeck subreddit](https://www.red
 - INIU 45w charger - [link](https://www.amazon.com/dp/B09GJQG5S3?ref_=pe_386300_442618370_TE_sc_as_ri_0)
 - Technikable bluetooth keyboard - [link](https://www.boardsource.xyz/products/Technikable)
 
-The big plus of the mini PC is it has a powered display portout that can run the glasses, and another usb-c in for the battery (or laptop charger) power.
+The big plus of the mini PC is it has a powered display port out that can run the glasses, and another usb-c in for the battery (or laptop charger) power.
 
-Most of the time this all gets transported in Bellroy crossbody bag.
+Most of the time this all gets transported in Bellroy cross-body bag.
 
 - Bellroy bag
 
@@ -48,7 +48,7 @@ For software it runs the same thing I've been running everywhere these days. Ubu
 
 ## Visibility
 
-I run the glasses in monitor mode, so there's no eye-tracking or anything. The compatibility has been great (can plug and unplug just like any other monitor). Readability can be tough, especially when looking at corners. I have the display scaled up to 2xwhich basically solves readability at the cost of information density. Sway helps here, it feels great to have basically no system chrome in the way.
+I run the glasses in monitor mode, so there's no eye-tracking or anything. The compatibility has been great (can plug and unplug just like any other monitor). Readability can be tough, especially when looking at corners. I have the display scaled up to 2x which basically solves readability at the cost of information density. Sway helps here, it feels great to have basically no system chrome in the way.
 
 ![Simulation screenshot, close to what it looks like in practice](https://grant-uploader.s3.amazonaws.com/2024-09-03-16-21-46-2000.jpg)
 
@@ -64,11 +64,11 @@ Bluetooth has been the biggest hiccup, though. Sometimes the connection is chopp
 
 ### Subway
 
-So far I mostly use it on the subway to noodle on side projects or write things like this post. I have about 45 minutes on the train, so it's great to be able to use that time I'd otherwise probably dedicate to podcasts. I've sometimes pulled out a laptop on the subway, this is less obtrusive but probably looks weirder - still I hope it's mostly an enjoyable cyberpunk-ish curiousity for the other riders. Noone has said anything to me about it yet.
+So far I mostly use it on the subway to noodle on side projects or write things like this post. I have about 45 minutes on the train, so it's great to be able to use that time I'd otherwise probably dedicate to podcasts. I've sometimes pulled out a laptop on the subway, this is less obtrusive but probably looks weirder - still I hope it's mostly an enjoyable cyberpunk-ish curiosity for the other riders. No one has said anything to me about it yet.
 
 ### Porch
 
-I've also been using it on the porch, especially when trying to do some writing after the baby's gone to bed. This works OK - it's pretty with the neighbordhood visible in the background, but I also feel like I'm pushing myself to use it there. Part of using it is really appreciating the laptop form factor - the extra screen space (because not scaled), the ability to look at different parts of the screen without it following you around... I wouldn't be surprised if I shift back to that more. The glasses setup really shines for the portability. But it's also a matter of getting the kinks/friction out, it's possible if I get my software set up just the right way I'll reach for the glasses more.
+I've also been using it on the porch, especially when trying to do some writing after the baby's gone to bed. This works OK - it's pretty with the neighborhood visible in the background, but I also feel like I'm pushing myself to use it there. Part of using it is really appreciating the laptop form factor - the extra screen space (because not scaled), the ability to look at different parts of the screen without it following you around... I wouldn't be surprised if I shift back to that more. The glasses setup really shines for the portability. But it's also a matter of getting the kinks/friction out, it's possible if I get my software set up just the right way I'll reach for the glasses more.
 
 ### TV
 
@@ -92,7 +92,7 @@ The challenge with any of this homebrew deck stuff is it's going to have sharp e
 ]]></description>
             <link>https://garden.grantcuster.com/2024-09-03-09-37-47-Cyberdeck-glasses-edition</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-09-03-09-37-47-Cyberdeck-glasses-edition</guid>
-            <pubDate>Tue, 03 Sep 2024 09:37:47 GMT</pubDate>
+            <pubDate>Tue, 03 Sep 2024 13:37:47 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2024-09-02-19-57-44-Artisty-and-AI-the-Model-Makers]]></title>
@@ -126,7 +126,7 @@ and this [thread](https://x.com/timhwang/status/1830630445072961903) from Tim Hw
 
 These were _fun_, I like to imagine a world of weird models put forward as art objects to explore.
 
-Does it seem like this is where things are headed thougn?
+Does it seem like this is where things are headed though?
 
 I haven't been thinking this way. I think because I've mainly been focused on using models in a programming context, where I'm looking for capabilities to fit into apps.
 
@@ -140,7 +140,7 @@ Maybe the variety shakes out more after the big capability race settles a bit, m
 
 And the idea of curating a dataset to define a model, does have some nice analogies - it feels like breeding grape varieties for wine or something. Where your intelligence about adding just a hint of this edgy data to balance out a mostly sophisticated set - and then a tasting with notes like 'a hint of this subreddit'.
 
-But in that example what is it you actually do with the model? Maaaybe it's a chatbot? No I think better if it's language then it's some sort of interactive storytelling - in which case the big thing it would need to be is distilled - so that you could see it's value immediately because the potentiol for slop is so high...
+But in that example what is it you actually do with the model? Maaaybe it's a chatbot? No I think better if it's language then it's some sort of interactive storytelling - in which case the big thing it would need to be is distilled - so that you could see it's value immediately because the potential for slop is so high...
 
 So it's fun to think about but gets very fuzzy.
 
@@ -155,7 +155,7 @@ To pin something for another day: part of the question is how to distinguish a s
 ]]></description>
             <link>https://garden.grantcuster.com/2024-09-02-19-57-44-Artisty-and-AI-the-Model-Makers</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-09-02-19-57-44-Artisty-and-AI-the-Model-Makers</guid>
-            <pubDate>Mon, 02 Sep 2024 19:57:44 GMT</pubDate>
+            <pubDate>Mon, 02 Sep 2024 23:57:44 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2024-09-01-21-16-36-Zoom]]></title>
@@ -167,7 +167,7 @@ Redid CSS zoom method again. Hopefully a base to build on for future projects at
 ]]></description>
             <link>https://garden.grantcuster.com/2024-09-01-21-16-36-Zoom</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-09-01-21-16-36-Zoom</guid>
-            <pubDate>Sun, 01 Sep 2024 21:16:36 GMT</pubDate>
+            <pubDate>Mon, 02 Sep 2024 01:16:36 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[2024-09-01-11-06-33-Ted-Chiang-Why-AI-isnt-going-to-make-art]]></title>
@@ -204,7 +204,7 @@ That seems right to me but also limited, if we were looking for sincere intentio
 ]]></description>
             <link>https://garden.grantcuster.com/2024-09-01-11-06-33-Ted-Chiang-Why-AI-isnt-going-to-make-art</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-09-01-11-06-33-Ted-Chiang-Why-AI-isnt-going-to-make-art</guid>
-            <pubDate>Sun, 01 Sep 2024 11:06:33 GMT</pubDate>
+            <pubDate>Sun, 01 Sep 2024 15:06:33 GMT</pubDate>
         </item>
     </channel>
 </rss>
