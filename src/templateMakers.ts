@@ -155,8 +155,31 @@ export function MakePostInThread({
     </div>`;
 }
 
-export function MakeDateHeader({ content }: { content: string }) {
-  return html`<div class="px-4 mb-2 text-sm text-blue">${content}</div>`;
+export function MakeDateHeader({
+  content,
+  dayArray,
+}: {
+  content: string;
+  dayArray: number[];
+}) {
+  return html`<div>
+    <div class="h-24 w-full px-4 mb-3 flex items-end">
+      ${dayArray
+        .map(
+          (_, i) =>
+            `<div
+              key=${i}
+              class="w-full flex items-stretch justify-center"
+              style="height: ${(Math.min(3, dayArray[i]) / 3) * 100}%"
+            >
+        <div class="w-px h-full bg-green"></div>
+
+      </div>`,
+        )
+        .join("")}
+    </div>
+    <div class="px-4 mb-2 text-sm text-blue">${content}</div>
+  </div>`;
 }
 
 export function Scratch() {

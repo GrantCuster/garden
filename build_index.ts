@@ -53,6 +53,21 @@ const longMonthsOfYear: string[] = [
   "December",
 ];
 
+const daysInMonth: number[] = [
+  31,
+  28,
+  31,
+  30,
+  31,
+  30,
+  31,
+  31,
+  30,
+  31,
+  30,
+  31,
+];
+
 export function formatDateString(dateString: string): string {
   // Extract components from the string
   const [year, month, day, hour, minute, second] = dateString
@@ -228,15 +243,15 @@ async function buildMonthIndex(
   threads: string[][],
   activeMonthNames: string[],
 ) {
-  let postsContent = "<div class='posts'>";
+  let _headerContent = ''
+  let _postsContent = "<div class='posts'>";
 
   const splits = monthName.split("-");
   const year = splits[0];
   const month = Number(splits[1]) - 1;
+  const dayNumber = daysInMonth[month];
+  const dayArray = Array.from({ length: dayNumber }, (_, i) => 0);
   const postCount = files.length;
-  postsContent += MakeDateHeader({
-    content: `${longMonthsOfYear[month]} ${year} &middot; ${postCount} post${postCount > 1 ? "s" : ""}`,
-  });
 
   for (const file of files) {
     const filePath = path.join(inputDir, file);
@@ -254,86 +269,90 @@ async function buildMonthIndex(
       truncatedText = paragraphs.slice(0, 3).join("\n\n");
     }
 
-    let link = "";
-    let threadContent = "";
-    let threadStamp = "";
-    let isInThread = false;
-    let isLastInThread = false;
-    for (const thread of threads) {
-      // only check if last because only show thread once in index
-      if (thread.includes(file)) {
-        isInThread = true;
-        if (thread[thread.length - 1] !== file) {
-          break;
-        }
-        isLastInThread = true;
-        const threadBase = "t-" + path.basename(thread[0], ".md");
-        link = threadBase;
+    const day = Number(basename.split("-")[2]) - 1
+    dayArray[day] = dayArray[day] + 1
 
-        let truncatedThread: string[] = [];
+    // let link = "";
+    // let threadContent = "";
+    // let threadStamp = "";
+    // let isInThread = false;
+    // let isLastInThread = false;
+    // for (const thread of threads) {
+    //   // only check if last because only show thread once in index
+    //   if (thread.includes(file)) {
+    //     isInThread = true;
+    //     if (thread[thread.length - 1] !== file) {
+    //       break;
+    //     }
+    //     isLastInThread = true;
+    //     const threadBase = "t-" + path.basename(thread[0], ".md");
+    //     link = threadBase;
+    //
+    //     let truncatedThread: string[] = [];
+    //
+    //     // Last and second to last
+    //     truncatedThread.push(thread[thread.length - 2]);
+    //     truncatedThread.push(thread[thread.length - 1]);
+    //
+    //     if (thread.length > 2) {
+    //       threadContent += MakeThreadTruncated({
+    //         content: "1" + (thread.length > 3 ? "-" + (thread.length - 2) : ""),
+    //       });
+    //     }
+    //
+    //     for (const file of truncatedThread) {
+    //       const filePath = path.join(inputDir, file);
+    //       const basename = path.basename(file, ".md");
+    //       const index = thread.indexOf(file);
+    //
+    //       const text = await fs.readFile(filePath, "utf-8");
+    //       let destination = threadBase + "#" + basename;
+    //
+    //       const destinationFunc = `function navigate() { window.location = '${destination}' }; navigate();`;
+    //       const paragraphs = text.split("\n\n");
+    //       let truncated = false;
+    //       let truncatedText = text;
+    //       if (paragraphs.length > 3) {
+    //         truncated = true;
+    //         truncatedText = paragraphs.slice(0, 3).join("\n\n");
+    //       }
+    //
+    //       const generatedHtmlContent = execSync(
+    //         `pandoc -f markdown-smart-markdown_in_html_blocks+raw_html+autolink_bare_uris -t html`,
+    //         {
+    //           input: truncatedText,
+    //         },
+    //       ).toString();
+    //
+    //       const timestamp = formatDateString(basename);
+    //
+    //       const postContent = MakePostLink({
+    //         postCount: index + 1,
+    //         timestamp: timestamp,
+    //         htmlContent: generatedHtmlContent,
+    //         truncated,
+    //         postlinkFunction: destinationFunc,
+    //       });
+    //       threadContent += postContent;
+    //     }
+    //
+    //     threadStamp = formatDateString(
+    //       path.basename(thread[thread.length - 1], ".md"),
+    //     );
+    //     break;
+    //   }
+    // }
 
-        // Last and second to last
-        truncatedThread.push(thread[thread.length - 2]);
-        truncatedThread.push(thread[thread.length - 1]);
-
-        if (thread.length > 2) {
-          threadContent += MakeThreadTruncated({
-            content: "1" + (thread.length > 3 ? "-" + (thread.length - 2) : ""),
-          });
-        }
-
-        for (const file of truncatedThread) {
-          const filePath = path.join(inputDir, file);
-          const basename = path.basename(file, ".md");
-          const index = thread.indexOf(file);
-
-          const text = await fs.readFile(filePath, "utf-8");
-          let destination = threadBase + "#" + basename;
-
-          const destinationFunc = `function navigate() { window.location = '${destination}' }; navigate();`;
-          const paragraphs = text.split("\n\n");
-          let truncated = false;
-          let truncatedText = text;
-          if (paragraphs.length > 3) {
-            truncated = true;
-            truncatedText = paragraphs.slice(0, 3).join("\n\n");
-          }
-
-          const generatedHtmlContent = execSync(
-            `pandoc -f markdown-smart-markdown_in_html_blocks+raw_html+autolink_bare_uris -t html`,
-            {
-              input: truncatedText,
-            },
-          ).toString();
-
-          const timestamp = formatDateString(basename);
-
-          const postContent = MakePostLink({
-            postCount: index + 1,
-            timestamp: timestamp,
-            htmlContent: generatedHtmlContent,
-            truncated,
-            postlinkFunction: destinationFunc,
-          });
-          threadContent += postContent;
-        }
-
-        threadStamp = formatDateString(
-          path.basename(thread[thread.length - 1], ".md"),
-        );
-        break;
-      }
-    }
-
-    if (isInThread) {
-      if (isLastInThread) {
-        // only add to index for last
-        postsContent += MakeThreadLink({
-          timestamp: threadStamp,
-          htmlContent: threadContent,
-        });
-      }
-    } else {
+    // threads disabled for now
+    // if (isInThread) {
+    //   if (isLastInThread) {
+    //     // only add to index for last
+    //     postsContent += MakeThreadLink({
+    //       timestamp: threadStamp,
+    //       htmlContent: threadContent,
+    //     });
+    //   }
+    // } else {
       // is not in thread
       const generatedHtmlContent = execSync(
         `pandoc -f markdown-smart-markdown_in_html_blocks+raw_html+autolink_bare_uris -t html`,
@@ -351,10 +370,10 @@ async function buildMonthIndex(
         postlinkFunction: destinationFunc,
       });
 
-      link = destination;
+      // link = destination;
 
-      postsContent += postContent;
-    }
+      _postsContent += postContent;
+    // }
 
     // TODO redo social text
     // if (markdownFiles.indexOf(file) === 0) {
@@ -366,7 +385,12 @@ async function buildMonthIndex(
     // }
   }
 
-  postsContent += "</div>";
+  _postsContent += "</div>";
+
+  _headerContent += MakeDateHeader({
+    content: `${longMonthsOfYear[month]} ${year} &middot; ${postCount} post${postCount > 1 ? "s" : ""}`,
+    dayArray: dayArray,
+  });
 
   const monthIndex = activeMonthNames.indexOf(monthName);
   const targetName = monthIndex === 0 ? "index.html" : monthName + ".html";
@@ -395,6 +419,7 @@ setTimeout(handleScroll, 1000)`;
     await fs.writeFile(path.join(outputDir, "infinite.js"), script, "utf-8");
   }
 
+  const postsContent = _headerContent + _postsContent;
   await saveIndexContent({
     optionHead: `<script src="/infinite.js"></script>`,
     postsContent: postsContent,
@@ -519,15 +544,18 @@ const main = async () => {
       // rebuild
       await fs.rm(outputDir, { recursive: true });
       await fs.mkdir(outputDir, { recursive: true });
-      await fs.copyFile(
-        path.join(srcDir, cssFile),
-        path.join(outputDir, "index.css"),
-      );
-      await fs.copyFile(
+     await fs.copyFile(
         path.join(srcDir, jsFile),
         path.join(outputDir, "index.js"),
       );
     }
+
+    // Always copy css
+      await fs.copyFile(
+        path.join(srcDir, cssFile),
+        path.join(outputDir, "index.css"),
+      );
+ 
 
     const _markdownFiles = (await fs.readdir(inputDir))
       .filter((file) => file.endsWith(".md"))
