@@ -53,20 +53,7 @@ const longMonthsOfYear: string[] = [
   "December",
 ];
 
-const daysInMonth: number[] = [
-  31,
-  28,
-  31,
-  30,
-  31,
-  30,
-  31,
-  31,
-  30,
-  31,
-  30,
-  31,
-];
+const daysInMonth: number[] = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
 export function formatDateString(dateString: string): string {
   // Extract components from the string
@@ -243,8 +230,8 @@ async function buildMonthIndex(
   threads: string[][],
   activeMonthNames: string[],
 ) {
-  let _headerContent = ''
-  let _postsContent = "<div class='posts'>";
+  let _headerContent = "";
+  let _postsContent = "";
 
   const splits = monthName.split("-");
   const year = splits[0];
@@ -269,8 +256,8 @@ async function buildMonthIndex(
       truncatedText = paragraphs.slice(0, 3).join("\n\n");
     }
 
-    const day = Number(basename.split("-")[2]) - 1
-    dayArray[day] = dayArray[day] + 1
+    const day = Number(basename.split("-")[2]) - 1;
+    dayArray[day] = dayArray[day] + 1;
 
     // let link = "";
     // let threadContent = "";
@@ -353,26 +340,26 @@ async function buildMonthIndex(
     //     });
     //   }
     // } else {
-      // is not in thread
-      const generatedHtmlContent = execSync(
-        `pandoc -f markdown-smart-markdown_in_html_blocks+raw_html+autolink_bare_uris -t html`,
-        {
-          input: truncatedText,
-        },
-      ).toString();
+    // is not in thread
+    const generatedHtmlContent = execSync(
+      `pandoc -f markdown-smart-markdown_in_html_blocks+raw_html+autolink_bare_uris -t html`,
+      {
+        input: truncatedText,
+      },
+    ).toString();
 
-      const timestamp = formatDateString(basename);
+    const timestamp = formatDateString(basename);
 
-      const postContent = MakePostLink({
-        timestamp,
-        htmlContent: generatedHtmlContent,
-        truncated,
-        postlinkFunction: destinationFunc,
-      });
+    const postContent = MakePostLink({
+      timestamp,
+      htmlContent: generatedHtmlContent,
+      truncated,
+      postlinkFunction: destinationFunc,
+    });
 
-      // link = destination;
+    // link = destination;
 
-      _postsContent += postContent;
+    _postsContent += postContent;
     // }
 
     // TODO redo social text
@@ -384,8 +371,6 @@ async function buildMonthIndex(
     //   );
     // }
   }
-
-  _postsContent += "</div>";
 
   _headerContent += MakeDateHeader({
     content: `${longMonthsOfYear[month]} ${year} &middot; ${postCount} post${postCount > 1 ? "s" : ""}`,
@@ -419,7 +404,8 @@ setTimeout(handleScroll, 1000)`;
     await fs.writeFile(path.join(outputDir, "infinite.js"), script, "utf-8");
   }
 
-  const postsContent = _headerContent + _postsContent;
+  const postsContent =
+    '<div class="posts">' + _headerContent + _postsContent + "</div>";
   await saveIndexContent({
     optionHead: `<script src="/infinite.js"></script>`,
     postsContent: postsContent,
@@ -544,18 +530,17 @@ const main = async () => {
       // rebuild
       await fs.rm(outputDir, { recursive: true });
       await fs.mkdir(outputDir, { recursive: true });
-     await fs.copyFile(
+      await fs.copyFile(
         path.join(srcDir, jsFile),
         path.join(outputDir, "index.js"),
       );
     }
 
     // Always copy css
-      await fs.copyFile(
-        path.join(srcDir, cssFile),
-        path.join(outputDir, "index.css"),
-      );
- 
+    await fs.copyFile(
+      path.join(srcDir, cssFile),
+      path.join(outputDir, "index.css"),
+    );
 
     const _markdownFiles = (await fs.readdir(inputDir))
       .filter((file) => file.endsWith(".md"))
