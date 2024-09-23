@@ -9,10 +9,36 @@
             <link>https://garden.grantcuster.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 15 Sep 2024 14:41:21 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 23 Sep 2024 21:47:32 GMT</lastBuildDate>
         <atom:link href="https://garden.grantcuster.com/rss.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Sun, 15 Sep 2024 14:41:21 GMT</pubDate>
+        <pubDate>Mon, 23 Sep 2024 21:47:32 GMT</pubDate>
         <managingEditor><![CDATA[Grant Custer]]></managingEditor>
+        <item>
+            <title><![CDATA[2024-09-23-17-39-53-Wide-desk]]></title>
+            <description><![CDATA[# Wide desk
+
+![https://grant-uploader.s3.amazonaws.com/2024-09-23-17-39-33-2000.jpg](New desk setup as of this weekend)
+
+![https://grant-uploader.s3.amazonaws.com/2024-09-23-17-38-54-800.jpg](Materials, with extra for later)
+
+![https://grant-uploader.s3.amazonaws.com/2024-09-23-17-39-16-800.jpg](Cutting up the legs)
+
+![https://grant-uploader.s3.amazonaws.com/2024-09-23-17-38-46-800.jpg](Track has been great for breaking up plywood)
+
+![https://grant-uploader.s3.amazonaws.com/2024-09-23-17-38-21-2000.jpg](Laying out the legs)
+
+![https://grant-uploader.s3.amazonaws.com/2024-09-23-17-38-21-800.jpg](Install went in a little bent)
+
+![https://grant-uploader.s3.amazonaws.com/2024-09-23-17-39-25-2000.jpg](Bare but functional)
+
+## Old Desk retro
+
+![https://grant-uploader.s3.amazonaws.com/2024-09-23-17-39-05-2000.jpg](Old desk setup, now in the garage. I gave up the standing option for more space.)
+]]></description>
+            <link>https://garden.grantcuster.com/2024-09-23-17-39-53-Wide-desk</link>
+            <guid isPermaLink="true">https://garden.grantcuster.com/2024-09-23-17-39-53-Wide-desk</guid>
+            <pubDate>Mon, 23 Sep 2024 21:39:53 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-09-15-10-37-37]]></title>
             <description><![CDATA[Organizing a new quotes repo: https://github.com/grantcuster/quotes
@@ -52,30 +78,6 @@ But then it's more like a conventional image editor app. Maybe that's fine. I"ve
             <link>https://garden.grantcuster.com/2024-09-05-17-26-43-Wysywig-brainstorm</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-09-05-17-26-43-Wysywig-brainstorm</guid>
             <pubDate>Thu, 05 Sep 2024 21:26:43 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-09-05-17-13-52-Hand-landmark-ideas]]></title>
-            <description><![CDATA[# Hand landmark ideas
-
-Brainstorming on the train. Laying out the pieces.
-
-I can use mediapipe hand landmark. I know the positions of the fingers. I'll use pointer finger as cursor, if they have two hands up I can use both of them...
-
-I can use pointer and thumb pincer as click. I can normalize distance based on lower knuckle thumb distance probably. Click and drag works with that motion too, although maybe it's a shame you can't just point and drag - maybe also some ability to toggle based on the other hand.
-
-You could also try and distinguish point and drag from fist, so that raising one finger was the trigger - interesting you'd want to wait until it was fully raised though, probably need a little delay.
-
-Idea to use your hand to 'freeze pixels' in a webcam just by dragging across an area... Question of when your fingers are 'live' and active.
-
-Pixelate pixels by clicking, every click doubles the pixel area. That would actually work I think. I donder if I even grid it out in that case or just do it iteratively over the top... I think do it over the top but bigger pixels would overwrite smaller pixels. You'd want to set up pointerDown, pointerMove, pointerUp events, which would be fun in it's own right. And I guess you'd always track pointer as pointer... I think I'd need to chunk it up a bit though, because there's got to be some instability just sitting that there's not with a mouse or trackpad.
-
-Maybe that's a good first demo. Pointerdown, pointermove, pointerup. What do you do when a hand goes offscreen? I think you keep it down if it's down huh? Till it comes back not down.
-
-A bummer with webcam examples is I won't be able to write them on the train.
-]]></description>
-            <link>https://garden.grantcuster.com/2024-09-05-17-13-52-Hand-landmark-ideas</link>
-            <guid isPermaLink="true">https://garden.grantcuster.com/2024-09-05-17-13-52-Hand-landmark-ideas</guid>
-            <pubDate>Thu, 05 Sep 2024 21:13:52 GMT</pubDate>
         </item>
     </channel>
 </rss>
