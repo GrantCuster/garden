@@ -9,10 +9,24 @@
             <link>https://garden.grantcuster.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 23 Sep 2024 21:55:47 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 29 Sep 2024 00:11:47 GMT</lastBuildDate>
         <atom:link href="https://garden.grantcuster.com/rss.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Mon, 23 Sep 2024 21:55:47 GMT</pubDate>
+        <pubDate>Sun, 29 Sep 2024 00:11:47 GMT</pubDate>
         <managingEditor><![CDATA[Grant Custer]]></managingEditor>
+        <item>
+            <title><![CDATA[2024-09-28-20-08-11-String-computer-storage]]></title>
+            <description><![CDATA[# String computer storage
+
+New desk experiments - stashing a beheaded desktop below the desk with string loops.
+
+![Top view - strings coming out of drilled holes](https://grant-uploader.s3.amazonaws.com/2024-09-28-20-07-26-800.jpg)
+
+![Bottom view - laptop body tied to the underside of the desk](https://grant-uploader.s3.amazonaws.com/2024-09-28-20-07-26-800.jpg)
+]]></description>
+            <link>https://garden.grantcuster.com/2024-09-28-20-08-11-String-computer-storage</link>
+            <guid isPermaLink="true">https://garden.grantcuster.com/2024-09-28-20-08-11-String-computer-storage</guid>
+            <pubDate>Sat, 28 Sep 2024 20:08:11 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[2024-09-23-17-39-53-Wide-desk]]></title>
             <description><![CDATA[# Wide desk
@@ -27,7 +41,7 @@
 
 ![Track has been great for breaking up plywood](https://grant-uploader.s3.amazonaws.com/2024-09-23-17-38-46-800.jpg)
 
-![Laying out the legs](https://grant-uploader.s3.amazonaws.com/2024-09-23-17-38-21-2000.jpg)
+![Laying out the legs](https://grant-uploader.s3.amazonaws.com/2024-09-23-17-38-33-800.jpg)
 
 ![Install went in a little bent](https://grant-uploader.s3.amazonaws.com/2024-09-23-17-38-21-800.jpg)
 
@@ -39,47 +53,84 @@
 ]]></description>
             <link>https://garden.grantcuster.com/2024-09-23-17-39-53-Wide-desk</link>
             <guid isPermaLink="true">https://garden.grantcuster.com/2024-09-23-17-39-53-Wide-desk</guid>
-            <pubDate>Mon, 23 Sep 2024 21:39:53 GMT</pubDate>
+            <pubDate>Mon, 23 Sep 2024 17:39:53 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[2024-09-15-10-37-37]]></title>
-            <description><![CDATA[Organizing a new quotes repo: https://github.com/grantcuster/quotes
+            <title><![CDATA[2024-09-19-09-16-52]]></title>
+            <description><![CDATA[Thinking a lot lately about making a comfortable environment for myself. Both in real space and digital space.
 
-![pokemonsay hooked up to my quotes text file](https://grant-uploader.s3.amazonaws.com/2024-09-15-10-38-29-800.jpg)
+In real space I think about my desk setup. I think about nostalgic 90s photos of cozy computer setups.
+
+In digital space I think about my neovim and terminal setup. After getting things pretty well setup I've kind of let them sit - and added a few things that never quite worked right. That cruft started to build up and now I'm starting to clean it out.
+
+A hard thing is, if you keep to tools you only know well (even things like vim plugins and keymap settings) you never learn anything new, but if you do a bunch you end up with a mess. I think that's why opinionated setups can be a big help -- you know what you're using is useful to someones workflow. I've had some good experiences there with using the basics and then at some point needing something more and having it already there configured to use.
+
+That is definitely part of why I use the miryoku keyboard layout. Previously I'd tried setting up only basic keys and building up from there, but that could really throw a wrench when you ran into something -- like needing to use a function key and you couldn't go ahead with that keyboard until you'd reflashed.
+
+But I also do feel some weight of neovim knowing some things are hanging around unused. Maybe I should make an alt, super-minimal config. Or maybe I should stick with where I'm in and have patience. Definitely another piece is needing to work with the setup - actually typing and looking at this setup now I think it's pretty good. I fixed navigating wrapped lines yesterday and now that is so much better -- I guess part of it is wondering how much stuff like that is lurking.
 ]]></description>
-            <link>https://garden.grantcuster.com/2024-09-15-10-37-37</link>
-            <guid isPermaLink="true">https://garden.grantcuster.com/2024-09-15-10-37-37</guid>
-            <pubDate>Sun, 15 Sep 2024 14:37:37 GMT</pubDate>
+            <link>https://garden.grantcuster.com/2024-09-19-09-16-52</link>
+            <guid isPermaLink="true">https://garden.grantcuster.com/2024-09-19-09-16-52</guid>
+            <pubDate>Thu, 19 Sep 2024 09:16:52 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[2024-09-12-21-21-40]]></title>
-            <description><![CDATA[Inspired by dynamicland to try some real world manipulation linked to digital objects. I'd guessed coarse color matching would be enough here - it may not be.
+            <title><![CDATA[2024-09-17-09-12-43]]></title>
+            <description><![CDATA[Back on the train and in the glasses deck. Sitting next to a big coffee spill on the flor and a man slowly, methodically eating a sandwich.
 
-![Red construction paper in real life moves sloth on computer](https://grant-uploader.s3.amazonaws.com/2024-09-12-21-22-59.gif)
+I don't know if I'll actually publish this as a post, but I wanted to collect my thoughts by writing.
+
+This morning I was thinking of buying a new kitchen knife and working on cooking a couple of dinners a week again. I'd like to find some sort of system for all of that that feels good.
+
+I was also thinking about buying some new pants too.
+
+Is that today's todo list?
+
+- Buy kitchen knife (best starter knife?)
+- Buy pants
+
+I got the little raspberry pi TV working. That's cool I think. Still somehow feel behind on the work I'm doing.
+
+I want to take some time to redo my Neovim config:
+
+- add config to navigate wrapped lines
+- remove ChatGPT integration
+- add neogit
+- add diffview I think
+
+What do I want to do for a constraint systems thing? I was still thinking about manipulation of digital objects in the real world. Just keying out a color didn't seem to work that well. I still feel like that should work, maybe I just need white paper background and better lighting... but hands would still disrupt something like red. Maybe that's why it's a green and blue screen, red has more collisions with skin tones...
+
+I think I figured out dynamicland is using SIFT to track objects. Which should handle rotation and different sizing. I think I could get that going. I still don't quite understand how you choose what features. Maybe you feed it an image of just the paper with the markers on it. I wonder why they're called fiduciary markers.
+
+If I got that going I think the best thing to do would be to let the user put together a digital canvas but with physical manipulation.
+
+I'm hot on this train.
+
+I was trying to think if I could use lightweight object detection model instead - maybe if I printed out really generic objects, like cats and dogs... but that wouldn't necessarily handle rotation.
+
+I also know I have good hand landmark tracking - could I use that instead? I feel like the gap there is a good selection mechanism. It could be fun to do forefinger pinch and drag to move. Middle finger pinch and drag to scale. Ring finger pinch to open context menu. Pinky finger pinch to delete. Set a little timer on it. Ah what about moving camera though. Other hand? Yea other hand pan and zoom.
+
+Set up canvas. Could replicate with mouse and keyboard keys.
+
+Camera video goes behind the canvas. Maybe you could pull in resources off the side? Textboxes could work too.
+
+Oh do you want to think more about how your zoom canvas should work? I don't understand why the center doesn't go to zero zero in the current canvas. It's kind of OK but it's not totally on stable ground.
+
+What was the thing I wanted to write about, adding computation to objects.
+
+dynamicland - bless and draw four points - that was actually the older model right?
+
+hyperphotos - clickable photos. still a gemini demo where I could just use bounding boxes for that. I need a source for the links. Something like a sitemap, or just a list of links. Hmm maybe a site builder. Where you first specify the pages, and it just does a bare-canvas. But you have the option to then go to a webcam view.
+
+What's a good bare-bones structure? Portfolio and about? If it was hamster photos and you put text descriptions... Still wouldn't handle rotation. Match these images to this sketch...
+
+
+
+
+
 ]]></description>
-            <link>https://garden.grantcuster.com/2024-09-12-21-21-40</link>
-            <guid isPermaLink="true">https://garden.grantcuster.com/2024-09-12-21-21-40</guid>
-            <pubDate>Fri, 13 Sep 2024 01:21:40 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[2024-09-05-17-26-43-Wysywig-brainstorm]]></title>
-            <description><![CDATA[# Wysywig brainstorm
-
-Demo that has some promise where all data is in the image file. Sources on the left, canvas layout on the top right. Data encoded as image pixels on the bottom right.
-
-But I'm not excited to jump back into it lately so I need to figure something out.
-
-I think it gets more interesting when I have the three ways of working with the images.
-
-- The first way is like they're... images, the destination has them as movable, resizable boxes.
-- The second way is like text. You have keybindings that print the image, and move you to the next square. One undecide piece here is are their text blocks? That complicates things, right? For their to be text blocks - maybe simplifies some things too, maybe they work kind of like they did in Sprout. Expanding out horizontally at first, to some max width then moving down. What is that data structure? Each char belongs to the text block... But that could also help explain why text gets laid out differently. It's not text that does, it's anything in this block. It's a layout in a block yea...
-- The third way is paint, makes most sense with colors you could click and drag to print the same image... I guess like chars, a big part of the paint being useful is it should be able to break out of the box clumps - that's why you use it for something like annotation on top of other pieces. Maybe you group it together as you paint - i've done that before too.
-
-But then it's more like a conventional image editor app. Maybe that's fine. I"ve tried to avoid layers before, hmmm...
-]]></description>
-            <link>https://garden.grantcuster.com/2024-09-05-17-26-43-Wysywig-brainstorm</link>
-            <guid isPermaLink="true">https://garden.grantcuster.com/2024-09-05-17-26-43-Wysywig-brainstorm</guid>
-            <pubDate>Thu, 05 Sep 2024 21:26:43 GMT</pubDate>
+            <link>https://garden.grantcuster.com/2024-09-17-09-12-43</link>
+            <guid isPermaLink="true">https://garden.grantcuster.com/2024-09-17-09-12-43</guid>
+            <pubDate>Tue, 17 Sep 2024 09:12:43 GMT</pubDate>
         </item>
     </channel>
 </rss>
