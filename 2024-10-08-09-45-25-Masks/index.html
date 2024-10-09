@@ -1,0 +1,153 @@
+<html class="bg-hard0 text-foreground">
+  <head>
+    <title>
+      Tuesday &middot; Oct 8, 2024 &middot; 9:45 AM - Grant's Garden
+    </title>
+    <meta name="description" content="# Masks" />
+    <meta
+      property="og:title"
+      content="Tuesday &middot; Oct 8, 2024 &middot; 9:45 AM - Grant's Garden"
+    />
+    <meta property="og:description" content="# Masks" />
+    <meta
+      property="og:image"
+      content="https://grant-uploader.s3.amazonaws.com/og-images/2024-10-08-09-45-25-Masks.png"
+    />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:image"
+      content="https://grant-uploader.s3.amazonaws.com/og-images/2024-10-08-09-45-25-Masks.png"
+    />
+    <script src="/index.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/index.css" />
+  </head>
+  <body>
+    <div class="max-w-[55ch] mx-auto">
+      <div class="text-green mt-4 mb-2 px-4">
+        <a href="/">Grant's garden</a>
+      </div>
+      <div class="px-4 text-sm text-dark4 mb-2">
+        Tuesday &middot; Oct 8, 2024 &middot; 9:45 AM
+      </div>
+      <div class="px-4 border border-dark1 mb-4 post">
+        <div class="markdown">
+          <h1 id="masks">Masks</h1>
+          <p>
+            New on <a href="https://constraint.systems">Constraint Systems</a>:
+          </p>
+          <p><a href="https://masks.constraint.systems">Masks</a></p>
+          <p>[ insert GIF here ]</p>
+          <p>
+            <a href="https://github.com/constraint-sys/masks">Github repo</a>
+          </p>
+          <p>Collage faces using your webcam.</p>
+          <h2 id="dev-notes">Dev notes</h2>
+          <h3 id="mediapipe">Mediapipe</h3>
+          <p>
+            I've been looking at the <a href="#mediapipe">mediapipe</a> set of
+            models for a while. They're small AI models that can run on-device
+            (in JavaScript on this case). I was curious how well the segmenter
+            could do at background removal. The best model turned out to be [
+            selfie name ], which is actually a multi-class model, segmenting
+            hair, face, body and clothes separately.
+          </p>
+          <p>
+            I think I was first alerted to Mediapipe possibilities based on
+            demos posted by Nolan Lawson and Grant Knot [ citations needed ].
+          </p>
+          <h3 id="solitaire-win-state">Solitaire win state</h3>
+          <p>[ insert solitaire image ]</p>
+          <p>
+            For a long time I've been looking for an excuse to do something with
+            the "solitaire win state" effect where a card is drawn on top of
+            itself slightly offset. This is the default state of drawing to a
+            canvas if you don't clear it, and I'm always interested in using
+            default states in interesting ways.
+          </p>
+          <p>
+            I tried this out with drawing the face and was pleased to see if you
+            draw only the face segment on top of each other it looks like a
+            worm.
+          </p>
+          <h3 id="performance">Performance</h3>
+          <p>
+            The Mediapipe models run fast on the GPU. Segmentation was fine at
+            60 fps on a Macbook Pro. It struggled more on my Intel LG Gram. For
+            segmentation, the results come back as pixel arrays, with a
+            different value for each category. (There's also confidence masks
+            which would maybe let me have smoother edges, but I didn't dip into
+            them for this project.) The [ default example ] shows looping
+            through the pixel array to draw depending on your category and then
+            you composite the video on top. It's pretty fast but I wondered if
+            WebGL could be faster.
+          </p>
+          <p>
+            WebGL worked! Pretty much completely thanks to this post and
+            accompanying codepen [ link here ] from user [ user name here ]. The
+            codepen needed import syntax change, and then to be modified for
+            what I was using, but it had the foundations of the WebGL approach
+            laid out. I didn't rigorously record performance stats, but I think
+            on my Gram it went from ~50ms to under 16ms with the switch to
+            WebGL. It will still make my fan go, and later I added an FPS
+            throttle to help with that. (Plus with this drawing effect a lower
+            FPS is often kind of interesting.)
+          </p>
+          <p>
+            I fiddled with the compositing to get fewer draw calls - I'm still a
+            little confused about why the blend mode combo results in what it
+            does here, but it works.
+          </p>
+          <p>
+            Once I got the WebGL setup things were pretty smooth. I had to
+            adjust to a fuzzy category val match for phones - an issue with
+            float precision probably?
+          </p>
+          <p>
+            WebGL handles masking out the video using the segmentation. The
+            result is drawn to a conventional 2D canvas. This doesn't seem to
+            eat up too much performance and it makes things like saving a copy
+            or backing it up to local storage simple.
+          </p>
+          <h3 id="ai-considerations">AI Considerations</h3>
+          <p>
+            I've been unsure about how to work AI into the Constraint Systems
+            stuff. I think these capabilities should be explored, but I didn't
+            want to have people pasting in their API keys. With Mediapipe
+            everything runs on the user's device, and this experiment should
+            continue to work as long as browsers do.
+          </p>
+          <p>
+            I also kind of like the shape of these small models, they have a
+            targeted capability and then it's up to you to think of how it can
+            be applied - that's the general shape of experimentation I like to
+            do.
+          </p>
+          <p>
+            In some ways this is a companion to some of the other image
+            manipulation apps I've done, like Res, which explored pixelation
+            based on compression size. Here we have an algorithm that instead
+            pattern matches on faces. We explore and get a feel from the
+            capability by experimenting with it. Face tracking can of course be
+            put to creepy/bad uses. I think by keeping data here local I can use
+            this as a demonstration/education, but it's rocky terrain all
+            around. Please don't point it at anybody without their consent. It
+            is interesting that even though taking a full video of people around
+            you contains the same information (actually more), capturing just
+            the faces feels creepier.
+          </p>
+          <h3 id="long-form-collage">Long form collage</h3>
+          <p>
+            One thing I like about the 'draw on top of what's there' rendering
+            approach is that it can build up and accumulate over time. I'm
+            interested in setting up a long running version of this with a
+            dedicated screen, that could potentially build up over months.
+            Because the web app saves and restores from local storage you also
+            get some of this effect from opening on the same device over time.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
