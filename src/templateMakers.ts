@@ -163,7 +163,7 @@ export function MakeDateHeader({
   dayArray: number[];
 }) {
   return html`<div>
-    <div class="h-24 w-full px-4 mb-3 flex items-end">
+    <div class="h-24 w-full px-4 mb-3 flex items-end border-b-2 border-dark3">
       ${dayArray
         .map(
           (_, i) =>
@@ -172,7 +172,9 @@ export function MakeDateHeader({
               class="w-full flex items-stretch justify-center"
               style="height: ${(Math.min(3, dayArray[i]) / 3) * 100}%"
             >
-        <div class="w-px h-full bg-green"></div>
+        <div class="h-full bg-green"
+          style="width: 2px"
+        ></div>
 
       </div>`,
         )
