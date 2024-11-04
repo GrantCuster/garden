@@ -1,0 +1,215 @@
+<html class="bg-hard0 text-foreground">
+  <head>
+    <title>
+      Thursday &middot; Jul 30, 2020 &middot; 10:34 AM - Grant's Garden
+    </title>
+    <meta name="description" content="# Automadraw: release notes" />
+    <meta
+      property="og:title"
+      content="Thursday &middot; Jul 30, 2020 &middot; 10:34 AM - Grant's Garden"
+    />
+    <meta property="og:description" content="# Automadraw: release notes" />
+    <meta
+      property="og:image"
+      content="https://grant-uploader.s3.amazonaws.com/og-images/2020-07-30-10-34-10-Automadraw-release-notes.png"
+    />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:image"
+      content="https://grant-uploader.s3.amazonaws.com/og-images/2020-07-30-10-34-10-Automadraw-release-notes.png"
+    />
+    <script src="/index.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/index.css" />
+  </head>
+  <body>
+    <div class="max-w-[55ch] mx-auto">
+      <div class="text-green mt-4 mb-2 px-4">
+        <a href="/">Grant's garden</a>
+      </div>
+      <div class="px-4 text-sm text-dark4 mb-2">
+        Thursday &middot; Jul 30, 2020 &middot; 10:34 AM
+      </div>
+      <div class="px-4 border border-dark1 mb-4 post">
+        <div class="markdown">
+          <h1 id="automadraw-release-notes">Automadraw: release notes</h1>
+          <p>
+            <img
+              src="https://grant-uploader.s3.amazonaws.com/2024-08-21-20-00-13.gif"
+            />
+          </p>
+          <p>
+            <a href="https://automadraw.constraint.systems">Automadraw</a> is a
+            new experimental app I made for my
+            <a href="https://constraint.systems">Constraint Systems</a> project.
+            It lets you draw and evolve your drawing using cellular automata
+            using two keyboard controlled cursors.
+          </p>
+          <h2 id="what-is-it-for">What is it for</h2>
+          <p>
+            I think there are two main uses for Automadraw: 1. Get more familiar
+            with the cellular automata (Conway's Game of Life and Langton's Ant)
+            that it runs. You can quickly experiment with lots of different
+            patterns. 2. Draw something collaboratively with the automata. The
+            interaction design aims to make working with the automata intuitive.
+            These design techniques (two cursors, keyboard controls) could be
+            applied to a wide range of creative apps.
+          </p>
+          <h2 id="two-cursors">Two cursors</h2>
+          <p>
+            I had originally planned to use just one cursor, and have it shift
+            between draw mode and "act" (run automata) mode. As I experimented I
+            found that usually for act mode I wanted to cover a large area and
+            draw mode a smaller one. Having to resize when switching between
+            modes ruined the flow, so I split the cursors up.
+          </p>
+          <p>
+            Splitting them up opened up some new possibilities. I realized I
+            could set it up so that I could use each cursor's actions (draw or
+            act, respectively) regardless of which one was in focus. This set up
+            a couple of interactions I really liked:
+          </p>
+          <figure>
+            <img
+              src="https://grant-uploader.s3.amazonaws.com/2024-08-21-20-01-35.gif"
+              alt="Sweeping: draw some lines then use a long, narrow act cursor to sweep over the lines, running Game of Life over each sweep step. This usually produces intricate symmetrical designs that really feel like they&#39;re evolving through each sweep."
+            />
+            <figcaption aria-hidden="true">
+              Sweeping: draw some lines then use a long, narrow act cursor to
+              sweep over the lines, running Game of Life over each sweep step.
+              This usually produces intricate symmetrical designs that really
+              feel like they're evolving through each sweep.
+            </figcaption>
+          </figure>
+          <figure>
+            <img
+              src="https://grant-uploader.s3.amazonaws.com/2024-08-21-20-02-29.gif"
+              alt="Active environment: resize the act cursor over a large area, use the draw cursor and have it move in and out of the act area as the automata is run. The act area becomes an environment where different rules apply. It feels like a physics or chemistry simulation."
+            />
+            <figcaption aria-hidden="true">
+              Active environment: resize the act cursor over a large area, use
+              the draw cursor and have it move in and out of the act area as the
+              automata is run. The act area becomes an environment where
+              different rules apply. It feels like a physics or chemistry
+              simulation.
+            </figcaption>
+          </figure>
+          <p>
+            This set-up is uniquely suited to keyboard cursor controls, where
+            each cursor's position is fully visible and fully predictable
+            (versus a touch interface where you would have to use multiple
+            fingers and the fingers themselves would obscure your view of the
+            changes taking place). I use Vim-like keyboard controls because I
+            honestly prefer them. My suspicion is that they may enable modes of
+            interaction other methods do not. I was happy to find an interaction
+            that fit them so well. I'm looking forward to seeing how even more
+            multiple cursors feel in future experiments.
+          </p>
+          <p>
+            <a href="https://stamp.constraint.systems">Stamp</a> is a different
+            example of the possibilities of multiple cursors: two cursors across
+            two canvases.
+          </p>
+          <p>
+            <img
+              src="https://grant-uploader.s3.amazonaws.com/2024-08-21-20-03-12.gif"
+            />
+          </p>
+          <h2 id="keyboard-events">Keyboard events</h2>
+          <p>
+            Part of the reason the two cursor interaction is interesting is
+            because of an accident of keyboard event handling. A lot of the
+            Constraint System experiments let you hold down multiple keys. This
+            is tricky to handle in Javascript for everything except modifier
+            keys. The main issue is that if you're holding down one key, and
+            start holding an additional one, the new one will take over the
+            <code>keyDown</code>
+            event. The solution is to make a keymap object, store each key on
+            <code>keyDown</code> and remove it on on <code>keyUp</code>. You
+            then use the keymap object for the source of truth about what is
+            pressed on each <code>keyDown</code> event.
+          </p>
+          <p>
+            This technique mostly just works, but there turns out to be an
+            issue, arguably a bug, that makes things like the "sweep" technique
+            I discussed above possible. If you are pressing one key, add another
+            key, then let up on the second key, <code>keyDown</code> events stop
+            firing. For Automadraw, this behavior enables this interaction:
+          </p>
+          <ul>
+            <li>
+              Hold down 'a' to run automata, press a direction key to move the
+              act cursor. When you let up on the direction key the automata will
+              pause running... until you press a direction key again. Using this
+              technique you can run "sweeps", moving the act cursor across a set
+              of pixels, automatically running the automata once each step.
+            </li>
+          </ul>
+          <p>
+            This interaction was a happy accident, and I'm looking forward to
+            thinking about how to expand and support it more in future
+            experiments.
+          </p>
+          <h2 id="limitations-and-future-possiblities">
+            Limitations and future possiblities
+          </h2>
+          <p>
+            I had been wanting to experiment with cellular automata and a
+            drawing app for a long time. For this experiment, I needed to really
+            scope things down in order to get started. I restricted the drawing
+            app colors to 1-bit (on or off). This usefully limited the number of
+            cellular automata I could use and the number of interactions I
+            needed to support. I also made the app 'pixels' large, at 16 actual
+            pixels. This makes drawing quick and the automata actions more
+            legible, but also restricts the fidelity of the final image. Someday
+            I would like to build a cellular automata app more focused on image
+            editing, where you could evolve parts of an image at a higher
+            fidelity. That would also involve using automata that use color
+            information, there are some interesting examples of those in
+            <a href="https://www.youtube.com/watch?v=lyZUzakG3bE"
+              >this CA Lab demo video</a
+            >.
+          </p>
+          <h2 id="code">Code</h2>
+          <p>
+            The code for Automadraw is
+            <a href="https://github.com/constraint-systems/automadraw"
+              >avaliable on github</a
+            >.
+          </p>
+          <h3 id="slowly-recreating-react">Slowly recreating React</h3>
+          <p>
+            I built the early Constraint Systems experiments using React, but
+            have moved off of it to vanilla Javascript for the most recent ones.
+            I do find myself recreating a lot of the set-up of React. I've found
+            out firsthand that a lot of the React boilerplate I questioned is in
+            there to work around the constraints of Javascript itself. I may
+            switch back to React sometime, but right now I'm still enjoying
+            experimenting on my own. It is also true that a lot of the benefits
+            of React don't mesh well with HTML canvas, which is where most of
+            the action for this app takes place.
+          </p>
+          <h3 id="es6-modules">ES6 modules</h3>
+          <p>
+            This was the first project where I used ES6 modules. It was nice to
+            be able to organize the code into sections like
+            <code>keyboard</code> and <code>state</code>. I'll continue to use
+            them and refine my organization going forward. Maybe someday I'll
+            have a true base starter kit I can reuse across projects.
+          </p>
+          <h3 id="canvas-compositing">Canvas compositing</h3>
+          <p>
+            One switch I've made that I've been very happy with, is moving from
+            rendering multiple canvas DOM elements on top of eachother, to
+            placing only one canvas on the dom and compositing the different
+            layers (in this case: <code>cursor</code>, <code>grid</code>,
+            <code>art</code>) on to the DOM layer for each render. My rendering
+            code is a little knotty, but it still feels a lot cleaner than
+            stacking the canvases in the DOM.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

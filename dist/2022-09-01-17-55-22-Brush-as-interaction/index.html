@@ -1,0 +1,100 @@
+<html class="bg-hard0 text-foreground">
+  <head>
+    <title>
+      Thursday &middot; Sep 1, 2022 &middot; 5:55 PM - Grant's Garden
+    </title>
+    <meta name="description" content="# Brush as interaction" />
+    <meta
+      property="og:title"
+      content="Thursday &middot; Sep 1, 2022 &middot; 5:55 PM - Grant's Garden"
+    />
+    <meta property="og:description" content="# Brush as interaction" />
+    <meta
+      property="og:image"
+      content="https://grant-uploader.s3.amazonaws.com/og-images/2022-09-01-17-55-22-Brush-as-interaction.png"
+    />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:image"
+      content="https://grant-uploader.s3.amazonaws.com/og-images/2022-09-01-17-55-22-Brush-as-interaction.png"
+    />
+    <script src="/index.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/index.css" />
+  </head>
+  <body>
+    <div class="max-w-[55ch] mx-auto">
+      <div class="text-green mt-4 mb-2 px-4">
+        <a href="/">Grant's garden</a>
+      </div>
+      <div class="px-4 text-sm text-dark4 mb-2">
+        Thursday &middot; Sep 1, 2022 &middot; 5:55 PM
+      </div>
+      <div class="px-4 border border-dark1 mb-4 post">
+        <div class="markdown">
+          <h1 id="brush-as-interaction">Brush as interaction</h1>
+          <p>How do you change things?</p>
+          <p>
+            I'm interested in users having the ability to personalize websites.
+            I've mainly thought about it as a case for UI that lets you choose
+            different options, probably powered by CSS (see components.ai's
+            <a href="https://components.ai/css-gui">CSS.GUI</a>).
+          </p>
+          <p>
+            My
+            <a href="https://css-paint.constraint.systems">CSS Paint</a> project
+            lets you use a brush. It's interesting to use a brush. Should we let
+            people style their website using a brush to paint styles on to divs?
+          </p>
+          <p>
+            What out there is like a brush? There is the browser dev tools'
+            element picker. The element picker is almost like a 2-step brush
+            where you first select the element and then you edit it by way of
+            CSS. With a brush you set the CSS then you target the elements.
+          </p>
+          <p>
+            The advantage of a brush over an element picker or indivdual panel
+            approach is that you could apply it to more elements quickly.
+            Possibly the painting approach puts you in a different mode, less
+            structural, more expressive. Maybe a combo would be best. You
+            structurally build a house and then you expressively paint the
+            walls. Paint a little, sit back and consider, paint a little more.
+          </p>
+          <h2 id="challenges">Challenges</h2>
+          <h3 id="targeting-the-divs">Targeting the divs</h3>
+          <p>
+            If I think about being able to "paint divs" to style a website one
+            practical consideration is that, sometimes, divs are on top of other
+            divs, or their boundaries are not obvious. In that case painting may
+            have uninteneded effects. It'd be interesting to try and make a tool
+            where divs always have to have a little padding, as an affordance to
+            be targeted. You could also probably address this by using some of
+            the tools vector tools like Figma use to target different stacked
+            elements, although that would takes away from the simplicity I
+            think.
+          </p>
+          <h3 id="layout-shifts">Layout shifts</h3>
+          <p>
+            CSS does such a wide range of things, some of them, like changing
+            layout, when applied directly with a brush may be jarring in their
+            results. Maybe you need to limit some of the properties, or maybe
+            you can add hints to the transformations (or even some sort of diff
+            view?) that make what's happening more apparent.
+          </p>
+          <h2 id="connections-to-atomic-css-tailwind">
+            Connections to atomic CSS / Tailwind
+          </h2>
+          <p>
+            I've been loving using
+            <a href="https://tailwind.css">tailwind</a> for styles lately, which
+            has some things in common with a brush approach in that you have
+            this wide, but not infinite, set of styles you can choose from, like
+            a palette. I wonder if brush plus tailwind could be a good fit.
+            Prehaps another prototype.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
