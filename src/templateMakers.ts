@@ -95,10 +95,12 @@ export function MakePageHead({
   url: string;
   optional_head?: string;
 }) {
+  const descriptionReplaced = description.replace(/"/g, "'");
+  const titleReplaced = title.replace(/"/g, "'");
   return html`<title>${title} - Grant's Garden</title>
-    <meta name="description" content="${encodeURIComponent(description)}" />
-    <meta property="og:title" content="${encodeURIComponent(title)}" />
-    <meta property="og:description" content="${encodeURIComponent(description)}" />
+    <meta name="description" content="${descriptionReplaced}" />
+    <meta property="og:title" content="${titleReplaced}" />
+    <meta property="og:description" content="${descriptionReplaced}" />
     <meta property="og:image" content="${image_link}" />
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:image" content="${image_link}" />
