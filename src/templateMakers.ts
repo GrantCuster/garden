@@ -86,20 +86,23 @@ export function MakePageHead({
   title,
   description,
   image_link,
+  url,
   optional_head,
 }: {
   title: string;
   description: string;
   image_link: string;
+  url: string;
   optional_head?: string;
 }) {
   return html`<title>${title} - Grant's Garden</title>
-    <meta name="description" content="${description}" />
-    <meta property="og:title" content="${title} - Grant's Garden" />
-    <meta property="og:description" content="${description}" />
+    <meta name="description" content="${encodeURIComponent(description)}" />
+    <meta property="og:title" content="${encodeURIComponent(title)}" />
+    <meta property="og:description" content="${encodeURIComponent(description)}" />
     <meta property="og:image" content="${image_link}" />
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:image" content="${image_link}" />
+    <meta property="og:url" content="${url}" />
     <script src="/index.js"></script>
     ${optional_head ? optional_head : ""}`;
 }
