@@ -115,6 +115,7 @@ const domain = "https://garden.grantcuster.com";
 // Duplicated in garden
 export function getPreview(text: string, fileName: string) {
   const firstLine = text.split("\n")[0];
+
   const title = firstLine.startsWith("#")
     ? firstLine.slice(1).trim() + " - " + new Date().toLocaleString()
     : new Date().toLocaleString();
@@ -123,6 +124,9 @@ export function getPreview(text: string, fileName: string) {
   let stripped = text
     .replace(/!\[.*\]\(.*\)/g, "")
     .replace(/\*/g, "")
+    .split("\n")
+    .filter((line) => !line.startsWith("# "))
+    .join("\n")
     .replace(/#/g, "")
     .split("\n")
     .map((line) => line.trim())
@@ -152,10 +156,10 @@ export function getPreview(text: string, fileName: string) {
   if (previewImage.includes(".gif")) {
     previewImage = previewImage.replace(".gif", "-preview.jpg");
   }
-  previewImage = previewImage.replace(
-    "https://grant-uploader.s3.amazonaws.com/",
-    "",
-  );
+  // previewImage = previewImage.replace(
+  //   "https://grant-uploader.s3.amazonaws.com/",
+  //   "",
+  // );
 
   return {
     excerpt: stripped,
@@ -207,10 +211,7 @@ async function buildStandalonePage({
     },
   ).toString();
 
-  const { excerpt, title, previewImage, url } = getPreview(
-    content,
-    basename,
-  );
+  const { excerpt, title, previewImage, url } = getPreview(content, basename);
 
   let postHeadContent = MakePageHead({
     title: title,
