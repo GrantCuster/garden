@@ -480,12 +480,13 @@ setTimeout(handleScroll, 1000)`;
 async function generateIndexContent({
   markdownFiles,
   threads,
+  allMarkdownFiles,
 }: {
   markdownFiles: string[];
   threads: string[][];
+  allMarkdownFiles: string[];
 }) {
   let monthsLookup: Record<string, number> = {};
-
   const activeMonths: Record<string, string[]>[] = [];
   for (const file of markdownFiles) {
     const basename = path.basename(file, ".md");
@@ -500,14 +501,29 @@ async function generateIndexContent({
     }
   }
 
-  const activeMonthNames = Object.values(activeMonths).map(
+  monthsLookup = {};
+  const allMonths: Record<string, string[]>[] = [];
+  for (const file of allMarkdownFiles) {
+    const basename = path.basename(file, ".md");
+    const splits = basename.split("-");
+    const yearMonth = splits.slice(0, 2).join("-");
+    if (monthsLookup[yearMonth] === undefined) {
+      monthsLookup[yearMonth] = 1;
+      allMonths.push({ [yearMonth]: [file] });
+    } else {
+      monthsLookup[yearMonth] = monthsLookup[yearMonth] + 1;
+      allMonths[allMonths.length - 1][yearMonth].push(file);
+    }
+  }
+
+  const allMonthNames = Object.values(allMonths).map(
     (section) => Object.keys(section)[0],
   );
 
   for (const activeMonth of activeMonths) {
     const monthName = Object.keys(activeMonth)[0];
     const files = Object.values(activeMonth)[0];
-    buildMonthIndex(monthName, files, threads, activeMonthNames);
+    buildMonthIndex(monthName, files, threads, allMonthNames);
   }
 }
 
@@ -603,7 +619,7 @@ const main = async () => {
     // Always copy css
     await fs.copyFile(
       path.join(srcDir, cssFile),
-      path.join(outputDir, "index.css")
+      path.join(outputDir, "index.css"),
     );
 
     const _markdownFiles = (await fs.readdir(inputDir))
@@ -679,7 +695,11 @@ const main = async () => {
     // build pages
     await buildNonThreadPages({ markdownFiles });
 
-    await generateIndexContent({ markdownFiles: thisMonthsFiles, threads });
+    await generateIndexContent({
+      markdownFiles: thisMonthsFiles,
+      threads,
+      allMarkdownFiles: _markdownFiles,
+    });
 
     await generateRSS({ markdownFiles });
 
