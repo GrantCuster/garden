@@ -441,8 +441,8 @@ async function buildMonthIndex(
   const monthIndex = activeMonthNames.indexOf(monthName);
   const targetName = monthIndex === 0 ? "index.html" : monthName + ".html";
 
-  if (fullRebuild) {
-    const script = `const monthNames = ${JSON.stringify(activeMonthNames)};
+  // if (fullRebuild) {
+  const script = `const monthNames = ${JSON.stringify(activeMonthNames)};
 let index = window.location.pathname === '/' ? 0 : monthNames.indexOf(window.location.pathname)
 function handleScroll() {
 console.log(document.body.scrollHeight - 200)
@@ -462,8 +462,8 @@ console.log(document.body.scrollHeight - 200)
 }
 window.addEventListener('scroll', handleScroll);
 setTimeout(handleScroll, 1000)`;
-    await fs.writeFile(path.join(outputDir, "infinite.js"), script, "utf-8");
-  }
+  await fs.writeFile(path.join(outputDir, "infinite.js"), script, "utf-8");
+  // }
 
   const postsContent =
     '<div class="posts">' + _headerContent + _postsContent + "</div>";

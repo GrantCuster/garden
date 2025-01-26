@@ -168,7 +168,7 @@ export function MakeDateHeader({
   dayArray: number[];
 }) {
   return html`<div>
-    <div class="h-24 w-full px-4 mb-3 flex items-end border-b-2 border-dark3">
+    <div class="h-24 w-full hidden px-4 mb-3 items-end border-b-2 border-dark3">
       ${dayArray
         .map(
           (_, i) =>
