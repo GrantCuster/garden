@@ -29,7 +29,7 @@ export function MakeWrapper({
       />
     </head>
     <body>
-      <div class="max-w-[55ch] mx-auto">${content}</div>
+      <div class="max-w-[65ch] mx-auto">${content}</div>
     </body>
   </html>`;
 }
