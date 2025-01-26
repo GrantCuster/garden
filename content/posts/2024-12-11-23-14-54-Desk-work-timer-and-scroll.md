@@ -1,4 +1,4 @@
-# Desk work: timer and scroll
+# Work: timer and scroll
 
 I did a couple of quick improvised desk additions today. Making a  hole for a countdown timer to sit and a mounting system for a roll of paper. Real task management tools.
 

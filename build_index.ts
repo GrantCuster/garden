@@ -203,7 +203,8 @@ async function buildStandalonePage({
   const basename = path.basename(file, ".md");
   const timestamp = formatDateString(basename);
 
-  const content = await fs.readFile(path.join(inputDir, file), "utf-8");
+  let content = await fs.readFile(path.join(inputDir, file), "utf-8");
+  content = processWorkAndInspirationTags(content);
   const generatedHtmlContent = execSync(
     `pandoc -f markdown-smart-markdown_in_html_blocks+raw_html+autolink_bare_uris -t html`,
     {
@@ -241,7 +242,8 @@ async function buildThread({ files }: { files: string[] }) {
   for (const file of files) {
     const basename = path.basename(file, ".md");
     const timestamp = formatDateString(basename);
-    const content = await fs.readFile(path.join(inputDir, file), "utf-8");
+    let content = await fs.readFile(path.join(inputDir, file), "utf-8");
+    content = processWorkAndInspirationTags(content);
     const generatedHtmlContent = execSync(
       `pandoc -f markdown-smart-markdown_in_html_blocks+raw_html+autolink_bare_uris -t html`,
       {
@@ -283,6 +285,32 @@ async function buildThread({ files }: { files: string[] }) {
   const dirName = path.join(outputDir, threadBasename);
   await fs.mkdir(dirName, { recursive: true });
   await fs.writeFile(path.join(dirName, "index.html"), formattedContent);
+}
+
+function processWorkAndInspirationTags(text: string) {
+  const workTagPattern = /^# Work:?|# work:?/;
+  const inspirationTagPattern = /^# Inspiration:?|# inspiration:?/;
+
+  // Split the text into lines
+  const lines = text.split("\n");
+
+  // Check and modify the first line if it matches the pattern
+  if (workTagPattern.test(lines[0])) {
+    lines[0] = lines[0].replace(workTagPattern, "").trim();
+    lines[0] = `# ` + lines[0];
+    lines.unshift(`<div class="tag">
+Work
+</div>\n`);
+  }
+  if (inspirationTagPattern.test(lines[0])) {
+    lines[0] = lines[0].replace(inspirationTagPattern, "").trim();
+    lines[0] = `# ` + lines[0];
+    lines.unshift(`<div class="tag">
+Inspiration
+</div>\n`);
+  }
+
+  return lines.join("\n");
 }
 
 async function buildMonthIndex(
@@ -402,6 +430,9 @@ async function buildMonthIndex(
     //   }
     // } else {
     // is not in thread
+
+    truncatedText = processWorkAndInspirationTags(truncatedText);
+
     const generatedHtmlContent = execSync(
       `pandoc -f markdown-smart-markdown_in_html_blocks+raw_html+autolink_bare_uris -t html`,
       {
