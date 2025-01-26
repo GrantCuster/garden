@@ -16,11 +16,17 @@ export function MakeWrapper({
   head: string;
   content: string;
 }) {
+  const timestamp = Date.now();
+  const flooredTimestamp = Math.floor(timestamp / 1000);
+
   return html`<html class="bg-hard0 text-foreground">
     <head>
       ${head}
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="stylesheet" href="/index.css" />
+      <link
+        rel="stylesheet"
+        href="/index.css?v=${flooredTimestamp.toString()}"
+      />
     </head>
     <body>
       <div class="max-w-[55ch] mx-auto">${content}</div>
@@ -51,8 +57,8 @@ export function MakePostLink({
   return html`<div>
     <div class="px-4 text-sm text-dark4 mb-2">
       ${postCount
-        ? `<span class="text-aqua -ml-3">${postCount}</span> &middot; `
-        : ``}${timestamp}
+      ? `<span class="text-aqua -ml-3">${postCount}</span> &middot; `
+      : ``}${timestamp}
     </div>
     <div
       class="px-4 border border-dark1 mb-4 post cursor-pointer"
@@ -60,9 +66,9 @@ export function MakePostLink({
     >
       <div class="markdown">${htmlContent}</div>
       ${truncated
-        ? `<div class="text-dark4 mb-2 text-sm">Read more</div>
+      ? `<div class="text-dark4 mb-2 text-sm">Read more</div>
 `
-        : ""}
+      : ""}
     </div>
   </div>`;
 }
@@ -97,6 +103,8 @@ export function MakePageHead({
 }) {
   const descriptionReplaced = description.replace(/"/g, "'");
   const titleReplaced = title.replace(/"/g, "'");
+  const timestamp = Date.now(); // e.g., 1672531200000 (milliseconds since epoch)
+  const flooredTimestamp = Math.floor(timestamp / 1000);
   return html`<title>${title} - Grant's Garden</title>
     <meta name="description" content="${descriptionReplaced}" />
     <meta property="og:title" content="${titleReplaced}" />
@@ -105,7 +113,7 @@ export function MakePageHead({
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:image" content="${image_link}" />
     <meta property="og:url" content="${url}" />
-    <script src="/index.js"></script>
+    <script src="/index.js?v=${flooredTimestamp.toString()}"></script>
     ${optional_head ? optional_head : ""}`;
 }
 
@@ -170,9 +178,9 @@ export function MakeDateHeader({
   return html`<div>
     <div class="h-24 hidden w-full px-4 mb-3 items-end border-b-2 border-dark3">
       ${dayArray
-        .map(
-          (_, i) =>
-            `<div
+      .map(
+        (_, i) =>
+          `<div
               key=${i}
               class="w-full flex items-stretch justify-center"
               style="height: ${(Math.min(3, dayArray[i]) / 3) * 100}%"
@@ -182,8 +190,8 @@ export function MakeDateHeader({
         ></div>
 
       </div>`,
-        )
-        .join("")}
+      )
+      .join("")}
     </div>
     <div class="px-4 mb-2 text-sm text-blue">${content}</div>
   </div>`;

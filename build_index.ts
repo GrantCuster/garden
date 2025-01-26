@@ -464,11 +464,13 @@ window.addEventListener('scroll', handleScroll);
 setTimeout(handleScroll, 1000)`;
   await fs.writeFile(path.join(outputDir, "infinite.js"), script, "utf-8");
   // }
+  const timestamp = Date.now();
+  const flooredTimestamp = Math.floor(timestamp / 1000);
 
   const postsContent =
     '<div class="posts">' + _headerContent + _postsContent + "</div>";
   await saveIndexContent({
-    optionHead: `<script src="/infinite.js"></script>`,
+    optionHead: `<script src="/infinite.js?v=${flooredTimestamp.toString()}"></script>`,
     postsContent: postsContent,
     target: targetName,
   });
@@ -601,7 +603,7 @@ const main = async () => {
     // Always copy css
     await fs.copyFile(
       path.join(srcDir, cssFile),
-      path.join(outputDir, "index.css"),
+      path.join(outputDir, "index.css")
     );
 
     const _markdownFiles = (await fs.readdir(inputDir))
