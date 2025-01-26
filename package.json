@@ -7,7 +7,8 @@
     "incremental": "ts-node -r dotenv/config build_index.ts incremental",
     "build": "ts-node -r dotenv/config build_index.ts",
     "deploy": "git subtree push --prefix dist origin gh-pages",
-    "tailwind": "npx tailwindcss -i ./src/dev.css -o ./src/index.css"
+    "tailwind": "npx tailwindcss -i ./src/dev.css -o ./src/index.css",
+    "serve": "serve dist"
   },
   "author": "",
   "license": "ISC",
@@ -22,6 +23,8 @@
     "dotenv": "^16.4.5",
     "playwright": "^1.44.1",
     "prettier": "^3.3.1",
-    "rss": "^1.2.2"
+    "rss": "^1.2.2",
+    "serve": "^14.2.4",
+    "ts-node": "^10.9.2"
   }
 }
