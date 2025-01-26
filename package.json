@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "incremental": "ts-node -r dotenv/config build_index.ts incremental",
-    "build": "ts-node -r dotenv/config build_index.ts",
+    "build": "npm run tailwind && ts-node -r dotenv/config build_index.ts",
     "deploy": "git subtree push --prefix dist origin gh-pages",
     "tailwind": "npx tailwindcss -i ./src/dev.css -o ./src/index.css",
     "serve": "serve dist"
