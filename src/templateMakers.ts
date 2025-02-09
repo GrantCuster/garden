@@ -55,18 +55,18 @@ export function MakePostLink({
   postCount?: number;
 }) {
   return html`<div>
-    <div class="px-4 text-sm text-dark4 mb-2">
-      ${postCount
-      ? `<span class="text-aqua -ml-3">${postCount}</span> &middot; `
-      : ``}${timestamp}
-    </div>
     <div
-      class="px-4 border border-dark1 mb-4 post cursor-pointer"
+      class="px-4 border border-dark1 -mb-px post cursor-pointer"
       onclick="${postlinkFunction}"
     >
+      <div class="text-sm hidden text-dark4 mt-3 -mb-3">
+        ${postCount
+      ? `<span class="text-aqua -ml-3">${postCount}</span> &middot; `
+      : ``}${timestamp}
+      </div>
       <div class="markdown">${htmlContent}</div>
       ${truncated
-      ? `<div class="text-dark4 mb-2 text-sm">Read more</div>
+      ? `<div class="text-dark4 mb-3 text-sm">Read more</div>
 `
       : ""}
     </div>
@@ -125,8 +125,8 @@ export function MakeHeader({ isHome }: { isHome: boolean }) {
 
 export function MakePostPage(timestamp: string, htmlContent: string) {
   return html`${MakeHeader({ isHome: false })}
-    <div class="px-4 text-sm text-dark4 mb-2">${timestamp}</div>
     <div class="px-4 border border-dark1 mb-4 post">
+      <div class="text-sm text-dark4 mt-3 -mb-3">${timestamp}</div>
       <div class="markdown">${htmlContent}</div>
     </div>`;
 }
@@ -193,7 +193,7 @@ export function MakeDateHeader({
       )
       .join("")}
     </div>
-    <div class="px-4 mb-2 text-sm text-blue">${content}</div>
+    <div class="px-4 mb-2 mt-2 text-sm text-blue">${content}</div>
   </div>`;
 }
 

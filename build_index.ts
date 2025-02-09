@@ -290,6 +290,7 @@ async function buildThread({ files }: { files: string[] }) {
 function processWorkAndInspirationTags(text: string) {
   const workTagPattern = /^# Work:?|# work:?/;
   const inspirationTagPattern = /^# Inspiration:?|# inspiration:?/;
+  const thinkingTagPattern = /^# Thinking:?|# thinking:?/;
 
   // Split the text into lines
   const lines = text.split("\n");
@@ -307,6 +308,13 @@ Work
     lines[0] = `# ` + lines[0];
     lines.unshift(`<div class="tag">
 Inspiration
+</div>\n`);
+  }
+  if (thinkingTagPattern.test(lines[0])) {
+    lines[0] = lines[0].replace(thinkingTagPattern, "").trim();
+    lines[0] = `# ` + lines[0];
+    lines.unshift(`<div class="tag">
+Thinking
 </div>\n`);
   }
 
