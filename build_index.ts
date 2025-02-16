@@ -297,10 +297,15 @@ function processTitleTags(text: string) {
   const match = lines[0].match(titleTagPattern);
   if (match) {
     const tag = match[1]; // The captured single word
-    const newTitle = match[2]; // The rest of the title
+    const newTitle = match[2].trim(); // The rest of the title
 
-    // Replace the first line with the formatted title
-    lines[0] = `# ${newTitle}`;
+    if (newTitle === "") {
+      // Remove the first line if the title is empty
+      lines.shift();
+    } else {
+      // Replace the first line with the formatted title
+      lines[0] = `# ${newTitle}`;
+    }
 
     // Insert the div tag before the title
     lines.unshift(`<div class="tag">
