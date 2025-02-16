@@ -204,7 +204,7 @@ async function buildStandalonePage({
   const timestamp = formatDateString(basename);
 
   let content = await fs.readFile(path.join(inputDir, file), "utf-8");
-  content = processWorkAndInspirationTags(content);
+  content = processTitleTags(content);
   const generatedHtmlContent = execSync(
     `pandoc -f markdown-smart-markdown_in_html_blocks+raw_html+autolink_bare_uris -t html`,
     {
@@ -243,7 +243,7 @@ async function buildThread({ files }: { files: string[] }) {
     const basename = path.basename(file, ".md");
     const timestamp = formatDateString(basename);
     let content = await fs.readFile(path.join(inputDir, file), "utf-8");
-    content = processWorkAndInspirationTags(content);
+    content = processTitleTags(content);
     const generatedHtmlContent = execSync(
       `pandoc -f markdown-smart-markdown_in_html_blocks+raw_html+autolink_bare_uris -t html`,
       {
@@ -287,34 +287,24 @@ async function buildThread({ files }: { files: string[] }) {
   await fs.writeFile(path.join(dirName, "index.html"), formattedContent);
 }
 
-function processWorkAndInspirationTags(text: string) {
-  const workTagPattern = /^# Work:?|# work:?/;
-  const inspirationTagPattern = /^# Inspiration:?|# inspiration:?/;
-  const thinkingTagPattern = /^# Thinking:?|# thinking:?/;
+function processTitleTags(text: string) {
+  const titleTagPattern = /^# (\w+):\s*(\S.*)$/; // Match a single word followed by ':' and the rest of the title
 
   // Split the text into lines
   const lines = text.split("\n");
 
   // Check and modify the first line if it matches the pattern
-  if (workTagPattern.test(lines[0])) {
-    lines[0] = lines[0].replace(workTagPattern, "").trim();
-    lines[0] = `# ` + lines[0];
+  const match = lines[0].match(titleTagPattern);
+  if (match) {
+    const tag = match[1]; // The captured single word
+    const newTitle = match[2]; // The rest of the title
+
+    // Replace the first line with the formatted title
+    lines[0] = `# ${newTitle}`;
+
+    // Insert the div tag before the title
     lines.unshift(`<div class="tag">
-Work
-</div>\n`);
-  }
-  if (inspirationTagPattern.test(lines[0])) {
-    lines[0] = lines[0].replace(inspirationTagPattern, "").trim();
-    lines[0] = `# ` + lines[0];
-    lines.unshift(`<div class="tag">
-Inspiration
-</div>\n`);
-  }
-  if (thinkingTagPattern.test(lines[0])) {
-    lines[0] = lines[0].replace(thinkingTagPattern, "").trim();
-    lines[0] = `# ` + lines[0];
-    lines.unshift(`<div class="tag">
-Thinking
+${tag}
 </div>\n`);
   }
 
@@ -439,7 +429,7 @@ async function buildMonthIndex(
     // } else {
     // is not in thread
 
-    truncatedText = processWorkAndInspirationTags(truncatedText);
+    truncatedText = processTitleTags(truncatedText);
 
     const generatedHtmlContent = execSync(
       `pandoc -f markdown-smart-markdown_in_html_blocks+raw_html+autolink_bare_uris -t html`,
